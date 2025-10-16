@@ -16,7 +16,7 @@ const Hero = () => {
         </div>
 
         {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-tight mb-6 animate-fade-in">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 animate-fade-in">
           <span className="text-primary">GET IN CONTROL</span>{" "}
           <span className="text-foreground">OF YOUR BODY</span>
           <br />
