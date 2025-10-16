@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
@@ -7,19 +7,19 @@ const Navigation = () => {
 
   const navLinks = [
     { name: "How it Works", href: "#how-it-works" },
-    { name: "Success Stories", href: "#success" },
+    { name: "Company", href: "#company", hasDropdown: true },
+    { name: "Success", href: "#success" },
     { name: "Blog", href: "#blog" },
-    { name: "About Us", href: "#about" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-      <div className="container mx-auto px-4">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-black tracking-tight">
-              FIT<span className="text-primary">LIFE</span>
+          <a href="/" className="flex items-center">
+            <span className="text-2xl font-black tracking-tight uppercase">
+              WARRIOR<span className="text-primary">Babe</span>
             </span>
           </a>
 
@@ -29,19 +29,24 @@ const Navigation = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-foreground/80 hover:text-foreground transition-colors font-medium"
+                className="text-white/90 hover:text-white transition-colors font-medium text-sm flex items-center gap-1"
               >
                 {link.name}
+                {link.hasDropdown && <ChevronDown size={16} />}
               </a>
             ))}
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-6 rounded-full">
+          </div>
+
+          {/* CTA Button */}
+          <div className="hidden md:block">
+            <Button className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3 rounded-md uppercase text-sm tracking-wide">
               APPLY NOW
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -56,13 +61,13 @@ const Navigation = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="block text-foreground/80 hover:text-foreground transition-colors font-medium py-2"
+                className="block text-white/90 hover:text-white transition-colors font-medium py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.name}
               </a>
             ))}
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-6 rounded-full">
+            <Button className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 rounded-md uppercase">
               APPLY NOW
             </Button>
           </div>
