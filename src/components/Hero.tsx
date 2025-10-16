@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 pt-20">
+    <section className="min-h-screen flex items-center justify-center px-4 pt-32">
       <div className="container mx-auto max-w-6xl text-center">
         {/* Star Rating */}
         <div className="flex items-center justify-center gap-2 mb-8 animate-fade-in">
