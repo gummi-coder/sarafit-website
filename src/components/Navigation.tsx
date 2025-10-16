@@ -13,9 +13,9 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/40 backdrop-blur-md border-b border-white/5">
-      <div className="mx-auto px-6 max-w-[1400px]">
-        <div className="flex items-center justify-between h-20">
+    <nav className="fixed top-4 left-4 right-4 md:left-8 md:right-8 z-50">
+      <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl px-6">
+        <div className="flex items-center justify-between h-20 max-w-[1400px] mx-auto">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <span className="text-2xl font-black tracking-tight uppercase">
