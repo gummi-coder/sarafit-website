@@ -6,6 +6,7 @@ import Approach from "@/components/Approach";
 import Method from "@/components/Method";
 import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -19,6 +20,7 @@ const Index = () => {
       <Method />
       <Testimonials />
       <Blog />
+      <Newsletter />
       <Footer />
     </div>
   );
