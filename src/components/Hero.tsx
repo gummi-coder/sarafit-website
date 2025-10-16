@@ -35,9 +35,9 @@ const Hero = () => {
 
         {/* Video Section */}
         <div className="max-w-3xl mx-auto mb-8 animate-fade-in">
-          <div className="relative aspect-video rounded-2xl overflow-hidden bg-secondary border-4 border-primary/20 shadow-2xl group cursor-pointer">
+          <div className="relative aspect-video rounded-2xl overflow-hidden border-4 border-primary/10 shadow-2xl group cursor-pointer">
             {/* Video Thumbnail Placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary to-background flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background/30 backdrop-blur-sm flex items-center justify-center">
               <div className="relative">
                 <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-pulse" />
                 <Button

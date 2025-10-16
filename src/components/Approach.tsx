@@ -3,7 +3,7 @@ import { Play } from "lucide-react";
 
 const Approach = () => {
   return (
-    <section className="py-20 px-4 bg-secondary/30">
+    <section className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -41,8 +41,8 @@ const Approach = () => {
 
           {/* Video */}
           <div>
-            <div className="relative aspect-video rounded-2xl overflow-hidden bg-secondary border-2 border-primary/20 shadow-xl group cursor-pointer">
-              <div className="absolute inset-0 bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
+            <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary/10 group cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background/30 backdrop-blur-sm flex items-center justify-center">
                 <Button
                   size="lg"
                   className="relative bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-20 h-20 group-hover:scale-110 transition-transform"

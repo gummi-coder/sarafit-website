@@ -49,25 +49,26 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    /* Subtle pink dot grid + soft glows (reduced) */
+    /* Subtle pink dot grid + soft glows distributed throughout page */
     background-image:
       radial-gradient(hsl(var(--primary)/0.03) 1px, transparent 1px),
       radial-gradient(hsl(var(--primary)/0.02) 1px, transparent 1px),
-      radial-gradient(ellipse 800px 800px at 10% 20%, hsl(var(--primary)/0.18) 0%, transparent 55%),
-      radial-gradient(ellipse 600px 600px at 90% 80%, hsl(var(--primary)/0.12) 0%, transparent 55%),
-      radial-gradient(ellipse 700px 700px at 50% 50%, hsl(var(--primary)/0.08) 0%, transparent 55%),
-      radial-gradient(ellipse 500px 500px at 85% 15%, hsl(var(--primary)/0.07) 0%, transparent 55%),
-      radial-gradient(ellipse 600px 600px at 15% 85%, hsl(var(--primary)/0.10) 0%, transparent 55%),
-      radial-gradient(ellipse 400px 400px at 70% 60%, hsl(var(--primary)/0.08) 0%, transparent 55%);
+      radial-gradient(ellipse 800px 800px at 10% 10%, hsl(var(--primary)/0.18) 0%, transparent 55%),
+      radial-gradient(ellipse 600px 600px at 90% 25%, hsl(var(--primary)/0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 700px 700px at 20% 40%, hsl(var(--primary)/0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 500px 500px at 80% 55%, hsl(var(--primary)/0.08) 0%, transparent 55%),
+      radial-gradient(ellipse 600px 600px at 15% 70%, hsl(var(--primary)/0.12) 0%, transparent 55%),
+      radial-gradient(ellipse 400px 400px at 85% 85%, hsl(var(--primary)/0.10) 0%, transparent 55%),
+      radial-gradient(ellipse 500px 500px at 50% 95%, hsl(var(--primary)/0.08) 0%, transparent 55%);
     background-size:
       22px 22px,
       22px 22px,
-      auto, auto, auto, auto, auto, auto;
+      auto, auto, auto, auto, auto, auto, auto;
     background-position:
       0 0,
       11px 11px,
-      center, center, center, center, center, center;
+      0% 0%, 100% 0%, 0% 35%, 100% 50%, 0% 65%, 100% 80%, 50% 100%;
     background-attachment: fixed;
-    background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   }
 }

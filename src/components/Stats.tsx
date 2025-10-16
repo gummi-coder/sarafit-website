@@ -17,8 +17,8 @@ const Stats = () => {
 
         {/* Video Section */}
         <div className="max-w-4xl mx-auto mb-16">
-          <div className="relative aspect-video rounded-2xl overflow-hidden bg-secondary border-2 border-primary/20 shadow-xl group cursor-pointer">
-            <div className="absolute inset-0 bg-gradient-to-br from-secondary to-background flex items-center justify-center">
+          <div className="relative aspect-video rounded-2xl overflow-hidden border-2 border-primary/10 group cursor-pointer">
+            <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background/30 backdrop-blur-sm flex items-center justify-center">
               <Button
                 size="lg"
                 className="relative bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-20 h-20 group-hover:scale-110 transition-transform"
@@ -29,7 +29,7 @@ const Stats = () => {
           </div>
         </div>
 
-        <div className="bg-secondary/50 rounded-2xl p-8 md:p-12">
+        <div className="p-8 md:p-12">
           <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
             The FitLife Method Is The Ultimate Metabolic Boosting, Body Toning System For Women
           </h3>

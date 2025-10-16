@@ -15,7 +15,7 @@ const Method = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-secondary/30">
+    <section className="py-20 px-4">
       <div className="container mx-auto max-w-5xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-black mb-6">

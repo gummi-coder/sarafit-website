@@ -17,9 +17,9 @@ const Transformations = () => {
           {[1, 2, 3, 4, 5, 6].map((i) => (
             <div
               key={i}
-              className="aspect-[3/4] bg-secondary rounded-xl overflow-hidden hover:scale-105 transition-transform"
+              className="aspect-[3/4] rounded-xl overflow-hidden hover:scale-105 transition-transform border border-primary/10"
             >
-              <div className="w-full h-full bg-gradient-to-br from-secondary to-muted flex items-center justify-center">
+              <div className="w-full h-full bg-gradient-to-br from-background/50 to-background/30 backdrop-blur-sm flex items-center justify-center">
                 <span className="text-foreground/40 font-bold">Before/After {i}</span>
               </div>
             </div>
