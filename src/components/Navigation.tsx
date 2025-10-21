@@ -29,9 +29,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <span className="text-2xl font-black tracking-tight uppercase font-display">
-              GF<span className="text-primary">Training</span>
-            </span>
+            <img 
+              src="/sarafit-logo.svg" 
+              alt="Sarafit" 
+              className="h-8 w-auto"
+            />
           </a>
 
           {/* Desktop Navigation */}

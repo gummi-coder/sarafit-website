@@ -50,8 +50,8 @@ export default {
         star: "hsl(var(--star))",
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'system-ui', 'sans-serif'],
+        display: ['Abril Fatface', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
