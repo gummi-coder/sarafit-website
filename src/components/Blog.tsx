@@ -28,7 +28,7 @@ const Blog = () => {
     <section className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         <div className="flex items-center justify-between mb-12">
-          <h2 className="text-4xl md:text-5xl font-black">
+          <h2 className="text-4xl md:text-5xl font-black font-display">
             Top <span className="text-primary">Content</span>
           </h2>
           <Button variant="ghost" className="text-primary hover:text-primary/80 font-bold">
@@ -42,10 +42,10 @@ const Blog = () => {
               <CardContent className="p-0">
                 <div className="aspect-video bg-gradient-to-br from-secondary to-muted" />
                 <div className="p-6">
-                  <h3 className="font-bold text-xl mb-3 hover:text-primary transition-colors">
+                  <h3 className="font-bold text-xl mb-3 hover:text-primary transition-colors font-display">
                     {article.title}
                   </h3>
-                  <p className="text-foreground/70 text-sm mb-4 line-clamp-3">
+                  <p className="text-foreground/70 text-sm mb-4 line-clamp-3 font-sans">
                     {article.excerpt}
                   </p>
                   <div className="flex items-center justify-between text-sm">

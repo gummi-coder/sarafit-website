@@ -6,12 +6,12 @@ const Stats = () => {
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-6">
+          <h2 className="text-4xl md:text-5xl font-black mb-6 font-display">
             Get Toned & Feel Confident like{" "}
             <span className="text-primary">21,817+ other members</span>
           </h2>
-          <p className="text-xl text-foreground/80">
-            FitLife Elite is the Biggest 1:1 online fitness and nutrition coaching company For Women in the U.S.
+          <p className="text-xl text-foreground/80 font-sans">
+            GF Training is the Biggest 1:1 online fitness and nutrition coaching company For Men in the U.S.
           </p>
         </div>
 
@@ -30,14 +30,17 @@ const Stats = () => {
         </div>
 
         <div className="p-8 md:p-12">
-          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
-            The FitLife Method Is The Ultimate Metabolic Boosting, Body Toning System For Women
+          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center font-display">
+            The GF Training Method Is The Ultimate Metabolic Boosting, Body Toning System For Men
           </h3>
-          <p className="text-lg text-foreground/80 text-center mb-8">
+          <p className="text-lg text-foreground/80 text-center mb-8 font-sans">
             Works Regardless of Background and Experience.
           </p>
           <div className="text-center">
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-7 rounded-full text-lg">
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-7 rounded-full text-lg"
+              onClick={() => window.location.href = 'http://localhost:8082/apply'}
+            >
               APPLY NOW
             </Button>
           </div>
