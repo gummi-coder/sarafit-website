@@ -84,7 +84,7 @@ const Navigation = () => {
               className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3 rounded-md uppercase text-sm tracking-wide"
               onClick={() => window.location.href = 'http://localhost:8082/apply'}
             >
-              APPLY NOW
+              SKRÁ MIG NÚNA!
             </Button>
           </div>
 
@@ -144,7 +144,7 @@ const Navigation = () => {
               className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 rounded-md uppercase"
               onClick={() => window.location.href = 'http://localhost:8082/apply'}
             >
-              APPLY NOW
+              SKRÁ MIG NÚNA!
             </Button>
           </div>
         )}

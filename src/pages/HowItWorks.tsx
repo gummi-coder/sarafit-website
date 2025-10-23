@@ -187,7 +187,7 @@ const HowItWorks = () => {
              className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-lg px-12 py-7 rounded-full shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
              onClick={() => window.location.href = 'http://localhost:8082/apply'}
            >
-             APPLY NOW
+             SKRÁ MIG NÚNA!
            </Button>
         </div>
       </section>
@@ -340,7 +340,7 @@ const HowItWorks = () => {
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl px-16 py-8 rounded-full shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
             onClick={() => window.location.href = 'http://localhost:8082/apply'}
           >
-            APPLY NOW
+            SKRÁ MIG NÚNA!
           </Button>
         </div>
       </section>

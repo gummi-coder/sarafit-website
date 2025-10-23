@@ -113,7 +113,7 @@ const Testimonials = () => {
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-7 rounded-full text-xl shadow-lg hover:shadow-primary/25 transition-all hover:scale-105"
             onClick={() => window.location.href = 'http://localhost:8082/apply'}
           >
-            APPLY NOW
+            SKRÁ MIG NÚNA!
           </Button>
         </div>
       </div>

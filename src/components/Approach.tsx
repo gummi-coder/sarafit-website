@@ -9,27 +9,20 @@ const Approach = () => {
           {/* Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-black mb-6 font-display">
-              A New Way To Get{" "}
-              <span className="text-primary">Healthy And Fit 1:1 Online</span>
+              <span className="text-white">Fjarþjálfun sem er</span> <span className="text-primary">byggð með þín markmið í huga.</span>
             </h2>
             <p className="text-xl font-semibold text-foreground/90 mb-6 font-sans">
-              There is nothing Worse than Feeling uncomfortable In your skin...
+              Plan sem hentar þér svo þú getur hætt að byrja og gefast upp eftir nokkrar vikur.
             </p>
             <div className="space-y-4 text-lg text-foreground/80">
               <p className="font-sans">
-                👉 1:1 Online health and fitness coaching is so effective because it helps men{" "}
-                <span className="font-bold text-foreground">
-                  change their behaviors, beliefs, and habits through time.
-                </span>
+                👉 Sérsniðið æfingarprógram sem er byggt fyrir þinn lífsstíl og þín markmið.
               </p>
               <p className="font-sans">
-                👉 Nothing else accomplishes this with even remotely the same level of effectiveness.
+                👉 Næringarþjálfun þar sem við förum yfir þínar venjur og aðlögum ofan á þær.
               </p>
               <p className="font-sans">
-                👉{" "}
-                <span className="font-bold text-foreground">
-                  It's your lifestyle and how you live your life that we help you change..
-                </span>
+                👉 Fullur aðgangur að appinu SARAFIT þar sem þú heldur utan um allan árangur. Þú hefur einnig aðgang að spjallþræði við þjálfara beint í appinu.
               </p>
             </div>
             <div className="mt-8">
@@ -37,7 +30,7 @@ const Approach = () => {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-7 rounded-full text-lg"
                 onClick={() => window.location.href = 'http://localhost:8082/apply'}
               >
-                APPLY NOW
+                SKRÁ MIG NÚNA!
               </Button>
             </div>
           </div>
