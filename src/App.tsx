@@ -11,6 +11,7 @@ import Pricing from "./pages/Pricing";
 import EmailSignup1 from "./pages/EmailSignup1";
 import EmailSignup2 from "./pages/EmailSignup2";
 import Apply from "./pages/Apply";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -32,6 +33,7 @@ const App = () => (
                  <Route path="/email1" element={<EmailSignup1 />} />
                  <Route path="/email2" element={<EmailSignup2 />} />
                  <Route path="/apply" element={<Apply />} />
+                 <Route path="/terms" element={<Terms />} />
                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                  <Route path="*" element={<NotFound />} />
                </Routes>
