@@ -26,10 +26,11 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center">
-            <img 
-              src="/sarafit-logo.svg" 
-              alt="Sarafit" 
-              className="h-8 w-auto"
+            <img
+              src="/sarafit-logo.png"
+              alt="Sarafit"
+              className="h-16 w-auto md:h-20"
+              loading="lazy"
             />
           </a>
 

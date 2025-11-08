@@ -1,3 +1,14 @@
-<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <text x="10" y="45" font-family="Abril Fatface, serif" font-size="36" font-weight="900" fill="white" text-anchor="start">SARAFIT</text>
+<svg width="240" height="80" viewBox="0 0 240 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="80" rx="16" fill="#050505" />
+  <text
+    x="120"
+    y="55"
+    font-family="'Abril Fatface', serif"
+    font-size="52"
+    font-weight="900"
+    fill="#FFFFFF"
+    text-anchor="middle"
+  >
+    SARAFIT
+  </text>
 </svg>
