@@ -5,7 +5,6 @@ import Approach from "@/components/Approach";
 import Method from "@/components/Method";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
-import Blog from "@/components/Blog";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -18,7 +17,6 @@ const Index = () => {
       <Testimonials />
       <Pricing />
       <Transformations />
-      <Blog />
       <Footer />
     </div>
   );

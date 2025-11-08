@@ -288,8 +288,8 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          <div className="text-center">
-            <p className="text-lg text-foreground/80 mb-8">
+          <div className="text-center mb-0">
+            <p className="text-base md:text-lg text-foreground/80 leading-tight">
               <span className="font-bold text-foreground">Based on 1,500+ Reviews</span> from real clients who have transformed their lives
             </p>
           </div>
@@ -297,33 +297,12 @@ const HowItWorks = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="pt-0 pb-8 px-4">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-5xl font-black mb-8 font-display">
-            <span className="text-foreground">Are You Ready To</span>{" "}
-            <span className="text-primary">Get In Control Of Your Body</span>{" "}
-            <span className="text-foreground">& The Way It Looks</span>
-            <br />
-            <span className="text-foreground">For The Rest Of Your Life?</span>
-          </h2>
-          
-          <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-            Because of our strict requirements for hiring new world class, overqualified coaches,{" "}
-            <span className="font-bold text-foreground">we only have so many openings available at any given time.</span>
-          </p>
-          
-          <p className="text-lg text-foreground/80 mb-12 leading-relaxed">
-            If you're ready to see if you qualify, just fill out the short 2 to 3-minute application below and book a time to chat with someone from our team.
-            <br />
-            <br />
-            A new future you, is waiting for you...{" "}
-            <span className="font-bold text-primary">Step into him today.</span>
-          </p>
-
           <Button 
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl px-16 py-8 rounded-full shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
-            onClick={() => window.location.href = 'http://localhost:8082/apply'}
+            onClick={handleSignupClick}
           >
             SKRÁ MIG NÚNA!
           </Button>

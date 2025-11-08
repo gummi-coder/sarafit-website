@@ -12,14 +12,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 pt-32">
+    <section className="min-h-[85vh] flex items-start justify-center px-4 pt-36 pb-24">
       <div className="container mx-auto max-w-6xl text-center">
         {/* Star Rating */}
-        <div className="flex items-center justify-center gap-2 mb-12 animate-fade-in">
-          {[...Array(5)].map((_, i) => (
-            <Star key={i} className="w-6 h-6 fill-star text-star drop-shadow-sm" />
-          ))}
-          <span className="text-foreground/90 ml-3 text-lg font-medium">
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 animate-fade-in text-sm sm:text-base">
+          <div className="flex items-center justify-center gap-1">
+            {[...Array(5)].map((_, i) => (
+              <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-star text-star drop-shadow-sm" />
+            ))}
+          </div>
+          <span className="text-foreground/90 font-medium sm:ml-2">
             Með yfir <span className="font-bold text-primary">100+</span> meðmæli
           </span>
         </div>
