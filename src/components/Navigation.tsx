@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import {
@@ -14,13 +14,8 @@ const Navigation = () => {
 
   const navLinks = [
     { name: "How it Works", href: "/how-it-works" },
-    { name: "Company", href: "#company", hasDropdown: true },
-    { name: "Fjarþjálfun", href: "/pricing" },
-  ];
-
-  const companyDropdownItems = [
     { name: "Um mig", href: "/about" },
-    { name: "Hafa samband", href: "/contact" },
+    { name: "Fjarþjálfun", href: "/pricing" },
   ];
 
   return (
@@ -39,26 +34,7 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              link.name === "Company" ? (
-                <DropdownMenu key={link.name}>
-                  <DropdownMenuTrigger className="text-white/90 hover:text-white transition-colors font-medium text-sm flex items-center gap-1 font-sans">
-                    {link.name}
-                    <ChevronDown size={16} />
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent className="bg-card border border-border/20 backdrop-blur-sm">
-                    {companyDropdownItems.map((item) => (
-                      <DropdownMenuItem key={item.name} asChild>
-                        <Link
-                          to={item.href}
-                          className="text-foreground hover:text-primary transition-colors cursor-pointer"
-                        >
-                          {item.name}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))}
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              ) : link.href.startsWith('/') ? (
+              link.href.startsWith('/') ? (
                 <Link
                   key={link.name}
                   to={link.href}
@@ -102,25 +78,7 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="md:hidden pb-6 space-y-4 animate-fade-in">
             {navLinks.map((link) => (
-              link.name === "Company" ? (
-                <div key={link.name} className="space-y-2">
-                  <div className="text-white/90 font-medium py-2 font-sans">
-                    {link.name}
-                  </div>
-                  <div className="pl-4 space-y-2">
-                    {companyDropdownItems.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        className="block text-white/70 hover:text-white transition-colors font-medium py-1 font-sans text-sm"
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ) : link.href.startsWith('/') ? (
+              link.href.startsWith('/') ? (
                 <Link
                   key={link.name}
                   to={link.href}
