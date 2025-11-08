@@ -11,12 +11,12 @@ import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 const Contact = () => {
   const faqs = [
     {
-      question: "How do I get started with GF Training?",
+      question: "How do I get started with Sarafit?",
       answer: "Getting started is easy! Simply click the 'APPLY NOW' button on our website, fill out the application form, and our team will contact you within 24 hours to discuss your goals and match you with the perfect coach."
     },
     {
-      question: "What makes GF Training different from other fitness programs?",
-      answer: "GF Training offers personalized 1-on-1 coaching, custom nutrition plans, and a supportive community. Our coaches are certified professionals who work with you to create a sustainable plan that fits your lifestyle and goals."
+      question: "What makes Sarafit different from other fitness programs?",
+      answer: "Sarafit offers personalized 1-on-1 coaching, custom nutrition plans, and a supportive community. Our coaches are certified professionals who work with you to create a sustainable plan that fits your lifestyle and goals."
     },
     {
       question: "How much does the program cost?",
@@ -195,7 +195,7 @@ const Contact = () => {
               </div>
               
               <div className="mt-12 bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <h3 className="text-xl font-bold text-foreground mb-4">Why Choose GF Training?</h3>
+                <h3 className="text-xl font-bold text-foreground mb-4">Why Choose Sarafit?</h3>
                 <ul className="space-y-3 text-foreground/80">
                   <li className="flex items-start gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
@@ -229,7 +229,7 @@ const Contact = () => {
               <span className="text-primary">Questions</span>
             </h2>
             <p className="text-lg text-foreground/80">
-              Find answers to the most common questions about GF Training programs and services.
+              Find answers to the most common questions about Sarafit programs and services.
             </p>
           </div>
 

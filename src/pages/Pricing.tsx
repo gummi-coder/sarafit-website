@@ -22,7 +22,7 @@ const Pricing = () => {
       name: "Guðmundur",
       age: "41",
       result: "Transformed his body composition",
-      text: "At 41, I thought it was too late to get in shape. GF Training proved me wrong - I'm in the best shape of my life."
+      text: "At 41, I thought it was too late to get in shape. Sarafit proved me wrong - I'm in the best shape of my life."
     }
   ];
 

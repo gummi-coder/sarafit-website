@@ -11,7 +11,7 @@ const Stats = () => {
             <span className="text-primary">21,817+ other members</span>
           </h2>
           <p className="text-xl text-foreground/80 font-sans">
-            GF Training is the Biggest 1:1 online fitness and nutrition coaching company For Men in the U.S.
+            Sarafit is the Biggest 1:1 online fitness and nutrition coaching company For Men in the U.S.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ const Stats = () => {
 
         <div className="p-8 md:p-12">
           <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center font-display">
-            The GF Training Method Is The Ultimate Metabolic Boosting, Body Toning System For Men
+            The Sarafit Method Is The Ultimate Metabolic Boosting, Body Toning System For Men
           </h3>
           <p className="text-lg text-foreground/80 text-center mb-8 font-sans">
             Works Regardless of Background and Experience.

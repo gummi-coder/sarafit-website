@@ -112,7 +112,7 @@ const Apply = () => {
             
             
             <div className="text-sm text-foreground/60">
-              Contact GF Training<br />
+              Contact Sarafit<br />
               <a href="mailto:support@gftraining.com" className="text-primary hover:text-primary/80">
                 support@gftraining.com
               </a>

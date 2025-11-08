@@ -125,7 +125,7 @@ const HowItWorks = () => {
           </div>
 
           <p className="text-lg text-foreground/80 max-w-4xl mx-auto mb-12">
-            The GF Training VIP is a 1:1 personal training 12-month program tailored specifically to you. 
+            The Sarafit VIP is a 1:1 personal training 12-month program tailored specifically to you. 
             Work with a coach to get your macronutrients, exercises, adjustments, etc., and reach your desired body goal.
           </p>
 
@@ -259,34 +259,24 @@ const HowItWorks = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
-              <span className="text-foreground">GF Training Has</span>{" "}
+              <span className="text-foreground">Sarafit Has</span>{" "}
               <span className="text-primary">Proven Results</span>
             </h2>
             <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
-              Does GF Training work? There's only one way to find out, by seeing whether our students actually had success.
+              Does Sarafit work? There's only one way to find out, by seeing whether our students actually had success.
             </p>
           </div>
 
-          {/* Video Placeholder */}
+          {/* Video Embed */}
           <div className="max-w-4xl mx-auto mb-12">
-            <div className="relative aspect-video rounded-2xl overflow-hidden border-4 border-primary/10 shadow-2xl group cursor-pointer">
-              {/* Video Thumbnail Placeholder */}
-              <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background/30 backdrop-blur-sm flex items-center justify-center">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-pulse" />
-                  <Button
-                    size="lg"
-                    className="relative bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-24 h-24 group-hover:scale-110 transition-transform"
-                  >
-                    <Target className="w-12 h-12 fill-current" />
-                  </Button>
-                </div>
-              </div>
-              
-              {/* Video Label */}
-              <div className="absolute bottom-6 left-6 bg-primary text-primary-foreground px-6 py-3 rounded-lg font-bold text-lg">
-                GF TRAINING RESULTS
-              </div>
+            <div className="relative aspect-video rounded-2xl overflow-hidden border-4 border-primary/10 shadow-2xl">
+              <iframe
+                className="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/tyIsKQaaBOM"
+                title="SARAFIT video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
             </div>
           </div>
 

@@ -19,12 +19,12 @@ const Signup = () => {
         <div className="container mx-auto max-w-6xl text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 font-display">
             <span className="text-primary">Byrjaðu</span>{" "}
-            <span className="text-foreground">með GF Training</span>
+            <span className="text-foreground">með Sarafit</span>
           </h1>
           
           <p className="text-xl text-foreground/80 max-w-4xl mx-auto mb-12 leading-relaxed">
             Tilbúinn til að umbreyta líkamanum þínum og ná markmiðum þínum? 
-            Taktu þátt með þúsundum karla sem hafa þegar byrjað ferð sína með GF Training.
+            Taktu þátt með þúsundum karla sem hafa þegar byrjað ferð sína með Sarafit.
           </p>
         </div>
       </section>
@@ -145,7 +145,7 @@ const Signup = () => {
             {/* Benefits & Testimonials */}
             <div>
               <h2 className="text-3xl md:text-4xl font-black mb-8 font-display">
-                <span className="text-foreground">Why Choose GF Training?</span>
+                <span className="text-foreground">Why Choose Sarafit?</span>
               </h2>
               
               <div className="space-y-6">
@@ -185,9 +185,9 @@ const Signup = () => {
                       <span className="text-sm text-foreground/60">Based on 1,500+ reviews</span>
                     </div>
                     <p className="text-foreground/80 text-sm">
-                      "GF Training helped me achieve results I never thought possible. The personalized approach and constant support made all the difference."
+                      "Sarafit helped me achieve results I never thought possible. The personalized approach and constant support made all the difference."
                     </p>
-                    <p className="text-primary text-sm font-medium">- John D., GF Training Member</p>
+                    <p className="text-primary text-sm font-medium">- John D., Sarafit Member</p>
                   </div>
                 </div>
               </div>

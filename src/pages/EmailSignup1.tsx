@@ -61,7 +61,7 @@ const EmailSignup1 = () => {
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-white/10">
           <p className="text-sm text-foreground/40">
-            © 2025 GF Training. All rights reserved.
+            © 2025 Sarafit. All rights reserved.
           </p>
         </div>
       </div>

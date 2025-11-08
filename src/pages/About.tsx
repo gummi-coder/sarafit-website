@@ -23,38 +23,38 @@ const About = () => {
     },
     {
       year: "2018",
-      title: "The Birth of GF Training",
-      description: "The GF Training Blueprint was born, setting a new standard in fitness education. This program empowered men with the tools and knowledge to transform their health for life. The establishment of GF Training signaled the start of a movement, establishing expertise in personalized fitness solutions for men."
+      title: "The Birth of Sarafit",
+      description: "The Sarafit Blueprint was born, setting a new standard in fitness education. This program empowered men with the tools and knowledge to transform their health for life. The establishment of Sarafit signaled the start of a movement, establishing expertise in personalized fitness solutions for men."
     },
     {
       year: "2019",
       title: "Innovation and Experimentation",
-      description: "GF Training solidified its position as a leader in fitness education, testing and refining new programs to ensure the best client outcomes with unmatched support in the space. Through strategic innovation, the company expanded its reach and impact while maintaining its core commitment to delivering unmatched expertise."
+      description: "Sarafit solidified its position as a leader in fitness education, testing and refining new programs to ensure the best client outcomes with unmatched support in the space. Through strategic innovation, the company expanded its reach and impact while maintaining its core commitment to delivering unmatched expertise."
     },
     {
       year: "2020",
       title: "Thriving Through Adversity",
-      description: "As the world faced unprecedented challenges, GF Training stepped up to deliver strength and stability to its growing community. The release of version 2 of the GF Training Blueprint provided men with actionable strategies to stay consistent and healthy, even at home. This year solidified the GF Method as an essential resource for men navigating their health journeys."
+      description: "As the world faced unprecedented challenges, Sarafit stepped up to deliver strength and stability to its growing community. The release of version 2 of the Sarafit Blueprint provided men with actionable strategies to stay consistent and healthy, even at home. This year solidified the GF Method as an essential resource for men navigating their health journeys."
     },
     {
       year: "2021",
       title: "Elevating the Client Experience",
-      description: "This year, GF Training introduced its VIP Coaching Program, providing an elite 1:1 coaching experience based on the GF Method. We started to welcome the best of the best personal trainers to our team. The program expanded the brand's ability to deliver tailored solutions for men navigating life transitions."
+      description: "This year, Sarafit introduced its VIP Coaching Program, providing an elite 1:1 coaching experience based on the GF Method. We started to welcome the best of the best personal trainers to our team. The program expanded the brand's ability to deliver tailored solutions for men navigating life transitions."
     },
     {
       year: "2022",
       title: "Redefining Fitness Education",
-      description: "The release of GF Training Blueprint version 3 showcased our commitment to delivering cutting-edge education in fitness and nutrition. The GF Method was integrated into high-quality video content and expanded onto YouTube, growing GF Training's reach and establishing it as a trusted authority for men."
+      description: "The release of Sarafit Blueprint version 3 showcased our commitment to delivering cutting-edge education in fitness and nutrition. The GF Method was integrated into high-quality video content and expanded onto YouTube, growing Sarafit's reach and establishing it as a trusted authority for men."
     },
     {
       year: "2023",
       title: "Breaking Records, Changing Lives",
-      description: "GF Training launched The GF Hour podcast, bringing the GF Method to a larger audience with expert advice on fitness, nutrition, and mindset. The podcast stayed in the top 10 fitness podcasts and featured big-name guests and leading experts in the space. The VIP program was revamped to set a new standard for personalized coaching."
+      description: "Sarafit launched The GF Hour podcast, bringing the GF Method to a larger audience with expert advice on fitness, nutrition, and mindset. The podcast stayed in the top 10 fitness podcasts and featured big-name guests and leading experts in the space. The VIP program was revamped to set a new standard for personalized coaching."
     },
     {
       year: "2024",
       title: "Revolutionizing Men's Health",
-      description: "GF Training partnered with leading health companies to integrate advanced insights into its programs, creating a truly personalized approach to fitness and nutrition. This partnership brought a new dimension to the GF Method, addressing every facet of a man's health. With its innovative strategies and industry-leading products, GF Training continues to transform lives and lead the fitness space for men."
+      description: "Sarafit partnered with leading health companies to integrate advanced insights into its programs, creating a truly personalized approach to fitness and nutrition. This partnership brought a new dimension to the GF Method, addressing every facet of a man's health. With its innovative strategies and industry-leading products, Sarafit continues to transform lives and lead the fitness space for men."
     }
   ];
 
@@ -67,17 +67,17 @@ const About = () => {
         <div className="container mx-auto max-w-6xl text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 font-display">
             <span className="text-primary">About</span>{" "}
-            <span className="text-foreground">GF Training</span>
+            <span className="text-foreground">Sarafit</span>
           </h1>
           
           <p className="text-xl text-foreground/80 max-w-4xl mx-auto mb-12 leading-relaxed">
-            GF Training is a results-driven company empowering men through personalized fitness, nutrition, and education. 
+            Sarafit is a results-driven company empowering men through personalized fitness, nutrition, and education. 
             With online programs, world-class coaching, and community support, we help men take control of their health 
             and achieve life-changing transformations.
           </p>
 
           <p className="text-lg text-foreground/70 max-w-4xl mx-auto mb-16 leading-relaxed">
-            Founded by GF and later joined by partners, GF Training has grown into a movement trusted by thousands of men worldwide. 
+            Founded by GF and later joined by partners, Sarafit has grown into a movement trusted by thousands of men worldwide. 
             We are on a mission to help men regain their personal power and feel confident in their skin.
           </p>
 
@@ -165,7 +165,7 @@ const About = () => {
           </h2>
           
           <p className="text-lg text-foreground/80 mb-12 leading-relaxed">
-            Join thousands of men who have already transformed their lives with GF Training. 
+            Join thousands of men who have already transformed their lives with Sarafit. 
             Your journey to a stronger, more confident you starts today.
           </p>
 

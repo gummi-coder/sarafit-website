@@ -35,7 +35,7 @@ const EmailSignup2 = () => {
             <span className="text-3xl font-black text-primary-foreground">G</span>
           </div>
           <h1 className="text-2xl font-bold text-foreground">Gudmundur Fridgeirsson</h1>
-          <p className="text-foreground/70">GF Training Coach</p>
+          <p className="text-foreground/70">Sarafit Coach</p>
         </div>
 
         {/* Main Headline */}
@@ -144,7 +144,7 @@ const EmailSignup2 = () => {
           </blockquote>
           <div className="text-sm">
             <div className="font-bold text-foreground">Gudmundur Fridgeirsson</div>
-            <div className="text-foreground/70">GF Training Coach</div>
+            <div className="text-foreground/70">Sarafit Coach</div>
           </div>
         </div>
 
@@ -154,7 +154,7 @@ const EmailSignup2 = () => {
             "Ég var búin að prófa mjög mikið til þess að koma mér af stað því mér fannst ræktin svo leiðinleg EN það breyttist algerlega þegar ég byrjaði í þjálfun hjá GFtraining. Kom mér af stað og er loksins að ná að halda mig við ræktina"
           </blockquote>
           <div className="text-sm text-primary font-medium">
-            - Viðskiptavinur GF Training
+            - Viðskiptavinur Sarafit
           </div>
         </div>
 

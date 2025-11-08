@@ -127,7 +127,7 @@ const Footer = () => {
         <div className="border-t border-white/10 pt-6">
           <div className="text-center">
             <div className="text-white/60 text-xs">
-              <p>© 2025 GF Training. All rights reserved.</p>
+              <p>© 2025 Sarafit. All rights reserved.</p>
             </div>
           </div>
         </div>
