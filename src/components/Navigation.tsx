@@ -19,7 +19,7 @@ const Navigation = () => {
   ];
 
   const companyDropdownItems = [
-    { name: "Um Okkur", href: "/about" },
+    { name: "Um mig", href: "/about" },
     { name: "Hafa samband", href: "/contact" },
   ];
 
