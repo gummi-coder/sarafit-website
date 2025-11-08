@@ -1,5 +1,5 @@
 import { Facebook, Youtube, Instagram, Linkedin } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 
 // Custom Spotify Icon Component
 const SpotifyIcon = ({ className }: { className?: string }) => (
@@ -14,19 +14,20 @@ const SpotifyIcon = ({ className }: { className?: string }) => (
 );
 
 const Footer = () => {
+  const footerFormRef = useRef<HTMLDivElement | null>(null);
+
   useEffect(() => {
-    // Load Gummi script for footer
-    const script = document.createElement('script');
+    if (!footerFormRef.current) return;
+
+    const script = document.createElement("script");
     script.async = true;
-    script.setAttribute('data-uid', '887ca30a1c');
-    script.src = 'https://gummi.kit.com/887ca30a1c/index.js';
-    document.head.appendChild(script);
+    script.setAttribute("data-uid", "e5f8dfba21");
+    script.src = "https://sarafit.kit.com/e5f8dfba21/index.js";
+    footerFormRef.current.appendChild(script);
 
     return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector('script[data-uid="887ca30a1c"]');
-      if (existingScript) {
-        existingScript.remove();
+      if (footerFormRef.current && script.parentNode === footerFormRef.current) {
+        footerFormRef.current.removeChild(script);
       }
     };
   }, []);
@@ -106,20 +107,8 @@ const Footer = () => {
             <p className="text-white/60 text-xs">Get the latest fitness tips</p>
           </div>
           
-          <div className="max-w-sm mx-auto">
-            <form className="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="flex-1 px-3 py-2 bg-white/10 border border-white/20 rounded text-white placeholder-white/60 focus:outline-none focus:border-primary text-sm"
-              />
-              <button 
-                type="submit" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-4 py-2 rounded text-sm transition-all"
-              >
-                Subscribe
-              </button>
-            </form>
+          <div className="max-w-xs mx-auto scale-[0.9] md:scale-100">
+            <div ref={footerFormRef} />
           </div>
         </div>
 
