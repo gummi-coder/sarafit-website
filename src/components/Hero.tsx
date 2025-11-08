@@ -1,4 +1,4 @@
-import { Star, Play } from "lucide-react";
+import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -28,20 +28,14 @@ const Hero = () => {
 
         {/* Video Section */}
         <div className="max-w-3xl mx-auto mb-8 animate-fade-in">
-          <div className="relative aspect-video rounded-2xl overflow-hidden border-4 border-primary/10 shadow-2xl group cursor-pointer">
-            {/* Video Thumbnail Placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-br from-background/50 to-background/30 backdrop-blur-sm flex items-center justify-center">
-              <div className="relative">
-                <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full animate-pulse" />
-                <Button
-                  size="lg"
-                  className="relative bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-24 h-24 group-hover:scale-110 transition-transform"
-                >
-                  <Play className="w-12 h-12 fill-current" />
-                </Button>
-              </div>
-            </div>
-            
+          <div className="relative aspect-video rounded-2xl overflow-hidden border-4 border-primary/10 shadow-2xl">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/tyIsKQaaBOM"
+              title="SARAFIT video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
           </div>
         </div>
 

@@ -40,62 +40,52 @@ const HowItWorks = () => {
   const features = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Dedicated 1-on-1 Coach",
-      description: "Every GF Training member gets a personal coach certified in both nutrition and fitness, ensuring you receive expert guidance tailored to your goals.",
+      title: "Persónuleg þjálfun",
+      description: "Allir sem skrá sig í fjarþjálfun hjá SARAFIT fá persónulega þjálfun frá einkaþjálfara sem býr til prógram og næringarplan svo þú fáir árangur sem endist.",
       benefits: [
-        "Your coach monitors your progress, adjusts your plan as needed, and helps you stay accountable throughout your fitness journey.",
-        "Whether you're aiming for fat loss, strength gains, or overall health improvements, your coach creates a roadmap designed just for you.",
-        "Monthly check-ins allow you to refine your strategy with your coach, ensuring your plan evolves with your progress."
+        "Þjálfarinn þinn heldur utan um árangurinn þinn, breytir prógraminu eins og þarf og hjálpar þér að halda þér við efnið svo þú gefist ekki upp.",
+        "Sama hvort markmiðið þitt er að byggja upp styrk, missa fitu eða bæta heilsuna almennt þá færðu plan sem hentar þínum þörfum fullkomlega.",
+        "Vikuleg lítil check ins og mánaðarleg árangurs check ins tryggja að rútínan þín skili þér árangri."
       ]
     },
     {
       icon: <MessageCircle className="w-8 h-8" />,
-      title: "1-on-1 Coaching",
-      description: "Monthly check-ins allow you to refine your strategy with your coach, ensuring your plan evolves with your progress.",
+      title: "Check in’s",
+      description: "Vikuleg persónuleg check ins frá Söru í spjall þræðinum í appinu og mánaðarleg árangurs check ins.",
       benefits: [
-        "Adjust your macros, workouts, and habits to match your changing needs and keep your results on track.",
-        "Celebrate milestones, tackle challenges, and get personalized feedback to maintain momentum.",
-        "Biweekly group calls with your coach and a small group of members provide support and accountability."
+        "Við skoðum æfingarprógramið, næringarplanið og dagleg habits og breytum ef þess þarf.",
+        "Fjarfundir þar sem við spjöllum um næringuna, hvernig við getum komið heilbrigðum kostum inn í núverandi rútínu, reiknum macros og almennt spjöllum um mataræði.",
+        "Mánaðarleg check in þar sem við tökum árangursmælingar og tökum stöðuna á heilsunni, bæði andlegri og líkamlegri."
       ]
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Team Huddles",
-      description: "Biweekly group calls with your coach and a small group of members provide support and accountability.",
+      title: "Persónulegt æfingaprógram",
+      description: "Sérhannað æfingaprógram sem er hannað fyrir þín markmið og þínar aðstæður, sama hverjar þær eru.",
       benefits: [
-        "Share your victories, ask questions, and get tips to stay aligned with your macros, workouts, and mindset.",
-        "Learn from others' experiences and feel inspired by a community of like-minded men pursuing similar goals.",
-        "Join three mindset-focused calls each month, where GF Training founder shares strategies to simplify and enhance your fitness journey."
-      ]
-    },
-    {
-      icon: <Clock className="w-8 h-8" />,
-      title: "Weekly Community Calls",
-      description: "Join three mindset-focused calls each month, where GF Training founder shares strategies to simplify and enhance your fitness journey.",
-      benefits: [
-        "Once a month, participate in a roundtable call centered on mastering advanced macro techniques for optimal results.",
-        "These calls help you stay motivated, develop new skills, and deepen your understanding of fitness and nutrition.",
-        "Have a question or need guidance? Your coach is just a message away."
+        "Ef þú ert nú þegar með upptekna rútínu eða hefur ekki mikinn tíma til að mæta þá getur þú samt fengið plan. Sara gerir fyrir þig æfingaprógram sem passar inn í þína uppteknu rútínu.",
+        "Þú færð prógram sem vinnur með þér ef þú ert að ná þér eftir meiðsli, barneignir eða andleg veikindi.",
+        "Hvort sem þú vilt læra að telja macros eða bæta inn hollari venjum inn í lífstílinn þinn — Sara hjálpar þér að finna það sem hentar best."
       ]
     },
     {
       icon: <MessageCircle className="w-8 h-8" />,
-      title: "24/7 Support",
-      description: "Have a question or need guidance? Your coach is just a message away.",
+      title: "Stuðningur 24/7",
+      description: "Ertu með spurningu eða vantar þig aðstoð? Þú ert með þjálfarann í vasanum.",
       benefits: [
-        "Send private questions anytime and receive a reply within 24 hours to stay on track.",
-        "Your communication with your coach is confidential, so you can feel comfortable discussing anything.",
-        "Log your workouts, track weights and reps, and measure your progress—all in one place."
+        "Sendu spurningar á þjálfarann þinn hvenær sem er og þú færð alltaf svar innan 24 klst.",
+        "Öll samtöl við þjálfarann þinn eru bundin trúnaði svo þér líði vel með að tala um hvað sem er.",
+        "Þú tekur æfingu hvenær sem þér hentar og loggar hana í appið. Þú loggar næringuna þína og heldur utan um árangur allt á einum stað."
       ]
     },
     {
       icon: <Smartphone className="w-8 h-8" />,
-      title: "GF Training App",
-      description: "Log your workouts, track weights and reps, and measure your progress—all in one place.",
+      title: "SARAFIT appið",
+      description: "Haltu utan um þyngdir og reps, progress myndir og þyngdartap/aukningu allt á einum stað.",
       benefits: [
-        "Access a library of exercise demo videos to ensure proper form and maximize results.",
-        "Your coach updates your plans directly through the app, keeping everything streamlined and easy to follow.",
-        "Track your macros, workouts, and progress with our comprehensive tracking system."
+        "Það eru leiðbeiningar og myndbönd af öllum æfingum í appinu svo þú getur passað vel upp á formið þitt.",
+        "Það er skeiðklukka sem telur niður hvíld á milli setta, þú skráir inn reps og sets eða tíma og heldur þannig alveg utan um árangurinn þinn á öllum æfingum. Þú getur meira að segja séð hvað þú tókst á síðustu æfingu.",
+        "Ef þú vilt halda utan um macros og kaloríur þá getur þú skráð það beint í appið."
       ]
     }
   ];
@@ -108,31 +98,29 @@ const HowItWorks = () => {
       <section className="pt-32 pb-20 px-4">
         <div className="container mx-auto max-w-6xl text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 font-display">
-            <span className="text-primary">A CLEAR, SUSTAINABLE PATH</span>{" "}
-            <span className="text-foreground">TO BUILDING & KEEPING</span>
+            <span className="text-primary">Fjarþjálfun sem er byggð</span>{" "}
+            <span className="text-foreground">fyrir þín markmið</span>
             <br />
-            <span className="text-foreground">YOUR DREAM BODY COMPOSITION</span>
-            <br />
-            <span className="text-primary">— FOR LIFE</span>
+            <span className="text-foreground">og þinn lífsstíl</span>
           </h1>
           
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             <div className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               <Target className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-4">Real 1:1 Personal Coach</h3>
-              <p className="text-foreground/80">Work with a dedicated coach who understands your goals and creates a personalized plan just for you.</p>
+              <h3 className="text-xl font-bold mb-4">Persónuleg nálgun</h3>
+              <p className="text-foreground/80">Þú vinnur með þjálfara sem byggir ofan á þínar þarfir og hjálpar þér að setja raunhæf markmið.</p>
             </div>
             
             <div className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               <Users className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-4">Custom Tailored Nutrition</h3>
-              <p className="text-foreground/80">Get your macronutrients calculated and adjusted based on your progress and changing needs.</p>
+              <h3 className="text-xl font-bold mb-4">Byggt á þínum lífsstíl</h3>
+              <p className="text-foreground/80">Hvort sem þú vilt telja macros eða ekki, fara eftir ítarlegu plani eða ekki, þá finnur Sara lausn sem virkar fyrir þig.</p>
             </div>
             
             <div className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
               <Smartphone className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-4">Workouts Crafted For You</h3>
-              <p className="text-foreground/80">Receive custom workout plans designed specifically for your fitness level and goals.</p>
+              <h3 className="text-xl font-bold mb-4">Þjálfun fer fram í appi</h3>
+              <p className="text-foreground/80">Þú heldur utan um æfingar, næringu og árangur allt á einum stað.</p>
             </div>
           </div>
 
@@ -196,13 +184,12 @@ const HowItWorks = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
-            <p className="text-primary text-lg font-bold mb-4 font-sans">How It Works</p>
+            <p className="text-primary text-lg font-bold mb-4 font-sans">SARAFIT</p>
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
-              <span className="text-foreground">Here's How It Works</span>
+              <span className="text-foreground">Svona virkar þetta</span>
             </h2>
             <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
-              To change your body composition and change your life, education is not enough, you need an immersive environment. 
-              GF Training VIP provides proven process, mental reprogramming, community and expert mentorship that make transformation inevitable...
+              Til þess að sjá langtíma árangur þarftu prógram og rútínu sem hentar þér vel. SARAFIT veitir þér alla þá aðstoð sem þú þarft til að komast á betri stað — sama hvar þú ert stödd í lífinu.
             </p>
           </div>
 
@@ -217,17 +204,17 @@ const HowItWorks = () => {
                 </div>
                 
                 <h2 className="text-5xl md:text-6xl font-black mb-6 font-display">
-                  <span className="text-primary">Proven</span>
+                  <span className="text-primary">Byggt á</span>
                   <br />
-                  <span className="text-foreground">Method</span>
+                  <span className="text-foreground">rannsóknum</span>
                 </h2>
                 
                 <p className="text-xl text-foreground/80 font-sans mb-8 leading-relaxed">
-                  Our step-by-step process has helped thousands of men achieve their dream body composition and maintain it for life.
+                  Þú færð stuðning frá SARAFIT frá upphafi til enda með aðferðum sem hafa virkað fyrir yfir 100 konur.
                 </p>
 
                 <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-6 rounded-full text-lg shadow-lg hover:shadow-primary/25 transition-all hover:scale-105">
-                  Start Your Journey
+                  Byrjaðu núna
                 </Button>
               </div>
             </div>
@@ -312,7 +299,7 @@ const HowItWorks = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-black mb-8 font-display">
             <span className="text-foreground">Are You Ready To</span>{" "}

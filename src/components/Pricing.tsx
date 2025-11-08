@@ -4,54 +4,50 @@ import { Check, Star } from "lucide-react";
 const Pricing = () => {
   const plans = [
     {
-      name: "SaraFit Basic",
-      price: "£299",
-      originalPrice: "£599",
-      period: "one-time",
-      description: "Perfect for getting started with your fitness journey",
+      name: "Tilbúið prógram",
+      price: "7.990 kr.",
+      originalPrice: "",
+      period: "á mánuði",
+      description: "aðgangur að appi og tilbúnu prógrami án þjálfunar.",
       features: [
-        "Personalized workout plan",
-        "Nutrition guidance",
-        "Weekly check-ins",
-        "Access to SaraFit community",
-        "Mobile app access",
-        "Progress tracking"
+        "Tilbúið æfingarprógram",
+        "Aðgangur að fitness appinu SARAFIT",
+        "Myndbönd og leiðbeiningar af öllum æfingum"
       ],
       popular: false,
-      cta: "GET STARTED"
+      cta: "Byrja núna"
     },
     {
-      name: "SaraFit Premium",
-      price: "£499",
-      originalPrice: "£999",
-      period: "one-time",
-      description: "Most popular choice for serious transformation",
+      name: "Fjarþjálfun",
+      price: "19.990kr.",
+      originalPrice: "",
+      period: "á mánuði",
+      description: "Alvöru þjálfun sem er byggð á þínum lífsstíl.",
       features: [
-        "Everything in Basic",
-        "1-on-1 coaching calls",
-        "Custom meal plans",
-        "Priority support",
-        "Advanced tracking tools",
-        "Exclusive workout library",
-        "Monthly progress reviews",
-        "Lifetime access"
+        "Sérhannað æfingarprógram",
+        "Fullur aðgangur að fitness appinu SARAFIT",
+        "Myndbönd og leiðbeiningar af öllum æfingum",
+        "Vikuleg check-in",
+        "Mánaðarleg árangurs check-in",
+        "Aðgangur að þjálfara í gegnum spjallþráð í appinu",
+        "Næringarþjálfun",
+        "NÝTT - fjarfundir þar sem þú færð kennslu á næringu og mataræði."
       ],
       popular: true,
-      cta: "JOIN PREMIUM"
+      cta: "Byrja núna"
     }
   ];
 
   return (
-    <section className="py-20 px-4 bg-secondary/20">
+    <section className="py-20 px-4">
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-black mb-6 font-display">
-            Choose Your <span className="text-primary">Transformation</span>
+            Veldu þína <span className="text-primary">leið</span>
           </h2>
           <p className="text-xl text-foreground/80 font-sans max-w-3xl mx-auto">
-            Get in control of your body with our proven system. No gimmicks, no fad diets. 
-            Just sustainable results that last.
+            Taktu stjórn á þínu eigin lífi með plani sem hentar þér 100%. Engin diet og engar reglur.
           </p>
         </div>
 
@@ -68,7 +64,7 @@ const Pricing = () => {
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide flex items-center gap-1">
-                  <Star className="w-3 h-3 fill-current" /> Most Popular
+                  <Star className="w-3 h-3 fill-current" /> vinsælast
                 </div>
               )}
               <h3 className="text-2xl font-bold mb-2 font-display">{plan.name}</h3>
