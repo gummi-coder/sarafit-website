@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Users, Target, Award, TrendingUp, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Users, Target, Award, TrendingUp } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const About = () => {
@@ -220,84 +220,42 @@ const About = () => {
         </div>
       </section>
 
-      {/* Contact Information */}
+      {/* What's Included Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
-              <span className="text-foreground">Contact</span>{" "}
-              <span className="text-primary">Information</span>
+              <span className="text-foreground">What's Included</span>{" "}
+              <span className="text-primary">in Every Plan</span>
             </h2>
+            <p className="text-lg text-foreground/80">
+              This builds perceived value before people judge the price.
+            </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            <div className="space-y-8 bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              <div className="flex items-start gap-4">
-                <div className="text-primary mt-1">
-                  <Mail className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">Email</h3>
-                  <p className="text-foreground/80">support@sarafit.com</p>
-                  <p className="text-foreground/60 text-sm">We respond within 24 hours</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="text-primary mt-1">
-                  <Phone className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">Phone</h3>
-                  <p className="text-foreground/80">+1 (555) 123-4567</p>
-                  <p className="text-foreground/60 text-sm">Mon-Fri 9AM-6PM EST</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="text-primary mt-1">
-                  <MapPin className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">Location</h3>
-                  <p className="text-foreground/80">Online Worldwide</p>
-                  <p className="text-foreground/60 text-sm">Serving clients globally</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="text-primary mt-1">
-                  <MessageCircle className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">Live Chat</h3>
-                  <p className="text-foreground/80">Available on our website</p>
-                  <p className="text-foreground/60 text-sm">Get instant answers to your questions</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-foreground mb-4">Why Choose Sarafit?</h3>
-              <ul className="space-y-3 text-foreground/80">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Personalized 1-on-1 coaching</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Custom nutrition plans</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span>24/7 support and accountability</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Proven results with thousands of clients</span>
-                </li>
-              </ul>
-            </div>
+          <div className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-10 max-w-3xl mx-auto">
+            <ul className="space-y-4 text-foreground/90 text-lg">
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                <span>Training plan tailored to your goal</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                <span>Meal plan or macro guidance</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                <span>App access with exercise demos</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                <span>Accountability check-ins</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+                <span>Progress tracking &amp; habit system</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
