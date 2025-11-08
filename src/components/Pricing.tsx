@@ -1,7 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Check, Star } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
 const Pricing = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSignupClick = () => {
+    scrollToSignupSection(navigate, location.pathname);
+  };
+
   const plans = [
     {
       name: "Tilbúið prógram",
@@ -19,7 +28,7 @@ const Pricing = () => {
     },
     {
       name: "Fjarþjálfun",
-      price: "19.990kr.",
+      price: "24.990 kr.",
       originalPrice: "",
       period: "á mánuði",
       description: "Alvöru þjálfun sem er byggð á þínum lífsstíl.",
@@ -88,6 +97,7 @@ const Pricing = () => {
                     ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/25" 
                     : "bg-secondary hover:bg-secondary/80 text-secondary-foreground shadow-md hover:shadow-foreground/10"
                 }`}
+                onClick={handleSignupClick}
               >
                 {plan.cta}
               </Button>

@@ -1,5 +1,7 @@
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation, useNavigate } from "react-router-dom";
+import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
 const Testimonials = () => {
   const testimonials = [
@@ -35,6 +37,13 @@ const Testimonials = () => {
     },
   ];
 
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSignupClick = () => {
+    scrollToSignupSection(navigate, location.pathname);
+  };
+
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-7xl">
@@ -60,7 +69,7 @@ const Testimonials = () => {
                 <span className="font-bold">Lestu af hverju fleiri en 100 viðskiptavinir hafa elskað SARAFIT og hvernig fjarþjálfun hefur breytt lífi þeirra!</span>
               </p>
 
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-6 rounded-full text-lg shadow-lg hover:shadow-primary/25 transition-all hover:scale-105">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-6 rounded-full text-lg shadow-lg hover:shadow-primary/25 transition-all hover:scale-105" onClick={handleSignupClick}>
                 Skrá mig í fjarþjálfun
               </Button>
             </div>

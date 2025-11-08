@@ -1,22 +1,24 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navLinks = [
     { name: "Hvernig þjálfun virkar", href: "/how-it-works" },
     { name: "Um mig", href: "/about" },
     { name: "Fjarþjálfun", href: "/pricing" },
   ];
+
+  const handleSignupClick = () => {
+    setIsMenuOpen(false);
+    scrollToSignupSection(navigate, location.pathname);
+  };
 
   return (
     <nav className="fixed top-6 left-8 right-8 z-50">
@@ -58,7 +60,7 @@ const Navigation = () => {
           <div className="hidden md:block">
             <Button 
               className="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-3 rounded-md uppercase text-sm tracking-wide"
-              onClick={() => window.location.href = 'http://localhost:8082/apply'}
+              onClick={handleSignupClick}
             >
               SKRÁ MIG NÚNA!
             </Button>
@@ -100,7 +102,7 @@ const Navigation = () => {
             ))}
             <Button 
               className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 rounded-md uppercase"
-              onClick={() => window.location.href = 'http://localhost:8082/apply'}
+              onClick={handleSignupClick}
             >
               SKRÁ MIG NÚNA!
             </Button>

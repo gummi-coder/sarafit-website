@@ -1,7 +1,16 @@
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation, useNavigate } from "react-router-dom";
+import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSignupClick = () => {
+    scrollToSignupSection(navigate, location.pathname);
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 pt-32">
       <div className="container mx-auto max-w-6xl text-center">
@@ -43,7 +52,7 @@ const Hero = () => {
         <Button 
           size="lg"
           className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-lg px-12 py-7 rounded-full animate-fade-in shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
-          onClick={() => window.location.href = 'http://localhost:8082/apply'}
+          onClick={handleSignupClick}
         >
           SKRÁ MIG NÚNA!
         </Button>

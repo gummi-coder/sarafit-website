@@ -11,8 +11,8 @@ import Pricing from "./pages/Pricing";
 import EmailSignup1 from "./pages/EmailSignup1";
 import EmailSignup2 from "./pages/EmailSignup2";
 import Apply from "./pages/Apply";
-import Signup from "./pages/Signup";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +22,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
                <Routes>
                  <Route path="/" element={<Index />} />
                  <Route path="/how-it-works" element={<HowItWorks />} />
@@ -31,7 +32,6 @@ const App = () => (
                  <Route path="/email1" element={<EmailSignup1 />} />
                  <Route path="/email2" element={<EmailSignup2 />} />
                  <Route path="/apply" element={<Apply />} />
-                 <Route path="/signup" element={<Signup />} />
                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                  <Route path="*" element={<NotFound />} />
                </Routes>

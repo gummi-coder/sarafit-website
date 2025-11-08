@@ -3,9 +3,13 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Check, Users, MessageCircle, Clock, Smartphone, Target, Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
 const HowItWorks = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
+  const location = useLocation();
   
   const transformations = [
     { id: 1, title: "Mike's Journey" },
@@ -35,6 +39,10 @@ const HowItWorks = () => {
 
   const getSlideIndex = (offset: number) => {
     return (currentSlide + offset + transformations.length) % transformations.length;
+  };
+
+  const handleSignupClick = () => {
+    scrollToSignupSection(navigate, location.pathname);
   };
 
   const features = [
@@ -173,7 +181,7 @@ const HowItWorks = () => {
            <Button 
              size="lg"
              className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-lg px-12 py-7 rounded-full shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
-             onClick={() => window.location.href = 'http://localhost:8082/apply'}
+            onClick={handleSignupClick}
            >
              SKRÁ MIG NÚNA!
            </Button>

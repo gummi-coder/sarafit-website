@@ -1,5 +1,7 @@
 import { CheckCircle2, XCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLocation, useNavigate } from "react-router-dom";
+import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
 const Method = () => {
   const benefits = [
@@ -13,6 +15,13 @@ const Method = () => {
     "Hætta að gefast upp og falla aftur í slæma vana sem hafa ekki góð áhrif á heilsuna þína",
     "Hætta að detta í binge og leti alla daga",
   ];
+
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSignupClick = () => {
+    scrollToSignupSection(navigate, location.pathname);
+  };
 
   return (
     <section className="py-20 px-4">
@@ -58,7 +67,7 @@ const Method = () => {
         <div className="text-center">
           <Button 
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-black px-12 py-7 rounded-full text-lg"
-            onClick={() => window.location.href = 'http://localhost:8082/apply'}
+            onClick={handleSignupClick}
           >
             SKRÁ MIG NÚNA!
           </Button>

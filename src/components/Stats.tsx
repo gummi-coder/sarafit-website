@@ -1,7 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
 const Stats = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSignupClick = () => {
+    scrollToSignupSection(navigate, location.pathname);
+  };
+
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
@@ -39,7 +48,7 @@ const Stats = () => {
           <div className="text-center">
             <Button 
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-7 rounded-full text-lg"
-              onClick={() => window.location.href = 'http://localhost:8082/apply'}
+              onClick={handleSignupClick}
             >
               APPLY NOW
             </Button>
