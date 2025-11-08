@@ -27,7 +27,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background page-glow">
       <Navigation />
       
       {/* 1️⃣ Hero Section */}

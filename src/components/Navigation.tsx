@@ -13,7 +13,7 @@ const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "How it Works", href: "/how-it-works" },
+    { name: "Hvernig þjálfun virkar", href: "/how-it-works" },
     { name: "Um mig", href: "/about" },
     { name: "Fjarþjálfun", href: "/pricing" },
   ];

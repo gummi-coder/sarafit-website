@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Users, Target, Award, TrendingUp } from "lucide-react";
+import { Users, Target, Award, TrendingUp, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const About = () => {
@@ -95,7 +95,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background page-glow">
       <Navigation />
       
       {/* Hero Section */}
@@ -133,7 +133,7 @@ const About = () => {
       </section>
 
       {/* Mission Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
@@ -164,36 +164,8 @@ const About = () => {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
-              <span className="text-foreground">Our Story</span>
-            </h2>
-            <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
-              A journey of transformation, innovation, and helping men achieve their best selves.
-            </p>
-          </div>
-
-          <div className="space-y-12">
-            {timeline.map((item, index) => (
-              <div key={index} className="grid lg:grid-cols-3 gap-8 items-start">
-                <div className="lg:col-span-1">
-                  <div className="text-4xl font-black text-primary mb-2">{item.year}</div>
-                </div>
-                <div className="lg:col-span-2">
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">{item.title}</h3>
-                  <p className="text-foreground/80 leading-relaxed">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
@@ -220,48 +192,61 @@ const About = () => {
         </div>
       </section>
 
-      {/* What's Included Section */}
+      {/* Contact Information Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
-              <span className="text-foreground">What's Included</span>{" "}
-              <span className="text-primary">in Every Plan</span>
+              <span className="text-foreground">Contact</span>{" "}
+              <span className="text-primary">Information</span>
             </h2>
             <p className="text-lg text-foreground/80">
-              This builds perceived value before people judge the price.
+              Reach out anytime—I'm here to help you get started and stay on track.
             </p>
           </div>
 
-          <div className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-10 max-w-3xl mx-auto">
-            <ul className="space-y-4 text-foreground/90 text-lg">
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                <span>Training plan tailored to your goal</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                <span>Meal plan or macro guidance</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                <span>App access with exercise demos</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                <span>Accountability check-ins</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
-                <span>Progress tracking &amp; habit system</span>
-              </li>
-            </ul>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="text-primary mb-4 flex justify-center">
+                <Mail className="w-8 h-8" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">Email</h3>
+              <p className="text-foreground/80 text-sm">support@sarafit.com</p>
+              <p className="text-foreground/60 text-xs">We respond within 24 hours</p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-primary mb-4 flex justify-center">
+                <Phone className="w-8 h-8" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">Phone</h3>
+              <p className="text-foreground/80 text-sm">+1 (555) 123-4567</p>
+              <p className="text-foreground/60 text-xs">Mon–Fri 9 AM – 6 PM EST</p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-primary mb-4 flex justify-center">
+                <MapPin className="w-8 h-8" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">Location</h3>
+              <p className="text-foreground/80 text-sm">Online Worldwide</p>
+              <p className="text-foreground/60 text-xs">Serving clients globally</p>
+            </div>
+
+            <div className="text-center">
+              <div className="text-primary mb-4 flex justify-center">
+                <MessageCircle className="w-8 h-8" />
+              </div>
+              <h3 className="font-bold text-foreground mb-2">Live Chat</h3>
+              <p className="text-foreground/80 text-sm">Available on our website</p>
+              <p className="text-foreground/60 text-xs">Get instant answers to your questions</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/10 to-primary/5">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-black mb-8 font-display">
             <span className="text-foreground">Ready to Start Your</span>{" "}

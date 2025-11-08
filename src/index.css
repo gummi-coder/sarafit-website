@@ -42,6 +42,36 @@ All colors MUST be HSL.
   }
 }
 
+@layer utilities {
+  .page-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .page-glow::before,
+  .page-glow::after {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, hsla(var(--primary)/0.22) 0%, transparent 60%);
+    filter: blur(100px);
+    border-radius: 9999px;
+    opacity: 0.7;
+  }
+
+  .page-glow::before {
+    top: -250px;
+    left: -250px;
+  }
+
+  .page-glow::after {
+    bottom: -250px;
+    right: -250px;
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
