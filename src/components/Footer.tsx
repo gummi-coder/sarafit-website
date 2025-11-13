@@ -1,5 +1,6 @@
 import { Facebook, Instagram } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 // Custom Spotify Icon Component
 const SpotifyIcon = ({ className }: { className?: string }) => (
@@ -77,11 +78,11 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-3 text-sm text-white">Quick Links</h4>
+            <h4 className="font-bold mb-3 text-sm text-white">Flýtileiðir</h4>
             <ul className="space-y-2">
-              <li><a href="/" className="text-white/60 hover:text-primary transition-colors text-xs">Heim</a></li>
-              <li><a href="/how-it-works" className="text-white/60 hover:text-primary transition-colors text-xs">Hvernig þetta virkar</a></li>
-              <li><a href="/about" className="text-white/60 hover:text-primary transition-colors text-xs">Um mig</a></li>
+              <li><Link to="/" className="text-white/60 hover:text-primary transition-colors text-xs">Heim</Link></li>
+              <li><Link to="/how-it-works" className="text-white/60 hover:text-primary transition-colors text-xs">Hvernig þetta virkar</Link></li>
+              <li><Link to="/about" className="text-white/60 hover:text-primary transition-colors text-xs">Um mig</Link></li>
             </ul>
           </div>
 
@@ -89,9 +90,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-3 text-sm text-white">Fjarþjálfun</h4>
             <ul className="space-y-2">
-              <li><a href="/pricing" className="text-white/60 hover:text-primary transition-colors text-xs">Fjarþjálfun</a></li>
-              <li><a href="/pricing#signup-form" className="text-white/60 hover:text-primary transition-colors text-xs">Tilbúin prógröm</a></li>
-              <li><a href="/pricing#signup-form" className="text-white/60 hover:text-primary transition-colors text-xs">Skráning</a></li>
+              <li><Link to="/how-it-works" className="text-white/60 hover:text-primary transition-colors text-xs">Fjarþjálfun</Link></li>
+              <li><Link to="/pricing" className="text-white/60 hover:text-primary transition-colors text-xs">Tilbúin prógröm</Link></li>
+              <li><Link to="/signup" className="text-white/60 hover:text-primary transition-colors text-xs">Skráning</Link></li>
             </ul>
           </div>
 
@@ -99,8 +100,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-3 text-sm text-white">Skilmálar</h4>
             <ul className="space-y-2">
-              <li><a href="/terms" className="text-white/60 hover:text-primary transition-colors text-xs">Skilmálar</a></li>
-              <li><a href="/terms#privacy" className="text-white/60 hover:text-primary transition-colors text-xs">Persónuverndarstefna</a></li>
+              <li><Link to="/terms" className="text-white/60 hover:text-primary transition-colors text-xs">Skilmálar</Link></li>
+              <li><Link to="/terms#privacy" className="text-white/60 hover:text-primary transition-colors text-xs">Persónuverndarstefna</Link></li>
             </ul>
           </div>
         </div>

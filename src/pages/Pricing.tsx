@@ -72,7 +72,7 @@ const Pricing = () => {
                 },
                 {
                   name: "Booty Builder",
-                  frequency: "30 daga áskorun: 5x í viku",
+                  frequency: "5x í viku",
                   description: "Fyrir þá sem vilja byggja upp rassvöðvana",
                   features: [
                     "Byggt á því markmiði að vilja byggja upp rassvöðvana",
@@ -84,7 +84,7 @@ const Pricing = () => {
                 },
                 {
                   name: "Endurance",
-                  frequency: "Engin tæki: 4x í viku",
+                  frequency: "4x í viku",
                   description: "Fyrir þá sem vilja byggja upp úthald og þol",
                   features: [
                     "Byggt á því markmiði að bæta þolið",
@@ -94,7 +94,18 @@ const Pricing = () => {
                   ],
                   popular: false
                 }
-              ].map((program, index) => (
+              ].map((program, index) => {
+                // Map program names to signup form values
+                const programMap: { [key: string]: string } = {
+                  "Melt Mode": "melt-mode",
+                  "Stronger & Bigger": "stronger-bigger",
+                  "Booty Builder": "booty-builder",
+                  "Endurance": "endurance"
+                };
+                
+                const programValue = programMap[program.name] || "";
+                
+                return (
                 <div
                   key={index}
                   className={`relative bg-card border-2 rounded-2xl p-6 transition-all hover:scale-105 hover:shadow-xl ${
@@ -127,12 +138,13 @@ const Pricing = () => {
                         ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/25" 
                         : "bg-secondary hover:bg-secondary/80 text-secondary-foreground shadow-md"
                     }`}
-                    onClick={() => navigate("/signup")}
+                    onClick={() => navigate(`/signup?program=${programValue}`)}
                   >
                     Velja prógram
                   </Button>
                 </div>
-              ))}
+              );
+              })}
             </div>
           </div>
         </section>

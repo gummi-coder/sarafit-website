@@ -47,10 +47,6 @@ const Testimonials = () => {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-16">
-          <p className="text-primary text-lg font-bold mb-4 font-sans">Lestu það sem aðrir hafa sagt um SARAFIT</p>
-        </div>
-
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left side - Star Rating */}
           <div className="lg:sticky lg:top-24 pt-8">

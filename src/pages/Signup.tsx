@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,14 +8,34 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useSearchParams } from "react-router-dom";
 
 const Signup = () => {
+  const [searchParams] = useSearchParams();
   const [programType, setProgramType] = useState<string>("");
   const [prebuiltPlan, setPrebuiltPlan] = useState<string>("");
   const [termsAccepted, setTermsAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submissionMessage, setSubmissionMessage] = useState<string | null>(null);
   const [submissionError, setSubmissionError] = useState<string | null>(null);
+
+  // Map URL program values to form values
+  const programValueMap: { [key: string]: { service: string; prebuilt: string } } = {
+    "melt-mode": { service: "tilbuin", prebuilt: "melt-mode" },
+    "stronger-bigger": { service: "tilbuin", prebuilt: "stronger-bigger" },
+    "booty-builder": { service: "tilbuin", prebuilt: "booty-builder" },
+    "endurance": { service: "tilbuin", prebuilt: "endurance" }
+  };
+
+  useEffect(() => {
+    const programParam = searchParams.get("program");
+    if (programParam && programValueMap[programParam]) {
+      const { service, prebuilt } = programValueMap[programParam];
+      setProgramType(service);
+      setPrebuiltPlan(prebuilt);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
 
   const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -222,10 +242,10 @@ const Signup = () => {
                             <SelectValue placeholder="Veldu prógram" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="styrkur-byrjandi">Styrkur byrjandi – 3x viku</SelectItem>
-                            <SelectItem value="styrkur-framkoma">Styrkur & vöðvabygging – 4x viku</SelectItem>
-                            <SelectItem value="fitutap-30">Fitu tap – 30 daga áskorun</SelectItem>
-                            <SelectItem value="heimaaefingar">Heimaæfingar – engin tæki</SelectItem>
+                            <SelectItem value="melt-mode">Melt Mode – 3x í viku</SelectItem>
+                            <SelectItem value="stronger-bigger">Stronger & Bigger – 3x í viku</SelectItem>
+                            <SelectItem value="booty-builder">Booty Builder – 5x í viku</SelectItem>
+                            <SelectItem value="endurance">Endurance – 4x í viku</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>

@@ -129,38 +129,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
-                <span className="text-foreground">Our Mission</span>
-              </h2>
-              <p className="text-lg text-foreground/80 mb-8 leading-relaxed">
-                Since we started in 2016, our mission has been to transform lives.
-              </p>
-              <p className="text-xl text-foreground/90 font-bold mb-8">
-                <span className="text-primary">Our goal is to empower men</span>{" "}
-                <span className="text-foreground">to build strength, confidence, and</span>{" "}
-                <span className="text-foreground">a body they love at any</span>{" "}
-                <span className="text-foreground">stage of life.</span>
-              </p>
-            </div>
-            
-            <div className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Our Vision</h3>
-              <p className="text-lg text-foreground/80 leading-relaxed">
-                <span className="font-bold text-foreground">To become the ultimate solution for men seeking strength, confidence, and lasting transformation.</span>
-              </p>
-              <p className="text-foreground/70 mt-4">
-                Imagine everything you need — fitness, nutrition, education, and support — under one roof, tailored just for you.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
