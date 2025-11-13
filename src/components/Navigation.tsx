@@ -10,9 +10,9 @@ const Navigation = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: "Hvernig þetta virkar", href: "/how-it-works" },
+    { name: "Fjarþjálfun", href: "/how-it-works" },
+    { name: "Tilbúin prógröm", href: "/pricing" },
     { name: "Um mig", href: "/about" },
-    { name: "Fjarþjálfun", href: "/pricing" },
   ];
 
   const handleSignupClick = () => {

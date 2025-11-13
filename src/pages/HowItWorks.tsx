@@ -1,45 +1,13 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Check, Users, MessageCircle, Clock, Smartphone, Target, Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Check, Users, MessageCircle, Smartphone, Target, Star, Utensils, Brain, BarChart3 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
 const HowItWorks = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
   const location = useLocation();
-  
-  const transformations = [
-    { id: 1, title: "Mike's Journey" },
-    { id: 2, title: "David's Transformation" },
-    { id: 3, title: "John's Success" },
-    { id: 4, title: "Chris's Results" },
-    { id: 5, title: "Alex's Progress" },
-    { id: 6, title: "Ryan's Achievement" },
-  ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % transformations.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + transformations.length) % transformations.length);
-  };
-
-  // Auto-slideshow every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const getSlideIndex = (offset: number) => {
-    return (currentSlide + offset + transformations.length) % transformations.length;
-  };
 
   const handleSignupClick = () => {
     scrollToSignupSection(navigate, location.pathname);
@@ -103,7 +71,7 @@ const HowItWorks = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-48 pb-20 px-4">
         <div className="container mx-auto max-w-6xl text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 font-display">
             <span className="text-primary">Fjarþjálfun sem er byggð</span>{" "}
@@ -132,64 +100,11 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          <p className="text-lg text-foreground/80 max-w-4xl mx-auto mb-12">
-            The Sarafit VIP is a 1:1 personal training 12-month program tailored specifically to you. 
-            Work with a coach to get your macronutrients, exercises, adjustments, etc., and reach your desired body goal.
-          </p>
-
-          {/* Progress Photos Slideshow */}
-          <div className="mb-16">
-            {/* Slideshow */}
-            <div className="relative max-w-5xl mx-auto mb-12">
-              <div className="flex items-center justify-center gap-10">
-                {/* Left slide (blurred, clickable) */}
-                <button 
-                  onClick={prevSlide}
-                  className="w-56 h-72 rounded-2xl overflow-hidden shadow-lg bg-card border border-border/20 opacity-50 blur-sm hover:opacity-70 transition-all cursor-pointer"
-                >
-                  <div className="w-full h-full bg-gradient-to-br from-background/50 to-background/30 backdrop-blur-sm flex items-center justify-center">
-                    <span className="text-foreground/40 font-bold text-sm text-center">
-                      {transformations[getSlideIndex(-1)].title}
-                    </span>
-                  </div>
-                </button>
-
-                {/* Center slide (focused) */}
-                <div className="w-72 h-96 rounded-2xl overflow-hidden shadow-2xl bg-card border border-primary/30 scale-110">
-                  <div className="w-full h-full bg-gradient-to-br from-background/50 to-background/30 backdrop-blur-sm flex items-center justify-center">
-                    <span className="text-foreground/40 font-bold text-xl text-center">
-                      {transformations[currentSlide].title}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Right slide (blurred, clickable) */}
-                <button 
-                  onClick={nextSlide}
-                  className="w-56 h-72 rounded-2xl overflow-hidden shadow-lg bg-card border border-border/20 opacity-50 blur-sm hover:opacity-70 transition-all cursor-pointer"
-                >
-                  <div className="w-full h-full bg-gradient-to-br from-background/50 to-background/30 backdrop-blur-sm flex items-center justify-center">
-                    <span className="text-foreground/40 font-bold text-sm text-center">
-                      {transformations[getSlideIndex(1)].title}
-                    </span>
-                  </div>
-                </button>
-              </div>
-            </div>
-          </div>
-
-           <Button 
-             size="lg"
-             className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-lg px-12 py-7 rounded-full shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
-            onClick={handleSignupClick}
-           >
-             SKRÁ MIG NÚNA!
-           </Button>
         </div>
       </section>
 
       {/* How It Works Section - Similar to Testimonials Layout */}
-      <section className="py-20 px-4">
+      <section className="pt-8 pb-20 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <p className="text-primary text-lg font-bold mb-4 font-sans">SARAFIT</p>

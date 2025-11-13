@@ -1,3 +1,4 @@
+import { FormEvent, useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,216 +8,271 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Check, Star } from "lucide-react";
 
 const Signup = () => {
+  const [programType, setProgramType] = useState<string>("");
+  const [prebuiltPlan, setPrebuiltPlan] = useState<string>("");
+  const [termsAccepted, setTermsAccepted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submissionMessage, setSubmissionMessage] = useState<string | null>(null);
+  const [submissionError, setSubmissionError] = useState<string | null>(null);
+
+  const handleFormSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const service = (formData.get("service") as string) || "";
+    const selectedPrebuilt = (formData.get("prebuiltPlan") as string) || "";
+
+    if (!service) {
+      setSubmissionMessage(null);
+      setSubmissionError("Vinsamlegast veldu þjónustu áður en þú sendir inn.");
+      return;
+    }
+
+    if (service === "tilbuin" && !selectedPrebuilt) {
+      setSubmissionMessage(null);
+      setSubmissionError("Vinsamlegast veldu tilbúið prógram áður en þú sendir inn.");
+      return;
+    }
+
+    if (!termsAccepted) {
+      setSubmissionMessage(null);
+      setSubmissionError("Þú þarft að samþykkja skilmála og persónuverndarstefnu.");
+      return;
+    }
+
+    setSubmissionError(null);
+    setSubmissionMessage(null);
+    setIsSubmitting(true);
+
+    formData.set("service", service);
+    if (service === "tilbuin") {
+      formData.set("prebuiltProgram", selectedPrebuilt);
+    } else {
+      formData.delete("prebuiltPlan");
+      formData.set("prebuiltProgram", "");
+    }
+    formData.set("termsAccepted", termsAccepted ? "yes" : "no");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xvgvzwyp", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+        },
+        body: formData,
+      });
+
+      if (response.ok) {
+        form.reset();
+        setProgramType("");
+        setPrebuiltPlan("");
+        setTermsAccepted(false);
+        setSubmissionMessage("Takk fyrir! Við höfum móttekið skráningu þína og munum hafa samband við þig fljótlega.");
+        setSubmissionError(null);
+      } else {
+        const data = await response.json();
+        if (data.error) {
+          setSubmissionError(data.error);
+        } else {
+          setSubmissionError("Eitthvað fór úrskeiðis. Vinsamlegast reyndu aftur síðar.");
+        }
+        setSubmissionMessage(null);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmissionError("Eitthvað fór úrskeiðis. Vinsamlegast reyndu aftur síðar.");
+      setSubmissionMessage(null);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background page-glow">
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-6xl text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 font-display">
-            <span className="text-primary">Byrjaðu</span>{" "}
-            <span className="text-foreground">með Sarafit</span>
-          </h1>
-          
-          <p className="text-xl text-foreground/80 max-w-4xl mx-auto mb-12 leading-relaxed">
-            Tilbúinn til að umbreyta líkamanum þínum og ná markmiðum þínum? 
-            Taktu þátt með þúsundum karla sem hafa þegar byrjað ferð sína með Sarafit.
-          </p>
-        </div>
-      </section>
-
-      {/* Signup Form Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Signup Form */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-black mb-8 font-display">
-                <span className="text-foreground">Skráning</span>
+      <main>
+        {/* Signup Form Section */}
+        <section className="pt-32 pb-20 px-4">
+          <div className="container mx-auto max-w-5xl">
+            <div className="text-center mb-10">
+              <h2 className="text-3xl md:text-5xl font-black mb-4 font-display">
+                Skráning í <span className="text-primary">Tilbúið prógram</span>
               </h2>
-              
-              <Card className="bg-card/50 backdrop-blur-sm border border-white/10">
+              <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
+                Fylltu út upplýsingarnar hér að neðan og við sendum þér allt sem þú þarft til að byrja strax.
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto">
+              <Card className="bg-card/60 backdrop-blur border border-border/20">
                 <CardHeader>
-                  <CardTitle className="text-xl text-foreground">Búðu til aðgang þinn</CardTitle>
+                  <CardTitle className="text-xl text-foreground">Skráningareyðublað</CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="fullName" className="text-foreground">Fullt nafn *</Label>
-                    <Input 
-                      id="fullName" 
-                      placeholder="Fullt nafn" 
-                      className="bg-background/50 border-border/20"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-foreground">Netfang *</Label>
-                    <Input 
-                      id="email" 
-                      type="email" 
-                      placeholder="Netfang" 
-                      className="bg-background/50 border-border/20"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-foreground">Símanúmer</Label>
-                    <Input 
-                      id="phone" 
-                      type="tel" 
-                      placeholder="Símanúmer" 
-                      className="bg-background/50 border-border/20"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="kennitala" className="text-foreground">Kennitala *</Label>
-                    <Input 
-                      id="kennitala" 
-                      placeholder="Kennitala" 
-                      className="bg-background/50 border-border/20"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="about" className="text-foreground">Upplýsingar um þig</Label>
-                    <Textarea 
-                      id="about" 
-                      placeholder="Lýstu þér og hvað þú ert að leita að..." 
-                      className="bg-background/50 border-border/20 min-h-[100px]"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="fitnessLevel" className="text-foreground">Núverandi getustig *</Label>
-                    <Select>
-                      <SelectTrigger className="bg-background/50 border-border/20">
-                        <SelectValue placeholder="Veldu núverandi getustig" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="beginner">Byrjandi</SelectItem>
-                        <SelectItem value="intermediate">Miðlungs</SelectItem>
-                        <SelectItem value="advanced">Íþróttamaður</SelectItem>
-                        <SelectItem value="expert">Sérfræðingur</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="goals" className="text-foreground">Hvað er markmið þitt? *</Label>
-                    <Textarea 
-                      id="goals" 
-                      placeholder="Lýstu aðal markmiðum þínum (t.d. þyngdartap, vöðvaaukning, styrkur, þol, o.s.frv.)" 
-                      className="bg-background/50 border-border/20 min-h-[100px]"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="program" className="text-foreground">Val á áætlun</Label>
-                    <Select>
-                      <SelectTrigger className="bg-background/50 border-border/20">
-                        <SelectValue placeholder="Veldu æfingaáætlun" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="basic">Basic - 3 mánaða áætlun</SelectItem>
-                        <SelectItem value="pro">Pro - 6 mánaða áætlun</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  
-                  <div className="flex items-center space-x-2">
-                    <Checkbox id="terms" />
-                    <Label htmlFor="terms" className="text-sm text-foreground/80">
-                      Ég samþykki skilmála og persónuverndarstefnu *
-                    </Label>
-                  </div>
-                  
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-6 rounded-full text-lg">
-                    Byrjaðu umbreytinguna
-                  </Button>
+                <CardContent>
+                  {submissionMessage && (
+                    <div className="mb-6 rounded-xl border border-primary/30 bg-primary/10 px-6 py-4 text-sm font-medium text-primary">
+                      {submissionMessage}
+                    </div>
+                  )}
+                  {submissionError && (
+                    <div className="mb-6 rounded-xl border border-destructive/40 bg-destructive/10 px-6 py-4 text-sm font-medium text-destructive">
+                      {submissionError}
+                    </div>
+                  )}
+                  <form className="space-y-6" onSubmit={handleFormSubmit} noValidate>
+                    <div className="space-y-2">
+                      <Label htmlFor="signup-name" className="text-foreground">
+                        Fullt nafn *
+                      </Label>
+                      <Input
+                        id="signup-name"
+                        name="name"
+                        placeholder="Fullt nafn"
+                        required
+                        className="bg-background/60 border-border/30"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="signup-email" className="text-foreground">
+                        Netfang *
+                      </Label>
+                      <Input
+                        id="signup-email"
+                        name="email"
+                        type="email"
+                        placeholder="Netfang"
+                        required
+                        className="bg-background/60 border-border/30"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="signup-phone" className="text-foreground">
+                        Símanúmer
+                      </Label>
+                      <Input
+                        id="signup-phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="Símanúmer"
+                        className="bg-background/60 border-border/30"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="signup-kennitala" className="text-foreground">
+                        Kennitala *
+                      </Label>
+                      <Input
+                        id="signup-kennitala"
+                        name="kennitala"
+                        placeholder="000000-0000"
+                        required
+                        className="bg-background/60 border-border/30"
+                      />
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label className="text-foreground">
+                        Þjónusta *
+                      </Label>
+                      <Select
+                        name="service"
+                        value={programType || undefined}
+                        onValueChange={(value) => {
+                          setProgramType(value);
+                          setSubmissionError(null);
+                          setSubmissionMessage(null);
+                          if (value !== "tilbuin") {
+                            setPrebuiltPlan("");
+                          }
+                        }}
+                      >
+                        <SelectTrigger className="bg-background/60 border-border/30">
+                          <SelectValue placeholder="Veldu þjónustu" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="fjar">Fjarþjálfun</SelectItem>
+                          <SelectItem value="tilbuin">Tilbúið prógram</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+
+                    {programType === "tilbuin" && (
+                      <div className="space-y-2 animate-fade-in">
+                        <Label className="text-foreground">
+                          Veldu tilbúið prógram *
+                        </Label>
+                        <Select
+                          name="prebuiltPlan"
+                          value={prebuiltPlan || undefined}
+                          onValueChange={(value) => {
+                            setPrebuiltPlan(value);
+                            setSubmissionError(null);
+                            setSubmissionMessage(null);
+                          }}
+                        >
+                          <SelectTrigger className="bg-background/60 border-border/30">
+                            <SelectValue placeholder="Veldu prógram" />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value="styrkur-byrjandi">Styrkur byrjandi – 3x viku</SelectItem>
+                            <SelectItem value="styrkur-framkoma">Styrkur & vöðvabygging – 4x viku</SelectItem>
+                            <SelectItem value="fitutap-30">Fitu tap – 30 daga áskorun</SelectItem>
+                            <SelectItem value="heimaaefingar">Heimaæfingar – engin tæki</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+                    )}
+
+                    <div className="space-y-2">
+                      <Label htmlFor="signup-goals" className="text-foreground">
+                        Hvað er markmið þitt? *
+                      </Label>
+                      <Textarea
+                        id="signup-goals"
+                        name="goals"
+                        placeholder="Segðu okkur frá helstu markmiðum þínum..."
+                        required
+                        className="bg-background/60 border-border/30 min-h-[120px]"
+                      />
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <Checkbox
+                        id="signup-terms"
+                        checked={termsAccepted}
+                        onCheckedChange={(checked) => {
+                          setTermsAccepted(checked === true);
+                          setSubmissionError(null);
+                        }}
+                      />
+                      <Label htmlFor="signup-terms" className="text-sm text-foreground/70">
+                        Ég samþykki að Sarafit hafi samband við mig og hef lesið persónuverndarstefnu.
+                      </Label>
+                    </div>
+
+                    <Button
+                      type="submit"
+                      disabled={isSubmitting || !termsAccepted}
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold py-6 rounded-full text-lg disabled:cursor-not-allowed disabled:opacity-70"
+                      aria-disabled={isSubmitting || !termsAccepted}
+                    >
+                      {isSubmitting ? "Sendi..." : "Senda skráningu"}
+                    </Button>
+                  </form>
                 </CardContent>
               </Card>
             </div>
-
-            {/* Benefits & Testimonials */}
-            <div>
-              <h2 className="text-3xl md:text-4xl font-black mb-8 font-display">
-                <span className="text-foreground">Why Choose Sarafit?</span>
-              </h2>
-              
-              <div className="space-y-6">
-                <div className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-4">What You Get:</h3>
-                  <ul className="space-y-3 text-foreground/80">
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Personalized 1-on-1 coaching</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Custom nutrition plans</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>24/7 support and accountability</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Proven results with thousands of clients</span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                      <span>Flexible scheduling</span>
-                    </li>
-                  </ul>
-                </div>
-                
-                <div className="bg-card/30 backdrop-blur-sm border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-4">Client Success:</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="w-4 h-4 fill-star text-star" />
-                      ))}
-                      <span className="text-sm text-foreground/60">Based on 1,500+ reviews</span>
-                    </div>
-                    <p className="text-foreground/80 text-sm">
-                      "Sarafit helped me achieve results I never thought possible. The personalized approach and constant support made all the difference."
-                    </p>
-                    <p className="text-primary text-sm font-medium">- John D., Sarafit Member</p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/10 to-primary/5">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-5xl font-black mb-8 font-display">
-            <span className="text-foreground">Ready to Transform</span>{" "}
-            <span className="text-primary">Your Body?</span>
-          </h2>
-          
-          <p className="text-lg text-foreground/80 mb-12 leading-relaxed">
-            Join thousands of men who have already started their transformation journey. 
-            Your stronger, more confident self is waiting.
-          </p>
-
-          <Button 
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl px-16 py-8 rounded-full shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
-          >
-            Start My Journey Today
-          </Button>
-        </div>
-      </section>
+        </section>
+      </main>
 
       <Footer />
     </div>
@@ -224,3 +280,4 @@ const Signup = () => {
 };
 
 export default Signup;
+

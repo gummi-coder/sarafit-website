@@ -1,48 +1,47 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Users, Target, Award, TrendingUp, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useNavigate, useLocation } from "react-router-dom";
+import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
 const About = () => {
-  const stats = [
-    { number: "5,000+", label: "Men Transformed", icon: <Users className="w-8 h-8" /> },
-    { number: "15+", label: "GF Ambassadors", icon: <Award className="w-8 h-8" /> },
-    { number: "50+", label: "GF Team Members", icon: <Users className="w-8 h-8" /> },
-  ];
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleSignupClick = () => {
+    scrollToSignupSection(navigate, location.pathname);
+  };
 
   const faqs = [
     {
-      question: "How do I get started with Sarafit?",
-      answer: "Getting started is easy! Simply click the 'APPLY NOW' button on our website, fill out the application form, and our team will contact you within 24 hours to discuss your goals and match you with the perfect coach."
+      question: "Þarf ég að telja kaloríur í fjarþjálfun?",
+      answer: "Nei það er ekki nauðsynlegt að telja kaloríur í fjarþjálfun hjá SARAFIT. Að telja kaloríur er mjög mælanleg leið til að vera viss um að ná ákveðnu markmiði á ákveðnum tíma og öllum er velkomið að prófa í fjarþjálfun en það er alls ekki nauðsynlegt og við vinnum 100% í kringum þínar þarfir."
     },
     {
-      question: "What makes Sarafit different from other fitness programs?",
-      answer: "Sarafit offers personalized 1-on-1 coaching, custom nutrition plans, and a supportive community. Our coaches are certified professionals who work with you to create a sustainable plan that fits your lifestyle and goals."
+      question: "Hvað gerir þjálfun hjá SARAFIT öðruvísi en aðrar þjálfanir?",
+      answer: "Allir fá alveg sérhannað prógram sem hentar þeim 100% - Hvernig vinnu þú ert í, hvernig lífið þitt er utan hreyfingu, meiðsli og margt annað spilar stóran part í því að fá prógram sem þú getur haldið sig við til lengri tíma. Þjálfunin er mjög persónuleg og þú hefur aðgang að þjálfaranum 24/7 í gegnum spjallþráðinn í appinu."
     },
     {
-      question: "How much does the program cost?",
-      answer: "Our pricing varies depending on the program you choose. We offer different packages to fit various budgets and goals. Contact us for a personalized quote based on your specific needs."
+      question: "Er einhver binditími eða skuldbinding?",
+      answer: "Nei! Engin binditími eða skuldbinding. Ég gef þér alla mína þekkingingu og leiðbeini þér hvernig þú getur náð þínu markmiði á þeim tíma sem þú vilt ná því - það er svo alveg upp að þér komið að standa við það og auðvitað ef þetta er ekki rétti tíminn fyrir þig þá hefur þú tök á því að hætta."
     },
     {
-      question: "Do I need any special equipment?",
-      answer: "No special equipment is required! Our programs are designed to work with whatever you have available, whether that's a full gym, home equipment, or just bodyweight exercises. Your coach will adapt your workouts to your available resources."
+      question: "Fylgir matarprógram með þjálfun?",
+      answer: "Þú færð ekki matarprógram í fjarþjálfun. Næringarþjálfunin byggir ofan á núverandi matarvenjur og þú færð fagmannlega leiðsögn sem kennir þér sjálf að byggja upp góðar venjur með matnum sem þú ert nú þegar að borða."
     },
     {
-      question: "How often will I communicate with my coach?",
-      answer: "You'll have regular check-ins with your coach, typically weekly or bi-weekly depending on your program. Plus, you'll have 24/7 support through our app, so you can ask questions anytime."
+      question: "Hversu oft heyri ég í þjálfaranum?",
+      answer: "Guðrún er til staðar 24/7 í spjallþræðinum í appinu svo þú getur sent á hana hvenær sem þér hentar. Það eru einnig vikulega check ins þar sem Guðrún tékkar á þér í spjallþræðinum og svo eru mánaðarleg árangurs check in líka."
     },
     {
-      question: "What if I'm a complete beginner?",
-      answer: "Perfect! Our programs are designed for all fitness levels, from complete beginners to advanced athletes. Your coach will start where you are and progress you at the right pace for your body and goals."
+      question: "Þarf ég að vera á einhverju sérstöku getustigi?",
+      answer: "Nei, Guðrún gerir fyrir þig prógram sem hentar alveg þínum markmiðum og sem passa alveg við þitt getustig - sama hvort þú sért að byrja eða hvort þú sért með nokkra ára reynslu en vantar stuðning til að ná einhverju sérstöku markmiði."
     },
     {
-      question: "Can I pause or cancel my membership?",
-      answer: "Yes, we offer flexible membership options. You can pause your membership for up to 3 months or cancel with 30 days notice. We want you to succeed, so we'll work with you to find the best solution."
-    },
-    {
-      question: "Do you offer nutrition coaching?",
-      answer: "Absolutely! Nutrition is a core part of our program. Your coach will create a personalized nutrition plan based on your goals, preferences, and lifestyle. We focus on sustainable habits that you can maintain long-term."
+      question: "Hversu löng er þjálfunin?",
+      answer: "Þú ræður lengdinni alveg sjálf og það fer mjög mikið eftir því hvert markmiðið þitt er, hversu hratt þú vilt ná því og hversu vel þú fylgir planinu og þjálfuninni."
     }
   ];
 
@@ -100,34 +99,32 @@ const About = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-6xl text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 font-display">
-            <span className="text-primary">About</span>{" "}
-            <span className="text-foreground">Sarafit</span>
+        <div className="container mx-auto max-w-6xl">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-12 text-center font-display">
+            <span className="text-primary">Um</span>{" "}
+            <span className="text-foreground">SARAFIT</span>
           </h1>
           
-          <p className="text-xl text-foreground/80 max-w-4xl mx-auto mb-12 leading-relaxed">
-            Sarafit is a results-driven company empowering men through personalized fitness, nutrition, and education. 
-            With online programs, world-class coaching, and community support, we help men take control of their health 
-            and achieve life-changing transformations.
-          </p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            {/* Photo on the left */}
+            <div className="order-2 lg:order-1 overflow-hidden rounded-2xl shadow-lg aspect-square">
+              <img 
+                src="/DSC02083.JPG" 
+                alt="Guðrún Sara" 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
 
-          <p className="text-lg text-foreground/70 max-w-4xl mx-auto mb-16 leading-relaxed">
-            Founded by GF and later joined by partners, Sarafit has grown into a movement trusted by thousands of men worldwide. 
-            We are on a mission to help men regain their personal power and feel confident in their skin.
-          </p>
-
-          {/* Stats */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {stats.map((stat, index) => (
-              <div key={index} className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-                <div className="text-primary mb-4 flex justify-center">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl font-black text-primary mb-2">{stat.number}</div>
-                <div className="text-foreground/80 font-medium">{stat.label}</div>
-              </div>
-            ))}
+            {/* Text on the right */}
+            <div className="order-1 lg:order-2">
+              <h2 className="text-3xl md:text-4xl font-black mb-6 font-display">
+                <span className="text-foreground">Guðrún </span>
+                <span className="text-primary">Sara</span>
+              </h2>
+              <p className="text-lg text-foreground/80 leading-relaxed font-sans">
+                Með yfir fimm ára reynslu í þjálfun hef ég einbeitt mér að því að hjálpa bæði byrjendum og íþróttafólki að ná raunverulegum árangri. Ég vinn út frá nýjustu aðferðum og rannsóknum, því mér finnst mikilvægt að fylgja því sem virkar í raun og veru – ekki skyndilausnum eða trendum sem einhver úti í heimi bjó til af því það hljómaði vel. Markmiðið mitt er að bjóða upp á þjálfun sem er sniðin að þér, styður við þitt líf – og skilar árangri sem endist.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -169,11 +166,11 @@ const About = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
-              <span className="text-foreground">Frequently Asked</span>{" "}
-              <span className="text-primary">Questions</span>
+              <span className="text-foreground">Algengar</span>{" "}
+              <span className="text-primary">spurningar</span>
             </h2>
-            <p className="text-lg text-foreground/80">
-              Find answers to the most common questions about Sarafit programs and services.
+            <p className="text-lg text-foreground/80 font-sans">
+              Þú getur fundið algengar spurningar hér fyrir neðan um þjálfun hjá sarafit.
             </p>
           </div>
 
@@ -197,49 +194,37 @@ const About = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
-              <span className="text-foreground">Contact</span>{" "}
-              <span className="text-primary">Information</span>
+              <span className="text-foreground">Hafa</span>{" "}
+              <span className="text-primary">samband</span>
             </h2>
-            <p className="text-lg text-foreground/80">
-              Reach out anytime—I'm here to help you get started and stay on track.
+            <p className="text-lg text-foreground/80 font-sans">
+              ekki hika við að hafa samband ef þú ert með einhverjar spurningar!
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-primary mb-4 flex justify-center">
                 <Mail className="w-8 h-8" />
               </div>
-              <h3 className="font-bold text-foreground mb-2">Email</h3>
-              <p className="text-foreground/80 text-sm">support@sarafit.com</p>
-              <p className="text-foreground/60 text-xs">We respond within 24 hours</p>
-            </div>
-
-            <div className="text-center">
-              <div className="text-primary mb-4 flex justify-center">
-                <Phone className="w-8 h-8" />
-              </div>
-              <h3 className="font-bold text-foreground mb-2">Phone</h3>
-              <p className="text-foreground/80 text-sm">+1 (555) 123-4567</p>
-              <p className="text-foreground/60 text-xs">Mon–Fri 9 AM – 6 PM EST</p>
+              <h3 className="font-bold text-foreground mb-2 font-sans">Email</h3>
+              <p className="text-foreground/80 text-sm font-sans">sara@sarafit.is</p>
             </div>
 
             <div className="text-center">
               <div className="text-primary mb-4 flex justify-center">
                 <MapPin className="w-8 h-8" />
               </div>
-              <h3 className="font-bold text-foreground mb-2">Location</h3>
-              <p className="text-foreground/80 text-sm">Online Worldwide</p>
-              <p className="text-foreground/60 text-xs">Serving clients globally</p>
+              <h3 className="font-bold text-foreground mb-2 font-sans">Staðsetning</h3>
+              <p className="text-foreground/80 text-sm font-sans">Online worldwide</p>
             </div>
 
             <div className="text-center">
               <div className="text-primary mb-4 flex justify-center">
                 <MessageCircle className="w-8 h-8" />
               </div>
-              <h3 className="font-bold text-foreground mb-2">Live Chat</h3>
-              <p className="text-foreground/80 text-sm">Available on our website</p>
-              <p className="text-foreground/60 text-xs">Get instant answers to your questions</p>
+              <h3 className="font-bold text-foreground mb-2 font-sans">Instagram DM</h3>
+              <p className="text-foreground/80 text-sm font-sans">@gudrunsaraxo</p>
             </div>
           </div>
         </div>
@@ -249,20 +234,20 @@ const About = () => {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-black mb-8 font-display">
-            <span className="text-foreground">Ready to Start Your</span>{" "}
-            <span className="text-primary">Transformation Journey?</span>
+            <span className="text-foreground">Ertu tilbúin að taka</span>{" "}
+            <span className="text-primary">fyrsta skrefið?</span>
           </h2>
           
-          <p className="text-lg text-foreground/80 mb-12 leading-relaxed">
-            Join thousands of men who have already transformed their lives with Sarafit. 
-            Your journey to a stronger, more confident you starts today.
+          <p className="text-lg text-foreground/80 mb-12 leading-relaxed font-sans">
+            Vertu partur af fleiri en hundrað ánægðum sterkum konum sem hafa skráð sig í þjálfun hjá SARAFIT.
           </p>
 
           <Button 
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl px-16 py-8 rounded-full shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
+            onClick={handleSignupClick}
           >
-            START YOUR JOURNEY
+            Byrjaðu í dag
           </Button>
         </div>
       </section>
