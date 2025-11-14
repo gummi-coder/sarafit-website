@@ -21,19 +21,19 @@ const Method = () => {
           </div>
 
           {/* Right side - Two phone images staggered */}
-          <div className="relative flex justify-center md:justify-center order-1 md:order-2">
-            <div className="relative">
+          <div className="relative flex justify-center md:justify-center order-1 md:order-2 overflow-hidden">
+            <div className="relative max-w-full">
               {/* First phone - "1 2.png" on the left, in front */}
               <img 
                 src="/1 2.png" 
                 alt="SARAFIT nutrition tracking" 
-                className="w-[320px] md:w-[360px] h-auto relative z-20 transform rotate-[-8deg]"
+                className="w-[240px] md:w-[360px] h-auto relative z-20 transform rotate-[-8deg]"
               />
               {/* Second phone - "Untitled design (5).png" on the right, overlapping corner to corner, behind */}
               <img 
                 src="/Untitled design (5).png" 
                 alt="SARAFIT nutrition tracking" 
-                className="w-[320px] md:w-[360px] h-auto absolute top-8 left-24 md:top-12 md:left-32 transform rotate-[4deg] z-10"
+                className="w-[240px] md:w-[360px] h-auto absolute top-4 left-12 md:top-12 md:left-32 transform rotate-[4deg] z-10"
               />
             </div>
           </div>

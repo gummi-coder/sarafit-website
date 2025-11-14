@@ -49,7 +49,6 @@ html {
 @layer utilities {
   .page-glow {
     position: relative;
-    overflow: hidden;
   }
 
   .page-glow::before,

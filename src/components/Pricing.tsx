@@ -61,14 +61,14 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
+        <div className="flex flex-col md:grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <div
               key={index}
               className={`relative bg-card border-2 rounded-2xl p-8 transition-all hover:scale-105 ${
                 plan.popular 
-                  ? "border-primary shadow-xl shadow-primary/20" 
-                  : "border-border/20 shadow-lg"
+                  ? "border-primary shadow-xl shadow-primary/20 order-1 md:order-2" 
+                  : "border-border/20 shadow-lg order-2 md:order-1"
               }`}
             >
               {plan.popular && (

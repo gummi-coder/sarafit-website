@@ -95,7 +95,7 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background page-glow">
+    <div className="min-h-screen bg-background page-glow" style={{ overflowY: 'clip' }}>
       <SEO
         title="Um mig - Guðrún Sara"
         description="Með yfir fjagra ára reynslu í þjálfun hjálpa ég bæði byrjendum og íþróttafólki að ná raunverulegum árangri. Persónuleg þjálfun sem hentar þínu lífi."

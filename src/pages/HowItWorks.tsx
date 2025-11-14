@@ -68,7 +68,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background page-glow">
+    <div className="min-h-screen bg-background page-glow" style={{ overflowY: 'clip' }}>
       <SEO
         title="Fjarþjálfun - Hvernig þetta virkar"
         description="Fjarþjálfun sem er byggð fyrir þín markmið og þinn lífsstíl. Persónuleg nálgun, sérhannað prógram og fullur aðgangur að SARAFIT appinu."
@@ -111,7 +111,7 @@ const HowItWorks = () => {
       </section>
 
       {/* How It Works Section - Similar to Testimonials Layout */}
-      <section className="pt-8 pb-20 px-4">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <p className="text-primary text-lg font-bold mb-4 font-sans">SARAFIT</p>
@@ -189,11 +189,11 @@ const HowItWorks = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
-              <span className="text-foreground">Sarafit Has</span>{" "}
-              <span className="text-primary">Proven Results</span>
+              <span className="text-foreground">SJÁÐU ÁRANGUR</span>{" "}
+              <span className="text-primary">SEM ENDIST</span>
             </h2>
             <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
-              Does Sarafit work? There's only one way to find out, by seeing whether our students actually had success.
+              Tónum líkaman og byggjum upp sjálfstraust í ræktinni. Engin diet og engar skyndilausnir - bara árangur sem endist til lengri tíma.
             </p>
           </div>
 
@@ -212,14 +212,14 @@ const HowItWorks = () => {
 
           <div className="text-center mb-0">
             <p className="text-base md:text-lg text-foreground/80 leading-tight">
-              <span className="font-bold text-foreground">Based on 1,500+ Reviews</span> from real clients who have transformed their lives
+              <span className="font-bold text-foreground">Með yfir 100+ meðmæli</span>
             </p>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="pt-0 pb-8 px-4">
+      <section className="pt-0 pb-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <Button 
             size="lg"
