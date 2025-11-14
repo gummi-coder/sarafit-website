@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check } from "lucide-react";
 
 const Blueprint = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
@@ -116,28 +115,6 @@ const Blueprint = () => {
             <p className="text-xl md:text-2xl text-foreground/90 max-w-3xl mx-auto leading-relaxed font-sans">
               Þú færð sent blueprint með hjálplegum upplýsingum hvernig þú getur byrjað! Tips frá einkaþjálfara og raunverulegur árangur - engin diet og ekkert bull.
             </p>
-          </div>
-
-          {/* Features */}
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <div className="flex items-start gap-3 p-6 bg-card/40 backdrop-blur-sm border border-white/10 rounded-xl">
-              <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <p className="text-foreground/90 font-sans">
-                6 vikna plan sem hjálpar þér að byrja
-              </p>
-            </div>
-            <div className="flex items-start gap-3 p-6 bg-card/40 backdrop-blur-sm border border-white/10 rounded-xl">
-              <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <p className="text-foreground/90 font-sans">
-                Byrjenda tips and tricks til að koma þér af stað
-              </p>
-            </div>
-            <div className="flex items-start gap-3 p-6 bg-card/40 backdrop-blur-sm border border-white/10 rounded-xl">
-              <Check className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-              <p className="text-foreground/90 font-sans">
-                Leiðbeiningar hvernig þú byggir þitt fyrsta prógram
-              </p>
-            </div>
           </div>
 
           {/* ConvertKit Signup Form */}
