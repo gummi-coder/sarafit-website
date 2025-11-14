@@ -101,7 +101,7 @@ const Blueprint = () => {
       <SEO
         title="6 vikna Byrjenda blueprint - SARAFIT"
         description="Fáðu blueprint með hjálplegum upplýsingum hvernig þú getur byrjað! Tips frá einkaþjálfara og raunverulegur árangur - engin diet og ekkert bull."
-        url="https://www.sarafit.is/blueprint"
+        url="https://sarafit.is/blueprint"
         keywords="blueprint, byrjenda blueprint, 6 vikna plan, SARAFIT, byrjenda tips"
         noindex={false}
       />

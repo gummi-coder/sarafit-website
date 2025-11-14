@@ -72,7 +72,7 @@ const HowItWorks = () => {
       <SEO
         title="Fjarþjálfun - Hvernig þetta virkar"
         description="Fjarþjálfun sem er byggð fyrir þín markmið og þinn lífsstíl. Persónuleg nálgun, sérhannað prógram og fullur aðgangur að SARAFIT appinu."
-        url="https://www.sarafit.is/how-it-works"
+        url="https://sarafit.is/how-it-works"
         keywords="fjarþjálfun, hvernig þetta virkar, persónuleg þjálfun, SARAFIT app, sérhannað prógram"
       />
       <Navigation />

@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://www.sarafit.is/sitemap.xml
+Sitemap: https://sarafit.is/sitemap.xml

@@ -22,8 +22,8 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "Sarafit",
-    "url": "https://www.sarafit.is",
-    "logo": "https://www.sarafit.is/logo.png",
+    "url": "https://sarafit.is",
+    "logo": "https://sarafit.is/logo.png",
     "description": "Fjarþjálfun sem hentar þínu lífi. Tónum líkaman og byggjum upp sjálfstraust í ræktinni.",
     "sameAs": [
       "https://www.instagram.com/sarafit",
@@ -41,7 +41,7 @@ const Index = () => {
       <SEO
         title="Sarafit - Fjarþjálfun sem hentar þínu lífi"
         description="Tónum líkaman og byggjum upp sjálfstraust í ræktinni. Engin diet og engar skyndilausnir - bara árangur sem endist til lengri tíma."
-        url="https://www.sarafit.is"
+        url="https://sarafit.is"
         structuredData={structuredData}
       />
       <Navigation />

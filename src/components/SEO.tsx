@@ -14,15 +14,15 @@ interface SEOProps {
 const SEO = ({
   title = "Sarafit - Fjarþjálfun sem hentar þínu lífi",
   description = "Tónum líkaman og byggjum upp sjálfstraust í ræktinni. Engin diet og engar skyndilausnir - bara árangur sem endist til lengri tíma.",
-  image = "https://www.sarafit.is/og-image.jpg",
-  url = "https://www.sarafit.is",
+  image = "https://sarafit.is/og-image.jpg",
+  url = "https://sarafit.is",
   type = "website",
   keywords = "fjarþjálfun, þjálfun, fitness, æfingar, næring, SARAFIT, Guðrún Sara, tilbúin prógröm, fitubrennsla, styrkur",
   noindex = false,
   structuredData,
 }: SEOProps) => {
   const fullTitle = title.includes("Sarafit") ? title : `${title} | Sarafit`;
-  const fullUrl = url.startsWith("http") ? url : `https://www.sarafit.is${url}`;
+  const fullUrl = url.startsWith("http") ? url : `https://sarafit.is${url}`;
 
   return (
     <Helmet>
