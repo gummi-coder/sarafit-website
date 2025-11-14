@@ -242,10 +242,10 @@ const Signup = () => {
                             <SelectValue placeholder="Veldu prógram" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="melt-mode">Melt Mode – 3x í viku</SelectItem>
-                            <SelectItem value="stronger-bigger">Stronger & Bigger – 3x í viku</SelectItem>
-                            <SelectItem value="booty-builder">Booty Builder – 5x í viku</SelectItem>
-                            <SelectItem value="endurance">Endurance – 4x í viku</SelectItem>
+                            <SelectItem value="melt-mode">Melt Mode</SelectItem>
+                            <SelectItem value="stronger-bigger">Stronger & Bigger</SelectItem>
+                            <SelectItem value="booty-builder">Booty Builder</SelectItem>
+                            <SelectItem value="endurance">Endurance</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>

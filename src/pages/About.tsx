@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, MessageCircle } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -95,6 +96,12 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background page-glow">
+      <SEO
+        title="Um mig - Guðrún Sara"
+        description="Með yfir fjagra ára reynslu í þjálfun hjálpa ég bæði byrjendum og íþróttafólki að ná raunverulegum árangri. Persónuleg þjálfun sem hentar þínu lífi."
+        url="https://www.sarafit.is/about"
+        keywords="Guðrún Sara, þjálfari, fjarþjálfun, SARAFIT, um mig, reynsla"
+      />
       <Navigation />
       
       {/* Hero Section */}
@@ -122,7 +129,7 @@ const About = () => {
                 <span className="text-primary">Sara</span>
               </h2>
               <p className="text-lg text-foreground/80 leading-relaxed font-sans">
-                Með yfir fimm ára reynslu í þjálfun hef ég einbeitt mér að því að hjálpa bæði byrjendum og íþróttafólki að ná raunverulegum árangri. Ég vinn út frá nýjustu aðferðum og rannsóknum, því mér finnst mikilvægt að fylgja því sem virkar í raun og veru – ekki skyndilausnum eða trendum sem einhver úti í heimi bjó til af því það hljómaði vel. Markmiðið mitt er að bjóða upp á þjálfun sem er sniðin að þér, styður við þitt líf – og skilar árangri sem endist.
+                Með yfir fjagra ára reynslu í þjálfun hef ég einbeitt mér að því að hjálpa bæði byrjendum og íþróttafólki að ná raunverulegum árangri. Ég vinn út frá nýjustu aðferðum og rannsóknum, því mér finnst mikilvægt að fylgja því sem virkar í raun og veru – ekki skyndilausnum eða trendum sem einhver úti í heimi bjó til af því það hljómaði vel. Markmiðið mitt er að bjóða upp á þjálfun sem er sniðin að þér, styður við þitt líf – og skilar árangri sem endist.
               </p>
             </div>
           </div>

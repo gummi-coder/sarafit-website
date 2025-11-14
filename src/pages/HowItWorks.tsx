@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Check, Users, MessageCircle, Smartphone, Target, Star, Utensils, Brain, BarChart3 } from "lucide-react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -68,6 +69,12 @@ const HowItWorks = () => {
 
   return (
     <div className="min-h-screen bg-background page-glow">
+      <SEO
+        title="Fjarþjálfun - Hvernig þetta virkar"
+        description="Fjarþjálfun sem er byggð fyrir þín markmið og þinn lífsstíl. Persónuleg nálgun, sérhannað prógram og fullur aðgangur að SARAFIT appinu."
+        url="https://www.sarafit.is/how-it-works"
+        keywords="fjarþjálfun, hvernig þetta virkar, persónuleg þjálfun, SARAFIT app, sérhannað prógram"
+      />
       <Navigation />
       
       {/* Hero Section */}

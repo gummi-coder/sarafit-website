@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, Star } from "lucide-react";
@@ -28,6 +29,12 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background page-glow">
+      <SEO
+        title="Tilbúin prógröm - Melt Mode, Stronger & Bigger, Booty Builder, Endurance"
+        description="Veldu prógram sem hentar þínum markmiðum. Melt Mode, Stronger & Bigger, Booty Builder og Endurance - allt með fullum aðgangi að SARAFIT appinu."
+        url="https://www.sarafit.is/pricing"
+        keywords="tilbúin prógröm, Melt Mode, Stronger Bigger, Booty Builder, Endurance, æfingarprógram, SARAFIT"
+      />
       <Navigation />
       
       <main className="pt-32">

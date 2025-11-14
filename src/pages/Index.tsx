@@ -5,6 +5,7 @@ import Method from "@/components/Method";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { useNavigate, useLocation } from "react-router-dom";
 import { scrollToSignupSection } from "@/lib/scroll-to-signup";
@@ -17,8 +18,32 @@ const Index = () => {
     scrollToSignupSection(navigate, location.pathname);
   };
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Sarafit",
+    "url": "https://www.sarafit.is",
+    "logo": "https://www.sarafit.is/logo.png",
+    "description": "Fjarþjálfun sem hentar þínu lífi. Tónum líkaman og byggjum upp sjálfstraust í ræktinni.",
+    "sameAs": [
+      "https://www.instagram.com/sarafit",
+      "https://www.facebook.com/sarafit"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "availableLanguage": "Icelandic"
+    }
+  };
+
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Sarafit - Fjarþjálfun sem hentar þínu lífi"
+        description="Tónum líkaman og byggjum upp sjálfstraust í ræktinni. Engin diet og engar skyndilausnir - bara árangur sem endist til lengri tíma."
+        url="https://www.sarafit.is"
+        structuredData={structuredData}
+      />
       <Navigation />
       <Hero />
       <Approach />
