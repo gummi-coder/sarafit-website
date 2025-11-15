@@ -68,7 +68,9 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background page-glow" style={{ overflowY: 'clip' }}>
+    <div className="relative bg-background min-h-screen">
+      <div className="absolute inset-0 pointer-events-none page-glow"></div>
+      <div className="relative z-10">
       <SEO
         title="Fjarþjálfun - Hvernig þetta virkar"
         description="Fjarþjálfun sem er byggð fyrir þín markmið og þinn lífsstíl. Persónuleg nálgun, sérhannað prógram og fullur aðgangur að SARAFIT appinu."
@@ -125,7 +127,7 @@ const HowItWorks = () => {
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left side - Photo/Content that scrolls */}
-            <div className="lg:sticky lg:top-24 pt-8">
+            <div className="lg:sticky lg:top-24 pt-8 self-start">
               <div className="text-center">
                 <div className="flex justify-center gap-2 mb-8">
                   {[...Array(5)].map((_, j) => (
@@ -232,6 +234,7 @@ const HowItWorks = () => {
       </section>
 
       <Footer />
+      </div>
     </div>
   );
 };

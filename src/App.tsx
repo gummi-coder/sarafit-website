@@ -28,21 +28,21 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-                 <Routes>
-                 <Route path="/" element={<Index />} />
-                 <Route path="/how-it-works" element={<HowItWorks />} />
-                 <Route path="/about" element={<About />} />
-                 <Route path="/contact" element={<Contact />} />
-                 <Route path="/pricing" element={<Pricing />} />
-                 <Route path="/signup" element={<Signup />} />
-                 <Route path="/email1" element={<EmailSignup1 />} />
-                 <Route path="/email2" element={<EmailSignup2 />} />
-                 <Route path="/apply" element={<Apply />} />
-                 <Route path="/terms" element={<Terms />} />
-                 <Route path="/blueprint" element={<Blueprint />} />
-                 {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                 <Route path="*" element={<NotFound />} />
-               </Routes>
+          <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/pricing" element={<Pricing />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/email1" element={<EmailSignup1 />} />
+              <Route path="/email2" element={<EmailSignup2 />} />
+              <Route path="/apply" element={<Apply />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/blueprint" element={<Blueprint />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

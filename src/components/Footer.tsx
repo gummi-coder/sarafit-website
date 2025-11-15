@@ -45,7 +45,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="pb-6 px-8">
+    <footer className="pb-6 px-8 mb-0">
       {/* Main Footer */}
       <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl px-8 py-8 max-w-[1200px] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-start mb-8">

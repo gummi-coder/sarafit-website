@@ -28,7 +28,9 @@ const Pricing = () => {
 
 
   return (
-    <div className="min-h-screen bg-background page-glow" style={{ overflowY: 'clip' }}>
+    <div className="relative bg-background min-h-screen">
+      <div className="absolute inset-0 pointer-events-none page-glow"></div>
+      <div className="relative z-10">
       <SEO
         title="Tilbúin prógröm - Melt Mode, Stronger & Bigger, Booty Builder, Endurance"
         description="Veldu prógram sem hentar þínum markmiðum. Melt Mode, Stronger & Bigger, Booty Builder og Endurance - allt með fullum aðgangi að SARAFIT appinu."
@@ -194,6 +196,7 @@ const Pricing = () => {
       </main>
 
       <Footer />
+      </div>
     </div>
   );
 };

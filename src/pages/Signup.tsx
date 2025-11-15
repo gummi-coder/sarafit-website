@@ -112,7 +112,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background page-glow">
+    <div className="relative bg-background min-h-screen">
+      <div className="absolute inset-0 pointer-events-none page-glow"></div>
+      <div className="relative z-10">
       <Navigation />
       
       <main>
@@ -295,6 +297,7 @@ const Signup = () => {
       </main>
 
       <Footer />
+      </div>
     </div>
   );
 };
