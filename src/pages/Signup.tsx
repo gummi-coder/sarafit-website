@@ -123,7 +123,7 @@ const Signup = () => {
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-5xl font-black mb-4 font-display">
-                Skráning í <span className="text-primary">Tilbúið prógram</span>
+                Skráning í <span className="text-primary">Sörufit</span>
               </h2>
               <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
                 Fylltu út upplýsingarnar hér að neðan og við sendum þér allt sem þú þarft til að byrja strax.
