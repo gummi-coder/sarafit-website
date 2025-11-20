@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import SEO from "@/components/SEO";
-import { Card, CardContent } from "@/components/ui/card";
 
 const Blueprint = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
@@ -53,19 +52,15 @@ const Blueprint = () => {
           </div>
 
           {/* ConvertKit Signup Form */}
-          <Card className="bg-card/60 backdrop-blur border border-white/10 shadow-2xl">
-            <CardContent className="p-8 md:p-12">
-              <div 
-                ref={formContainerRef}
-                id="convertkit-form-container" 
-                data-form="c842c19290"
-                className="min-h-[200px]"
-                style={{ pointerEvents: 'auto' }}
-              >
-                {/* ConvertKit form will be injected here by the script */}
-              </div>
-            </CardContent>
-          </Card>
+          <div 
+            ref={formContainerRef}
+            id="convertkit-form-container" 
+            data-form="c842c19290"
+            className="min-h-[200px]"
+            style={{ pointerEvents: 'auto' }}
+          >
+            {/* ConvertKit form will be injected here by the script */}
+          </div>
         </div>
       </section>
     </div>
