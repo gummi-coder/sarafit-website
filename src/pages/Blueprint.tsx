@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { Helmet } from "react-helmet-async";
 import SEO from "@/components/SEO";
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -7,7 +6,6 @@ const Blueprint = () => {
   const formContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Wait for container to be ready
     if (!formContainerRef.current) return;
 
     // Check if script already exists
@@ -16,71 +14,15 @@ const Blueprint = () => {
       return;
     }
 
-    // Function to find and move ConvertKit form
-    const moveFormToContainer = () => {
-      if (!formContainerRef.current) return;
-
-      // Try multiple selectors to find the ConvertKit form
-      const formSelectors = [
-        '[data-form="c842c19290"]',
-        '.kit-form',
-        '[id*="convertkit"]',
-        '[id*="ck_"]',
-        '[class*="kit"]',
-        'form[action*="convertkit"]',
-        'form[action*="kit.com"]'
-      ];
-
-      for (const selector of formSelectors) {
-        const form = document.querySelector(selector);
-        if (form && formContainerRef.current && !formContainerRef.current.contains(form)) {
-          // Check if form is not already in our container
-          formContainerRef.current.innerHTML = '';
-          // Move the form directly (not clone) to preserve functionality
-          formContainerRef.current.appendChild(form as Node);
-          return true;
-        }
-      }
-      return false;
-    };
-
-    // Use MutationObserver to watch for ConvertKit form injection
-    const observer = new MutationObserver(() => {
-      moveFormToContainer();
-    });
-
-    // Start observing
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-
-    // Also try immediately and after delays
-    moveFormToContainer();
-    setTimeout(moveFormToContainer, 500);
-    setTimeout(moveFormToContainer, 1000);
-    setTimeout(moveFormToContainer, 2000);
-
-    // Load ConvertKit script
+    // Load ConvertKit script - similar to Footer component
     const script = document.createElement("script");
     script.async = true;
     script.setAttribute("data-uid", "c842c19290");
     script.src = "https://sarafit.kit.com/c842c19290/index.js";
-    
-    // Add script to head for better compatibility
-    const head = document.head || document.getElementsByTagName("head")[0];
-    head.appendChild(script);
-
-    // After script loads, try to move form
-    script.onload = () => {
-      setTimeout(moveFormToContainer, 500);
-      setTimeout(moveFormToContainer, 1000);
-      setTimeout(moveFormToContainer, 2000);
-    };
+    formContainerRef.current.appendChild(script);
 
     // Cleanup function
     return () => {
-      observer.disconnect();
       const scriptToRemove = document.querySelector('script[data-uid="c842c19290"]');
       if (scriptToRemove && scriptToRemove.parentNode) {
         scriptToRemove.parentNode.removeChild(scriptToRemove);
@@ -90,13 +32,6 @@ const Blueprint = () => {
 
   return (
     <div className="min-h-screen bg-background page-glow">
-      <Helmet>
-        <script
-          async
-          data-uid="c842c19290"
-          src="https://sarafit.kit.com/c842c19290/index.js"
-        />
-      </Helmet>
       <SEO
         title="6 vikna Byrjenda blueprint - SARAFIT"
         description="Fáðu blueprint með hjálplegum upplýsingum hvernig þú getur byrjað! Tips frá einkaþjálfara og raunverulegur árangur - engin diet og ekkert bull."
@@ -124,7 +59,8 @@ const Blueprint = () => {
                 ref={formContainerRef}
                 id="convertkit-form-container" 
                 data-form="c842c19290"
-                className="min-h-[200px] flex items-center justify-center"
+                className="min-h-[200px]"
+                style={{ pointerEvents: 'auto' }}
               >
                 {/* ConvertKit form will be injected here by the script */}
               </div>
