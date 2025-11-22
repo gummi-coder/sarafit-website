@@ -15,6 +15,7 @@ import EmailSignup2 from "./pages/EmailSignup2";
 import Apply from "./pages/Apply";
 import Terms from "./pages/Terms";
 import Blueprint from "./pages/Blueprint";
+import Links from "./pages/Links";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -40,6 +41,7 @@ const App = () => (
               <Route path="/apply" element={<Apply />} />
               <Route path="/terms" element={<Terms />} />
               <Route path="/blueprint" element={<Blueprint />} />
+              <Route path="/links" element={<Links />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
