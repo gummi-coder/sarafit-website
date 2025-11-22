@@ -133,7 +133,7 @@ const Signup = () => {
             <div className="max-w-3xl mx-auto">
               <Card className="bg-card/60 backdrop-blur border border-border/20">
                 <CardHeader>
-                  <CardTitle className="text-xl text-foreground">Skráningareyðublað</CardTitle>
+                  <CardTitle className="text-xl text-foreground">Skráning</CardTitle>
                 </CardHeader>
                 <CardContent>
                   {submissionMessage && (
