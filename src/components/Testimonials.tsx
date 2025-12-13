@@ -45,10 +45,10 @@ const Testimonials = () => {
   };
 
   return (
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-7xl">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left side - Star Rating */}
+    <section className="py-20 px-4">
+      <div className="container mx-auto max-w-7xl">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left side - Star Rating */}
             <div className="lg:sticky lg:top-24 pt-8 self-start">
             <div className="text-center">
               <div className="flex justify-center gap-2 mb-8">

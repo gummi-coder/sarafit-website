@@ -112,14 +112,14 @@ const Signup = () => {
   };
 
   return (
-    <div className="relative bg-background min-h-screen">
+    <div className="relative bg-background min-h-screen w-full overflow-x-hidden">
       <div className="absolute inset-0 pointer-events-none page-glow"></div>
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
       <Navigation />
       
-      <main>
+      <main className="overflow-x-hidden">
         {/* Signup Form Section */}
-        <section className="pt-32 pb-20 px-4">
+        <section className="pt-32 pb-20 px-4 overflow-x-hidden">
           <div className="container mx-auto max-w-5xl">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-5xl font-black mb-4 font-display">

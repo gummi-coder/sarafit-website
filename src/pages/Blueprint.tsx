@@ -30,7 +30,9 @@ const Blueprint = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background page-glow">
+    <div className="min-h-screen bg-background w-full overflow-x-hidden">
+      <div className="absolute inset-0 pointer-events-none page-glow"></div>
+      <div className="relative z-10">
       <SEO
         title="6 vikna Byrjenda blueprint - SARAFIT"
         description="Fáðu blueprint með hjálplegum upplýsingum hvernig þú getur byrjað! Tips frá einkaþjálfara og raunverulegur árangur - engin diet og ekkert bull."
@@ -39,7 +41,7 @@ const Blueprint = () => {
         noindex={false}
       />
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center px-4 py-20">
+      <section className="min-h-screen flex items-center justify-center px-4 py-20 overflow-x-hidden">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12">
             <h1 className="text-5xl md:text-7xl font-black mb-6 font-display leading-tight">
@@ -52,17 +54,18 @@ const Blueprint = () => {
           </div>
 
           {/* ConvertKit Signup Form */}
-          <div 
-            ref={formContainerRef}
-            id="convertkit-form-container" 
-            data-form="c842c19290"
+              <div 
+                ref={formContainerRef}
+                id="convertkit-form-container" 
+                data-form="c842c19290"
             className="min-h-[200px]"
             style={{ pointerEvents: 'auto' }}
-          >
-            {/* ConvertKit form will be injected here by the script */}
-          </div>
+              >
+                {/* ConvertKit form will be injected here by the script */}
+              </div>
         </div>
       </section>
+      </div>
     </div>
   );
 };

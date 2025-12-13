@@ -68,9 +68,9 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="relative bg-background min-h-screen">
+    <div className="relative bg-background min-h-screen w-full overflow-x-hidden">
       <div className="absolute inset-0 pointer-events-none page-glow"></div>
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
       <SEO
         title="Fjarþjálfun - Hvernig þetta virkar"
         description="Fjarþjálfun sem er byggð fyrir þín markmið og þinn lífsstíl. Persónuleg nálgun, sérhannað prógram og fullur aðgangur að SARAFIT appinu."
@@ -80,7 +80,7 @@ const HowItWorks = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-48 pb-20 px-4">
+      <section className="pt-48 pb-20 px-4 overflow-x-hidden">
         <div className="container mx-auto max-w-6xl text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-8 font-display">
             <span className="text-primary">Fjarþjálfun sem er byggð</span>{" "}
@@ -113,7 +113,7 @@ const HowItWorks = () => {
       </section>
 
       {/* How It Works Section - Similar to Testimonials Layout */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 overflow-x-hidden">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <p className="text-primary text-lg font-bold mb-4 font-sans">SARAFIT</p>
@@ -187,7 +187,7 @@ const HowItWorks = () => {
       </section>
 
       {/* Video Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 overflow-x-hidden">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">

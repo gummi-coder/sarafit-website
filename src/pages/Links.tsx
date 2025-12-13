@@ -75,7 +75,7 @@ const Links = () => {
   ];
 
   return (
-    <div className="relative min-h-screen bg-background flex items-center justify-center px-4 py-20">
+    <div className="relative min-h-screen bg-background flex items-center justify-center px-4 py-20 w-full overflow-x-hidden">
       <div className="absolute inset-0 pointer-events-none page-glow"></div>
       <div className="relative z-10 w-full max-w-md">
       <SEO

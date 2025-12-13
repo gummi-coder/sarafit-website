@@ -28,9 +28,9 @@ const Pricing = () => {
 
 
   return (
-    <div className="relative bg-background min-h-screen">
+    <div className="relative bg-background min-h-screen w-full overflow-x-hidden">
       <div className="absolute inset-0 pointer-events-none page-glow"></div>
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
       <SEO
         title="Tilbúin prógröm - Melt Mode, Stronger & Bigger, Booty Builder, Endurance"
         description="Veldu prógram sem hentar þínum markmiðum. Melt Mode, Stronger & Bigger, Booty Builder og Endurance - allt með fullum aðgangi að SARAFIT appinu."
@@ -39,9 +39,9 @@ const Pricing = () => {
       />
       <Navigation />
       
-      <main className="pt-32">
+      <main className="pt-32 overflow-x-hidden">
         {/* Prebuilt Programs Pricing Table */}
-        <section className="py-20 px-4">
+        <section className="py-20 px-4 overflow-x-hidden">
           <div className="container mx-auto max-w-7xl">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">

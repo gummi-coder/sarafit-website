@@ -95,9 +95,9 @@ const About = () => {
   ];
 
   return (
-    <div className="relative bg-background min-h-screen">
+    <div className="relative bg-background min-h-screen w-full overflow-x-hidden">
       <div className="absolute inset-0 pointer-events-none page-glow"></div>
-      <div className="relative z-10">
+      <div className="relative z-10 w-full">
       <SEO
         title="Um mig - Guðrún Sara"
         description="Með yfir fjagra ára reynslu í þjálfun hjálpa ég bæði byrjendum og íþróttafólki að ná raunverulegum árangri. Persónuleg þjálfun sem hentar þínu lífi."
@@ -107,7 +107,7 @@ const About = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <section className="pt-32 pb-20 px-4 overflow-x-hidden">
         <div className="container mx-auto max-w-6xl">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mb-12 text-center font-display">
             <span className="text-primary">Um</span>{" "}
@@ -139,7 +139,7 @@ const About = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 overflow-x-hidden">
         <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
@@ -167,7 +167,7 @@ const About = () => {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 overflow-x-hidden">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black mb-6 font-display">
@@ -208,7 +208,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-20 px-4 overflow-x-hidden">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-5xl font-black mb-8 font-display">
             <span className="text-foreground">Ertu tilbúin að taka</span>{" "}

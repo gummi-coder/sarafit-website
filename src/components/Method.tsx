@@ -21,8 +21,8 @@ const Method = () => {
           </div>
 
           {/* Right side - Two phone images staggered */}
-          <div className="relative flex justify-center md:justify-center order-1 md:order-2 overflow-hidden">
-            <div className="relative max-w-full">
+          <div className="relative flex justify-center md:justify-center order-1 md:order-2 overflow-visible">
+            <div className="relative max-w-full py-8 px-4">
               {/* First phone - "1 2.png" on the left, in front */}
               <img 
                 src="/1 2.png" 
