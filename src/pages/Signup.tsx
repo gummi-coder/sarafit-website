@@ -24,7 +24,11 @@ const Signup = () => {
     "melt-mode": { service: "tilbuin", prebuilt: "melt-mode" },
     "stronger-bigger": { service: "tilbuin", prebuilt: "stronger-bigger" },
     "booty-builder": { service: "tilbuin", prebuilt: "booty-builder" },
-    "endurance": { service: "tilbuin", prebuilt: "endurance" }
+    "endurance": { service: "tilbuin", prebuilt: "endurance" },
+    "the-runner": { service: "tilbuin", prebuilt: "the-runner" },
+    "homebody": { service: "tilbuin", prebuilt: "homebody" },
+    "begin-now": { service: "tilbuin", prebuilt: "begin-now" },
+    "busy-bee": { service: "tilbuin", prebuilt: "busy-bee" }
   };
 
   useEffect(() => {
@@ -248,6 +252,10 @@ const Signup = () => {
                             <SelectItem value="stronger-bigger">Stronger & Bigger</SelectItem>
                             <SelectItem value="booty-builder">Booty Builder</SelectItem>
                             <SelectItem value="endurance">Endurance</SelectItem>
+                            <SelectItem value="the-runner">The Runner</SelectItem>
+                            <SelectItem value="homebody">Homebody</SelectItem>
+                            <SelectItem value="begin-now">Begin NOW</SelectItem>
+                            <SelectItem value="busy-bee">Busy Bee</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
