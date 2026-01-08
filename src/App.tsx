@@ -17,6 +17,7 @@ import Terms from "./pages/Terms";
 import Blueprint from "./pages/Blueprint";
 import Links from "./pages/Links";
 import Macros from "./pages/Macros";
+import Verdskra from "./pages/Verdskra";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -44,6 +45,7 @@ const App = () => (
               <Route path="/blueprint" element={<Blueprint />} />
               <Route path="/links" element={<Links />} />
               <Route path="/macros" element={<Macros />} />
+              <Route path="/verdskra" element={<Verdskra />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

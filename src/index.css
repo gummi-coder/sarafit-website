@@ -69,6 +69,17 @@ html::-webkit-scrollbar {
     overflow-x: clip;
   }
 
+  /* Mobile-only overflow prevention that doesn't break sticky */
+  .mobile-overflow-fix {
+    overflow-x: hidden;
+  }
+
+  @media (min-width: 768px) {
+    .mobile-overflow-fix {
+      overflow-x: visible;
+    }
+  }
+
   .page-glow {
     position: absolute;
     inset: 0;

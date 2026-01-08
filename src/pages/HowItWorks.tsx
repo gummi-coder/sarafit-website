@@ -68,9 +68,9 @@ const HowItWorks = () => {
   ];
 
   return (
-    <div className="relative bg-background min-h-screen w-full overflow-x-hidden">
+    <div className="relative bg-background min-h-screen w-full max-w-full" style={{ overflowX: 'clip' }}>
       <div className="absolute inset-0 pointer-events-none page-glow"></div>
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full max-w-full">
       <SEO
         title="Fjarþjálfun - Hvernig þetta virkar"
         description="Fjarþjálfun sem er byggð fyrir þín markmið og þinn lífsstíl. Persónuleg nálgun, sérhannað prógram og fullur aðgangur að SARAFIT appinu."
@@ -113,7 +113,7 @@ const HowItWorks = () => {
       </section>
 
       {/* How It Works Section - Similar to Testimonials Layout */}
-      <section className="py-20 px-4 overflow-x-hidden">
+      <section className="py-20 px-4">
         <div className="container mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <p className="text-primary text-lg font-bold mb-4 font-sans">SARAFIT</p>
@@ -145,7 +145,10 @@ const HowItWorks = () => {
                   Þú færð stuðning frá SARAFIT frá upphafi til enda með aðferðum sem hafa virkað fyrir yfir 100 konur.
                 </p>
 
-                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-6 rounded-full text-lg shadow-lg hover:shadow-primary/25 transition-all hover:scale-105">
+                <Button 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-12 py-6 rounded-full text-lg shadow-lg hover:shadow-primary/25 transition-all hover:scale-105"
+                  onClick={handleSignupClick}
+                >
                   Byrjaðu núna
                 </Button>
               </div>
@@ -221,7 +224,7 @@ const HowItWorks = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="pt-0 pb-20 px-4">
+      <section className="pt-0 pb-20 px-4 overflow-x-hidden">
         <div className="container mx-auto max-w-4xl text-center">
           <Button 
             size="lg"

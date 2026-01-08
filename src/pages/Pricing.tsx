@@ -184,7 +184,7 @@ const Pricing = () => {
                     <h3 className="text-lg md:text-xl font-bold mb-1 font-display text-foreground break-words">{program.name}</h3>
                     <p className="text-xs md:text-sm text-primary font-semibold font-sans">{program.frequency}</p>
                   </div>
-                  <p className="text-xs md:text-sm text-foreground/70 font-sans mb-4 md:mb-6 break-words">{program.description}</p>
+                  <p className="text-xs md:text-sm text-foreground/70 font-sans mb-4 md:mb-6 break-words">7.990 kr. á mánuði</p>
                   <ul className="space-y-2 mb-4 md:mb-6 text-left">
                     {program.features.map((feature, i) => (
                       <li key={i} className="flex items-start text-xs md:text-sm text-foreground/80 font-sans">

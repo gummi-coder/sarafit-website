@@ -10,6 +10,7 @@ const Navigation = () => {
   const location = useLocation();
 
   const navLinks = [
+    { name: "Verðskrá", href: "/verdskra" },
     { name: "Fjarþjálfun", href: "/how-it-works" },
     { name: "Tilbúin prógröm", href: "/pricing" },
     { name: "Um mig", href: "/about" },
