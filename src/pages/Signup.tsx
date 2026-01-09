@@ -8,10 +8,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [programType, setProgramType] = useState<string>("");
   const [prebuiltPlan, setPrebuiltPlan] = useState<string>("");
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -33,10 +34,14 @@ const Signup = () => {
 
   useEffect(() => {
     const programParam = searchParams.get("program");
+    const serviceParam = searchParams.get("service");
+
     if (programParam && programValueMap[programParam]) {
       const { service, prebuilt } = programValueMap[programParam];
       setProgramType(service);
       setPrebuiltPlan(prebuilt);
+    } else if (serviceParam) {
+      setProgramType(serviceParam);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
@@ -97,6 +102,7 @@ const Signup = () => {
         setTermsAccepted(false);
         setSubmissionMessage("Takk fyrir! Við höfum móttekið skráningu þína og munum hafa samband við þig fljótlega.");
         setSubmissionError(null);
+        setTimeout(() => navigate("/"), 2000);
       } else {
         const data = await response.json();
         if (data.error) {

@@ -7,13 +7,18 @@ const Pricing = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleSignupClick = () => {
-    scrollToSignupSection(navigate, location.pathname);
+  const handleSignupClick = (serviceCode?: string) => {
+    if (serviceCode) {
+      navigate(`/signup?service=${serviceCode}`);
+    } else {
+      scrollToSignupSection(navigate, location.pathname);
+    }
   };
 
   const plans = [
     {
       name: "Tilbúið prógram",
+      serviceCode: "tilbuin",
       price: "7.990 kr.",
       originalPrice: "",
       period: "á mánuði",
@@ -28,6 +33,7 @@ const Pricing = () => {
     },
     {
       name: "Fjarþjálfun",
+      serviceCode: "fjar",
       price: "24.990 kr.",
       originalPrice: "",
       period: "á mánuði",
@@ -97,7 +103,7 @@ const Pricing = () => {
                     ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/25" 
                     : "bg-secondary hover:bg-secondary/80 text-secondary-foreground shadow-md hover:shadow-foreground/10"
                 }`}
-                onClick={handleSignupClick}
+                onClick={() => handleSignupClick(plan.serviceCode)}
               >
                 {plan.cta}
               </Button>

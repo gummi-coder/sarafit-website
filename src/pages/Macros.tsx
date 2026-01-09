@@ -7,16 +7,29 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Progress } from "@/components/ui/progress";
+import { 
+  Activity, 
+  Target, 
+  Scale, 
+  Ruler, 
+  User, 
+  Utensils, 
+  Flame, 
+  Dna, 
+  RotateCcw,
+  Info
+} from "lucide-react";
 
 // Configuration - Goal intensity using fixed calorie deficits/surpluses
 const GOAL_INTENSITY_CONFIG = {
   lose_fat: {
-    mild: { deficit: -250, label: 'Mild (~0.25 kg/week)', description: '~0.25 kg/week' },
-    moderate: { deficit: -500, label: 'Moderate (~0.5 kg/week)', description: '~0.5 kg/week (1 lb/week)' }
+    mild: { deficit: -250, label: 'Rólegt (~0.25 kg/viku)', description: '~0.25 kg/viku' },
+    moderate: { deficit: -500, label: 'Miðlungs (~0.5 kg/viku)', description: '~0.5 kg/viku (1 lb/viku)' }
   },
   build_muscle: {
-    mild: { surplus: 250, label: 'Mild (~0.25 kg/week)', description: '' },
-    moderate: { surplus: 500, label: 'Moderate (~0.5 kg/week)', description: '' }
+    mild: { surplus: 250, label: 'Rólegt (~0.25 kg/viku)', description: '' },
+    moderate: { surplus: 500, label: 'Miðlungs (~0.5 kg/viku)', description: '' }
   }
 };
 
@@ -298,12 +311,12 @@ const Macros = () => {
     e.preventDefault();
 
     if (!gender || !age || !weight || !height || !activity || !goal || !macroPreset) {
-      alert('Please fill in all required fields.');
+      alert('Vinsamlegast fylltu út alla reiti.');
       return;
     }
 
     if ((goal === 'lose_fat' || goal === 'build_muscle') && !goalIntensity) {
-      alert('Please select goal intensity.');
+      alert('Vinsamlegast veldu hraða markmiðs.');
       return;
     }
 
@@ -312,17 +325,17 @@ const Macros = () => {
     const heightNum = parseInt(height);
 
     if (ageNum < 16 || ageNum > 100) {
-      alert('Age must be between 16 and 100 years.');
+      alert('Aldur verður að vera á milli 16 og 100 ára.');
       return;
     }
 
     if (weightNum < 30 || weightNum > 300) {
-      alert('Weight must be between 30 and 300 kg.');
+      alert('Þyngd verður að vera á milli 30 og 300 kg.');
       return;
     }
 
     if (heightNum < 100 || heightNum > 250) {
-      alert('Height must be between 100 and 250 cm.');
+      alert('Hæð verður að vera á milli 100 og 250 cm.');
       return;
     }
 
@@ -347,20 +360,31 @@ const Macros = () => {
   const resetCalculator = () => {
     // Only clear the results, keep all form data
     setResults(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const getMacroPresetOptions = () => {
     if (!gender) return [];
     
-    const genderPresets = MACRO_PRESETS[gender as keyof typeof MACRO_PRESETS] || MACRO_PRESETS.female;
+    // const genderPresets = MACRO_PRESETS[gender as keyof typeof MACRO_PRESETS] || MACRO_PRESETS.female;
     return [
-      { value: 'balanced', label: 'Balanced' },
-      { value: 'fat_loss', label: 'Fat Loss' },
-      { value: 'athlete', label: 'Athlete' },
-      { value: 'high_protein', label: 'High Protein' },
-      { value: 'low_fat', label: 'Low Fat' },
-      { value: 'low_carb', label: 'Low Carb' }
+      { value: 'balanced', label: 'Jafnvægi (Balanced)' },
+      { value: 'high_protein', label: 'Hátt prótein (High Protein)' },
+      { value: 'low_fat', label: 'Lág fita (Low Fat)' },
+      { value: 'low_carb', label: 'Lág kolvetni (Low Carb)' }
     ];
+  };
+
+  // Dynamically update macros when preset changes in the result view
+  const handlePresetChange = (newPreset: string) => {
+    setMacroPreset(newPreset);
+    if (results) {
+      const newMacros = calculateMacros(results.targetCalories, newPreset, gender);
+      setResults({
+        ...results,
+        macros: newMacros
+      });
+    }
   };
 
   return (
@@ -376,28 +400,34 @@ const Macros = () => {
         
         <main className="pt-32 pb-20 px-4 overflow-x-hidden">
           <div className="container mx-auto max-w-4xl w-full">
-            <div className="text-center mb-12">
-              <h1 className="text-4xl md:text-6xl font-black mb-4 font-display">
-                <span className="text-foreground">Macros</span>{" "}
-                <span className="text-primary">Reiknivél</span>
-              </h1>
-              <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-sans">
-                Reiknaðu út BMR, TDEE og makrór fyrir markmiðið þitt
-              </p>
-            </div>
-
             {!results ? (
-              <Card className="bg-card/60 backdrop-blur border border-white/10 overflow-visible w-full">
+              <>
+                <div className="text-center mb-12">
+                  <h1 className="text-4xl md:text-6xl font-black mb-4 font-display">
+                    <span className="text-foreground">Macros</span>{" "}
+                    <span className="text-primary">Reiknivél</span>
+                  </h1>
+                  <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-sans">
+                    Reiknaðu út orkuþörf og makróskiptingu fyrir þín markmið
+                  </p>
+                </div>
+                <Card className="bg-card/60 backdrop-blur border border-white/10 overflow-visible w-full shadow-lg">
                 <CardHeader>
-                  <CardTitle className="text-2xl text-foreground">Upplýsingar</CardTitle>
+                  <CardTitle className="text-2xl text-foreground flex items-center gap-2">
+                    <User className="w-6 h-6 text-primary" />
+                    Þínar upplýsingar
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="overflow-visible w-full">
                   <form onSubmit={handleSubmit} className="space-y-6 w-full">
                     <div className="grid md:grid-cols-2 gap-6 w-full">
-                      <div>
-                        <Label htmlFor="gender" className="text-foreground">Kyn *</Label>
+                      {/* Gender */}
+                      <div className="space-y-2">
+                        <Label htmlFor="gender" className="text-foreground flex items-center gap-2">
+                          <User className="w-4 h-4 text-primary" /> Kyn *
+                        </Label>
                         <Select value={gender} onValueChange={setGender} required>
-                          <SelectTrigger>
+                          <SelectTrigger className="bg-background/50 border-white/10">
                             <SelectValue placeholder="Veldu kyn" />
                           </SelectTrigger>
                           <SelectContent className="z-[100]">
@@ -407,8 +437,11 @@ const Macros = () => {
                         </Select>
                       </div>
 
-                      <div>
-                        <Label htmlFor="age" className="text-foreground">Aldur *</Label>
+                      {/* Age */}
+                      <div className="space-y-2">
+                        <Label htmlFor="age" className="text-foreground flex items-center gap-2">
+                          <Activity className="w-4 h-4 text-primary" /> Aldur *
+                        </Label>
                         <Input
                           id="age"
                           type="number"
@@ -418,11 +451,15 @@ const Macros = () => {
                           onChange={(e) => setAge(e.target.value)}
                           required
                           placeholder="Ár"
+                          className="bg-background/50 border-white/10"
                         />
                       </div>
 
-                      <div>
-                        <Label htmlFor="weight" className="text-foreground">Þyngd (kg) *</Label>
+                      {/* Weight */}
+                      <div className="space-y-2">
+                        <Label htmlFor="weight" className="text-foreground flex items-center gap-2">
+                          <Scale className="w-4 h-4 text-primary" /> Þyngd (kg) *
+                        </Label>
                         <Input
                           id="weight"
                           type="number"
@@ -433,11 +470,15 @@ const Macros = () => {
                           onChange={(e) => setWeight(e.target.value)}
                           required
                           placeholder="kg"
+                          className="bg-background/50 border-white/10"
                         />
                       </div>
 
-                      <div>
-                        <Label htmlFor="height" className="text-foreground">Hæð (cm) *</Label>
+                      {/* Height */}
+                      <div className="space-y-2">
+                        <Label htmlFor="height" className="text-foreground flex items-center gap-2">
+                          <Ruler className="w-4 h-4 text-primary" /> Hæð (cm) *
+                        </Label>
                         <Input
                           id="height"
                           type="number"
@@ -447,29 +488,36 @@ const Macros = () => {
                           onChange={(e) => setHeight(e.target.value)}
                           required
                           placeholder="cm"
+                          className="bg-background/50 border-white/10"
                         />
                       </div>
 
-                      <div>
-                        <Label htmlFor="activity" className="text-foreground">Aktívleiki *</Label>
+                      {/* Activity */}
+                      <div className="space-y-2 md:col-span-2">
+                        <Label htmlFor="activity" className="text-foreground flex items-center gap-2">
+                          <Flame className="w-4 h-4 text-primary" /> Hreyfing *
+                        </Label>
                         <Select value={activity} onValueChange={setActivity} required>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Veldu aktívleika" />
+                          <SelectTrigger className="bg-background/50 border-white/10">
+                            <SelectValue placeholder="Veldu hversu mikið þú hreyfir þig" />
                           </SelectTrigger>
                           <SelectContent className="z-[100]">
-                            <SelectItem value="sedentary">Hvít (lítið eða ekkert æfingar)</SelectItem>
-                            <SelectItem value="light">Létt (létt æfingar 1-3 daga/viku)</SelectItem>
-                            <SelectItem value="moderate">Miðlungs (miðlungs æfingar 3-5 daga/viku)</SelectItem>
-                            <SelectItem value="very_active">Mjög virkur (harðar æfingar 6-7 daga/viku)</SelectItem>
-                            <SelectItem value="extra_active">Mjög virkur (mjög harðar æfingar, líkamleg vinna)</SelectItem>
+                            <SelectItem value="sedentary">Kyrrseta (Lítil sem engin æfing)</SelectItem>
+                            <SelectItem value="light">Létt hreyfing (1-3 dagar/viku)</SelectItem>
+                            <SelectItem value="moderate">Miðlungs hreyfing (3-5 dagar/viku)</SelectItem>
+                            <SelectItem value="very_active">Mikil hreyfing (6-7 dagar/viku)</SelectItem>
+                            <SelectItem value="extra_active">Mjög mikil hreyfing (Líkamleg vinna + æfingar)</SelectItem>
                           </SelectContent>
                         </Select>
                       </div>
 
-                      <div>
-                        <Label htmlFor="goal" className="text-foreground">Markmið *</Label>
+                      {/* Goal */}
+                      <div className="space-y-2">
+                        <Label htmlFor="goal" className="text-foreground flex items-center gap-2">
+                          <Target className="w-4 h-4 text-primary" /> Markmið *
+                        </Label>
                         <Select value={goal} onValueChange={(value) => { setGoal(value); setGoalIntensity(""); }} required>
-                          <SelectTrigger>
+                          <SelectTrigger className="bg-background/50 border-white/10">
                             <SelectValue placeholder="Veldu markmið" />
                           </SelectTrigger>
                           <SelectContent className="z-[100]">
@@ -480,22 +528,25 @@ const Macros = () => {
                         </Select>
                       </div>
 
+                      {/* Intensity */}
                       {(goal === 'lose_fat' || goal === 'build_muscle') && (
-                        <div>
-                          <Label htmlFor="goalIntensity" className="text-foreground">Stig *</Label>
+                        <div className="space-y-2 animate-fade-in">
+                          <Label htmlFor="goalIntensity" className="text-foreground flex items-center gap-2">
+                            <Activity className="w-4 h-4 text-primary" /> Hraði *
+                          </Label>
                           <Select value={goalIntensity} onValueChange={setGoalIntensity} required>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Veldu stig" />
+                            <SelectTrigger className="bg-background/50 border-white/10">
+                              <SelectValue placeholder="Veldu hraða" />
                             </SelectTrigger>
                             <SelectContent className="z-[100]">
                               {goal === 'lose_fat' ? (
                                 <>
-                                  <SelectItem value="mild">Mild (~0.25 kg/viku)</SelectItem>
+                                  <SelectItem value="mild">Rólegt (~0.25 kg/viku)</SelectItem>
                                   <SelectItem value="moderate">Miðlungs (~0.5 kg/viku)</SelectItem>
                                 </>
                               ) : (
                                 <>
-                                  <SelectItem value="mild">Mild (~0.25 kg/viku)</SelectItem>
+                                  <SelectItem value="mild">Rólegt (~0.25 kg/viku)</SelectItem>
                                   <SelectItem value="moderate">Miðlungs (~0.5 kg/viku)</SelectItem>
                                 </>
                               )}
@@ -504,16 +555,19 @@ const Macros = () => {
                         </div>
                       )}
 
-                      <div>
-                        <Label htmlFor="macroPreset" className="text-foreground">Makró stilling *</Label>
+                      {/* Macro Preset */}
+                      <div className="space-y-2">
+                        <Label htmlFor="macroPreset" className="text-foreground flex items-center gap-2">
+                          <Utensils className="w-4 h-4 text-primary" /> Makró stilling *
+                        </Label>
                         <Select 
                           value={macroPreset} 
                           onValueChange={setMacroPreset} 
                           required
                           disabled={!gender}
                         >
-                          <SelectTrigger className={!gender ? "opacity-50 cursor-not-allowed" : ""}>
-                            <SelectValue placeholder={gender ? "Veldu makró stillingu" : "Veldu fyrst kyn"} />
+                          <SelectTrigger className={`bg-background/50 border-white/10 ${!gender ? "opacity-50 cursor-not-allowed" : ""}`}>
+                            <SelectValue placeholder={gender ? "Veldu skiptingu" : "Veldu fyrst kyn"} />
                           </SelectTrigger>
                           <SelectContent className="z-[100]">
                             {getMacroPresetOptions().length > 0 ? (
@@ -532,81 +586,97 @@ const Macros = () => {
                       </div>
                     </div>
 
-                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6">
+                    <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 text-lg shadow-lg shadow-primary/20">
                       Reikna út
                     </Button>
                   </form>
                 </CardContent>
               </Card>
+              </>
             ) : (
-              <div className="space-y-6 w-full">
+              <div className="space-y-6 w-full animate-fade-in">
                 {/* Markmiðskaloríur á dag - Prominent card at top */}
-                <Card className="bg-gradient-to-br from-primary/30 to-primary/10 backdrop-blur border border-primary/20 w-full">
-                  <CardContent className="p-6">
-                    <p className="text-sm text-foreground/70 mb-2 font-sans">Markmiðskaloríur á dag</p>
-                    <p className="text-5xl md:text-6xl font-black text-primary mb-2 font-display">{Math.round(results.targetCalories).toLocaleString()} kcal</p>
-                    <p className="text-sm text-foreground/60 font-sans">{results.caloriesDescription}</p>
+                <Card className="bg-card/60 backdrop-blur border border-white/10 w-full overflow-hidden relative">
+                  <CardContent className="p-8 relative z-10 text-center">
+                    <p className="text-lg text-foreground/80 mb-2 font-sans font-medium uppercase tracking-wide">Markmiðskaloríur á dag</p>
+                    <p className="text-6xl md:text-7xl font-black text-white mb-2 font-display drop-shadow-md">{Math.round(results.targetCalories).toLocaleString()} <span className="text-3xl text-white/70">kcal</span></p>
+                    <div className="inline-block bg-black/30 backdrop-blur-md px-4 py-1 rounded-full border border-white/10">
+                      <p className="text-sm text-white/90 font-sans font-medium">{results.caloriesDescription}</p>
+                    </div>
                   </CardContent>
                 </Card>
 
+                {/* Macro Preset Toggle */}
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {[
+                    { value: 'balanced', label: 'Jafnvægi' },
+                    { value: 'high_protein', label: 'Hátt prótein' },
+                    { value: 'low_fat', label: 'Lág fita' },
+                    { value: 'low_carb', label: 'Lág kolvetni' }
+                  ].map((preset) => (
+                    <Button
+                      key={preset.value}
+                      variant={macroPreset === preset.value ? "default" : "outline"}
+                      className={`rounded-full ${macroPreset === preset.value ? 'bg-primary text-white hover:bg-primary/90' : 'bg-transparent border-white/20 text-foreground hover:bg-white/10 hover:text-white'}`}
+                      onClick={() => handlePresetChange(preset.value)}
+                    >
+                      {preset.label}
+                    </Button>
+                  ))}
+                </div>
+
                 {/* Makróskipting - Three macro cards */}
-                <div className="space-y-4">
+                <div className="grid md:grid-cols-3 gap-4">
                   {/* Prótein */}
-                  <Card className="bg-card/60 backdrop-blur border border-white/10 w-full">
-                    <CardContent className="p-5">
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <p className="font-bold text-lg text-foreground mb-2">Prótein</p>
-                          <p className="text-sm text-foreground/70 font-sans mb-1">
-                            {results.macros.protein.percentage}% af kaloríum
-                          </p>
-                          <p className="text-xs text-foreground/60 font-sans">
-                            Svið: {results.macros.protein.minGrams}–{results.macros.protein.maxGrams} g • {Math.round(results.macros.protein.calories)} kcal
-                          </p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-4xl font-black text-foreground font-display">{results.macros.protein.grams} g</p>
-                        </div>
+                  <Card className="bg-card/60 backdrop-blur border border-white/10 w-full relative overflow-hidden group hover:border-primary/50 transition-colors">
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-center mb-4">
+                        <p className="font-bold text-lg text-foreground flex items-center gap-2">
+                          <Dna className="w-5 h-5 text-blue-400" /> Prótein
+                        </p>
+                        <span className="text-xs font-mono bg-blue-500/20 text-blue-300 px-2 py-1 rounded">{results.macros.protein.percentage}%</span>
+                      </div>
+                      <p className="text-4xl font-black text-foreground font-display mb-2">{results.macros.protein.grams}g</p>
+                      <Progress value={results.macros.protein.percentage} className="h-2 mb-3 bg-blue-950" indicatorClassName="bg-blue-500" />
+                      <div className="text-xs text-foreground/50 font-sans space-y-1">
+                        <p>{Math.round(results.macros.protein.calories)} kcal</p>
+                        <p>Svið: {results.macros.protein.minGrams}–{results.macros.protein.maxGrams} g</p>
                       </div>
                     </CardContent>
                   </Card>
 
                   {/* Kolvetni */}
-                  <Card className="bg-card/60 backdrop-blur border border-white/10 w-full">
-                    <CardContent className="p-5">
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <p className="font-bold text-lg text-foreground mb-2">Kolvetni</p>
-                          <p className="text-sm text-foreground/70 font-sans mb-1">
-                            {results.macros.carbs.percentage}% af kaloríum
-                          </p>
-                          <p className="text-xs text-foreground/60 font-sans">
-                            Svið: {results.macros.carbs.minGrams}–{results.macros.carbs.maxGrams} g • {Math.round(results.macros.carbs.calories)} kcal • Sykur: &lt; {results.macros.sugarLimit} g
-                          </p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-4xl font-black text-foreground font-display">{results.macros.carbs.grams} g</p>
-                        </div>
+                  <Card className="bg-card/60 backdrop-blur border border-white/10 w-full relative overflow-hidden group hover:border-primary/50 transition-colors">
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-center mb-4">
+                        <p className="font-bold text-lg text-foreground flex items-center gap-2">
+                          <Utensils className="w-5 h-5 text-green-400" /> Kolvetni
+                        </p>
+                        <span className="text-xs font-mono bg-green-500/20 text-green-300 px-2 py-1 rounded">{results.macros.carbs.percentage}%</span>
+                      </div>
+                      <p className="text-4xl font-black text-foreground font-display mb-2">{results.macros.carbs.grams}g</p>
+                      <Progress value={results.macros.carbs.percentage} className="h-2 mb-3 bg-green-950" indicatorClassName="bg-green-500" />
+                      <div className="text-xs text-foreground/50 font-sans space-y-1">
+                        <p>{Math.round(results.macros.carbs.calories)} kcal</p>
+                        <p>Sykur: &lt; {results.macros.sugarLimit} g</p>
                       </div>
                     </CardContent>
                   </Card>
 
                   {/* Fita */}
-                  <Card className="bg-card/60 backdrop-blur border border-white/10 w-full">
-                    <CardContent className="p-5">
-                      <div className="flex justify-between items-start">
-                        <div className="flex-1">
-                          <p className="font-bold text-lg text-foreground mb-2">Fita</p>
-                          <p className="text-sm text-foreground/70 font-sans mb-1">
-                            {results.macros.fat.percentage}% af kaloríum
-                          </p>
-                          <p className="text-xs text-foreground/60 font-sans">
-                            Svið: {results.macros.fat.minGrams}–{results.macros.fat.maxGrams} g • {Math.round(results.macros.fat.calories)} kcal • Mett fita: &lt; {results.macros.saturatedFatLimit} g
-                          </p>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-4xl font-black text-foreground font-display">{results.macros.fat.grams} g</p>
-                        </div>
+                  <Card className="bg-card/60 backdrop-blur border border-white/10 w-full relative overflow-hidden group hover:border-primary/50 transition-colors">
+                    <CardContent className="p-6">
+                      <div className="flex justify-between items-center mb-4">
+                        <p className="font-bold text-lg text-foreground flex items-center gap-2">
+                          <Flame className="w-5 h-5 text-yellow-400" /> Fita
+                        </p>
+                        <span className="text-xs font-mono bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">{results.macros.fat.percentage}%</span>
+                      </div>
+                      <p className="text-4xl font-black text-foreground font-display mb-2">{results.macros.fat.grams}g</p>
+                      <Progress value={results.macros.fat.percentage} className="h-2 mb-3 bg-yellow-950" indicatorClassName="bg-yellow-500" />
+                      <div className="text-xs text-foreground/50 font-sans space-y-1">
+                        <p>{Math.round(results.macros.fat.calories)} kcal</p>
+                        <p>Mett fita: &lt; {results.macros.saturatedFatLimit} g</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -615,29 +685,57 @@ const Macros = () => {
                 {/* BMR and TDEE - Two cards side by side */}
                 <div className="grid md:grid-cols-2 gap-4 w-full">
                   <Card className="bg-background/50 backdrop-blur border border-white/10">
-                    <CardContent className="p-4">
-                      <p className="text-sm text-foreground/70 mb-1 font-sans">BMR</p>
-                      <p className="text-2xl font-bold text-foreground font-display">{Math.round(results.bmr).toLocaleString()} kcal</p>
+                    <CardContent className="p-6 flex items-center justify-between">
+                      <div>
+                        <p className="text-sm text-foreground/70 mb-1 font-sans flex items-center gap-2"><Activity className="w-4 h-4" /> Grunnbrune (BMR)</p>
+                        <p className="text-xs text-foreground/50">Orka í hvíld</p>
+                      </div>
+                      <p className="text-3xl font-bold text-foreground font-display">{Math.round(results.bmr).toLocaleString()} kcal</p>
                     </CardContent>
                   </Card>
                   <Card className="bg-background/50 backdrop-blur border border-white/10">
-                    <CardContent className="p-4">
-                      <p className="text-sm text-foreground/70 mb-1 font-sans">TDEE</p>
-                      <p className="text-2xl font-bold text-foreground font-display">{Math.round(results.tdee).toLocaleString()} kcal</p>
+                    <CardContent className="p-6 flex items-center justify-between">
+                      <div>
+                        <p className="text-sm text-foreground/70 mb-1 font-sans flex items-center gap-2"><Flame className="w-4 h-4" /> Heildarorka (TDEE)</p>
+                        <p className="text-xs text-foreground/50">Viðhald með hreyfingu</p>
+                      </div>
+                      <p className="text-3xl font-bold text-foreground font-display">{Math.round(results.tdee).toLocaleString()} kcal</p>
                     </CardContent>
                   </Card>
                 </div>
+                
+                {/* CTA Box */}
+                <Card className="bg-primary/10 backdrop-blur border border-primary/20 w-full">
+                  <CardContent className="p-6 flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
+                    <div className="bg-primary/20 p-4 rounded-full">
+                      <Target className="w-8 h-8 text-primary" />
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-lg text-foreground mb-1">Vantar þig hjálp við að ná markmiðum þínum?</h4>
+                      <p className="text-sm text-foreground/80 leading-relaxed font-sans">
+                        Ef þú vilt persónulega aðstoð og stuðning getur þú skráð þig í fjarþjálfun hjá mér.
+                      </p>
+                    </div>
+                    <Button asChild className="bg-primary hover:bg-primary/90 text-white font-bold py-6 px-8 whitespace-nowrap">
+                      <a href="/verdskra">Skoða fjarþjálfun</a>
+                    </Button>
+                  </CardContent>
+                </Card>
 
                 {/* Explanation paragraph */}
                 <Card className="bg-background/30 backdrop-blur border border-white/10 w-full">
-                  <CardContent className="p-4">
-                    <p className="text-sm text-foreground/80 leading-relaxed font-sans break-words">{results.explanation}</p>
+                  <CardContent className="p-6 flex gap-4">
+                    <Info className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-bold text-foreground mb-2">Um niðurstöðurnar</h4>
+                      <p className="text-sm text-foreground/80 leading-relaxed font-sans">{results.explanation}</p>
+                    </div>
                   </CardContent>
                 </Card>
 
                 {/* Reikna aftur button */}
-                <Button onClick={resetCalculator} className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6">
-                  Reikna aftur
+                <Button onClick={resetCalculator} variant="outline" className="w-full border-primary/50 text-primary hover:bg-primary hover:text-white font-bold py-6 gap-2">
+                  <RotateCcw className="w-4 h-4" /> Reikna aftur
                 </Button>
               </div>
             )}
@@ -651,4 +749,3 @@ const Macros = () => {
 };
 
 export default Macros;
-

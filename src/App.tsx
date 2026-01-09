@@ -18,6 +18,9 @@ import Blueprint from "./pages/Blueprint";
 import Links from "./pages/Links";
 import Macros from "./pages/Macros";
 import Verdskra from "./pages/Verdskra";
+import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
+import Exercises from "./pages/Exercises";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -46,6 +49,9 @@ const App = () => (
               <Route path="/links" element={<Links />} />
               <Route path="/macros" element={<Macros />} />
               <Route path="/verdskra" element={<Verdskra />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/æfingar" element={<Exercises />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

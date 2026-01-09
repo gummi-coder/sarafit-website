@@ -4,10 +4,20 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { scrollToSignupSection } from "@/lib/scroll-to-signup";
 
-const Navigation = () => {
+interface NavigationProps {
+  theme?: "dark" | "light";
+}
+
+const Navigation = ({ theme = "dark" }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const isLight = theme === "light";
+  const textColor = isLight ? "text-slate-900" : "text-white";
+  const linkColor = isLight ? "text-slate-600 hover:text-primary" : "text-white/90 hover:text-white";
+  const bgColor = isLight ? "bg-white/80 border-slate-200" : "bg-black/40 border-white/10";
+  const mobileBg = isLight ? "bg-white border-slate-200" : "bg-black/90 border-white/10";
 
   const navLinks = [
     { name: "Verðskrá", href: "/verdskra" },
@@ -23,14 +33,14 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-6 left-4 right-4 md:left-8 md:right-8 z-50">
-      <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl px-4 md:px-8 max-w-[1200px] mx-auto w-full">
+      <div className={`${bgColor} backdrop-blur-md border rounded-2xl px-4 md:px-8 max-w-[1200px] mx-auto w-full transition-colors duration-300`}>
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center">
             <img
               src="/sarafit-logo.png"
               alt="Sarafit"
-              className="h-16 w-auto md:h-20"
+              className={`h-16 w-auto md:h-20 ${isLight ? "brightness-0 opacity-80" : ""}`}
               loading="lazy"
             />
           </a>
@@ -42,7 +52,7 @@ const Navigation = () => {
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="text-white/90 hover:text-white transition-colors font-medium text-sm flex items-center gap-1 font-sans"
+                  className={`${linkColor} transition-colors font-medium text-sm flex items-center gap-1 font-sans`}
                 >
                   {link.name}
                 </Link>
@@ -50,7 +60,7 @@ const Navigation = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-white/90 hover:text-white transition-colors font-medium text-sm flex items-center gap-1 font-sans"
+                  className={`${linkColor} transition-colors font-medium text-sm flex items-center gap-1 font-sans`}
                 >
                   {link.name}
                 </a>
@@ -70,7 +80,7 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className={`md:hidden ${textColor}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -80,13 +90,13 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden pb-6 space-y-4 animate-fade-in">
+          <div className={`md:hidden pb-6 space-y-4 animate-fade-in absolute top-full left-0 right-0 mt-2 p-4 rounded-2xl border backdrop-blur-xl ${mobileBg}`}>
             {navLinks.map((link) => (
               link.href.startsWith('/') ? (
                 <Link
                   key={link.name}
                   to={link.href}
-                  className="block text-white/90 hover:text-white transition-colors font-medium py-2 font-sans"
+                  className={`block ${linkColor} transition-colors font-medium py-2 font-sans`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}
@@ -95,7 +105,7 @@ const Navigation = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block text-white/90 hover:text-white transition-colors font-medium py-2 font-sans"
+                  className={`block ${linkColor} transition-colors font-medium py-2 font-sans`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.name}

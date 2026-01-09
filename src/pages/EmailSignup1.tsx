@@ -2,24 +2,24 @@ import { useEffect } from "react";
 
 const EmailSignup1 = () => {
   useEffect(() => {
-    // Load Gummi script
+    // Load Sarafit script
     const script = document.createElement('script');
     script.async = true;
-    script.setAttribute('data-uid', '887ca30a1c');
-    script.src = 'https://gummi.kit.com/887ca30a1c/index.js';
+    script.setAttribute('data-uid', 'e5f8dfba21');
+    script.src = 'https://sarafit.kit.com/e5f8dfba21/index.js';
     document.head.appendChild(script);
 
     // Also try to load it in the form container
-    const formContainer = document.getElementById('gummi-form-container');
+    const formContainer = document.getElementById('sarafit-form-container');
     if (formContainer) {
       formContainer.innerHTML = `
-        <script async data-uid="887ca30a1c" src="https://gummi.kit.com/887ca30a1c/index.js"></script>
+        <script async data-uid="e5f8dfba21" src="https://sarafit.kit.com/e5f8dfba21/index.js"></script>
       `;
     }
 
     return () => {
       // Cleanup script on unmount
-      const existingScript = document.querySelector('script[data-uid="887ca30a1c"]');
+      const existingScript = document.querySelector('script[data-uid="e5f8dfba21"]');
       if (existingScript) {
         existingScript.remove();
       }
@@ -32,36 +32,36 @@ const EmailSignup1 = () => {
         {/* Logo/Brand */}
         <div className="mb-12">
           <h1 className="text-4xl font-black text-foreground mb-4 font-display">
-            GF<span className="text-primary">Training</span>
+            SARA<span className="text-primary">FIT</span>
           </h1>
         </div>
 
         {/* Main Content */}
         <div className="space-y-8">
           <h2 className="text-3xl md:text-5xl font-black text-foreground leading-tight font-display">
-            Weekly value to transform your body
+            Vikulegur fróðleikur til að breyta líkamanum
           </h2>
           
           <p className="text-xl text-foreground/80 leading-relaxed">
-            Your weekly fitness newsletter. Unsubscribe anytime.
+            Vikulegt fréttabréf með æfingum og ráðum. Þú getur afskráð þig hvenær sem er.
           </p>
 
-          {/* Gummi Form Container */}
+          {/* Sarafit Form Container */}
           <div className="max-w-md mx-auto">
-            <div className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
-              <script async data-uid="887ca30a1c" src="https://gummi.kit.com/887ca30a1c/index.js"></script>
+            <div className="bg-card/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8" id="sarafit-form-container">
+              <script async data-uid="e5f8dfba21" src="https://sarafit.kit.com/e5f8dfba21/index.js"></script>
             </div>
           </div>
 
           <p className="text-sm text-foreground/60">
-            Join fitness enthusiasts staying ahead
+            Vertu með og fáðu nýjustu ráðin beint í pósthólfið
           </p>
         </div>
 
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-white/10">
           <p className="text-sm text-foreground/40">
-            © 2025 Sarafit. All rights reserved.
+            © 2025 Sarafit. Öll réttindi áskilin.
           </p>
         </div>
       </div>

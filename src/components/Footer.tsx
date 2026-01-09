@@ -25,8 +25,18 @@ const TikTokIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-const Footer = () => {
+interface FooterProps {
+  theme?: "dark" | "light";
+}
+
+const Footer = ({ theme = "dark" }: FooterProps) => {
   const footerFormRef = useRef<HTMLDivElement | null>(null);
+
+  const isLight = theme === "light";
+  const textColor = isLight ? "text-slate-900" : "text-white";
+  const mutedTextColor = isLight ? "text-slate-500" : "text-white/60";
+  const bgColor = isLight ? "bg-slate-50 border-slate-200" : "bg-black/40 border-white/10";
+  const borderColor = isLight ? "border-slate-200" : "border-white/10";
 
   useEffect(() => {
     if (!footerFormRef.current) return;
@@ -47,30 +57,30 @@ const Footer = () => {
   return (
     <footer className="pb-6 px-8 mb-0">
       {/* Main Footer */}
-      <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl px-8 py-8 max-w-[1200px] mx-auto">
+      <div className={`${bgColor} backdrop-blur-md border rounded-2xl px-8 py-8 max-w-[1200px] mx-auto transition-colors duration-300`}>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-start mb-8">
           {/* Logo & Social */}
           <div className="col-span-2 md:col-span-1">
             <div className="mb-4 flex items-center gap-3">
-              <img src="/sarafit-logo.png" alt="Sarafit" className="h-16 w-auto" />
+              <img src="/sarafit-logo.png" alt="Sarafit" className={`h-16 w-auto ${isLight ? "brightness-0 opacity-80" : ""}`} />
             </div>
-            <p className="text-white/60 text-xs leading-relaxed">
+            <p className={`${mutedTextColor} text-xs leading-relaxed`}>
               Ég hjálpa konum að verða sterkari og finna sjálfstraust.
             </p>
-            <a href="mailto:sara@sarafit.is" className="text-white/60 hover:text-primary transition-colors text-xs mt-2 mb-4 inline-block">
+            <a href="mailto:sara@sarafit.is" className={`${mutedTextColor} hover:text-primary transition-colors text-xs mt-2 mb-4 inline-block`}>
               sara@sarafit.is
             </a>
             <div className="flex gap-3">
-              <a href="https://www.instagram.com/gudrunsaraxo/" className="text-white/60 hover:text-primary transition-colors" target="_blank" rel="noreferrer">
+              <a href="https://www.instagram.com/gudrunsaraxo/" className={`${mutedTextColor} hover:text-primary transition-colors`} target="_blank" rel="noreferrer">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://www.tiktok.com/@gudrunsaraxo" className="text-white/60 hover:text-primary transition-colors" target="_blank" rel="noreferrer">
+              <a href="https://www.tiktok.com/@gudrunsaraxo" className={`${mutedTextColor} hover:text-primary transition-colors`} target="_blank" rel="noreferrer">
                 <TikTokIcon className="w-4 h-4" />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61558887181745" className="text-white/60 hover:text-primary transition-colors" target="_blank" rel="noreferrer">
+              <a href="https://www.facebook.com/profile.php?id=61558887181745" className={`${mutedTextColor} hover:text-primary transition-colors`} target="_blank" rel="noreferrer">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="https://open.spotify.com/user/gudrun_sara22" className="text-white/60 hover:text-primary transition-colors" target="_blank" rel="noreferrer">
+              <a href="https://open.spotify.com/user/gudrun_sara22" className={`${mutedTextColor} hover:text-primary transition-colors`} target="_blank" rel="noreferrer">
                 <SpotifyIcon className="w-4 h-4" />
               </a>
             </div>
@@ -78,52 +88,52 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-3 text-sm text-white">Flýtileiðir</h4>
+            <h4 className={`font-bold mb-3 text-sm ${textColor}`}>Flýtileiðir</h4>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-white/60 hover:text-primary transition-colors text-xs">Heim</Link></li>
-              <li><Link to="/how-it-works" className="text-white/60 hover:text-primary transition-colors text-xs">Hvernig þetta virkar</Link></li>
-              <li><Link to="/about" className="text-white/60 hover:text-primary transition-colors text-xs">Um mig</Link></li>
+              <li><Link to="/" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Heim</Link></li>
+              <li><Link to="/how-it-works" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Hvernig þetta virkar</Link></li>
+              <li><Link to="/about" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Um mig</Link></li>
             </ul>
           </div>
 
           {/* Resources */}
           <div>
-            <h4 className="font-bold mb-3 text-sm text-white">Fjarþjálfun</h4>
+            <h4 className={`font-bold mb-3 text-sm ${textColor}`}>Fjarþjálfun</h4>
             <ul className="space-y-2">
-              <li><Link to="/how-it-works" className="text-white/60 hover:text-primary transition-colors text-xs">Fjarþjálfun</Link></li>
-              <li><Link to="/pricing" className="text-white/60 hover:text-primary transition-colors text-xs">Tilbúin prógröm</Link></li>
-              <li><Link to="/signup" className="text-white/60 hover:text-primary transition-colors text-xs">Skráning</Link></li>
+              <li><Link to="/how-it-works" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Fjarþjálfun</Link></li>
+              <li><Link to="/pricing" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Tilbúin prógröm</Link></li>
+              <li><Link to="/signup" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Skráning</Link></li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="font-bold mb-3 text-sm text-white">Skilmálar</h4>
+            <h4 className={`font-bold mb-3 text-sm ${textColor}`}>Skilmálar</h4>
             <ul className="space-y-2">
-              <li><Link to="/terms" className="text-white/60 hover:text-primary transition-colors text-xs">Skilmálar</Link></li>
-              <li><Link to="/terms#privacy" className="text-white/60 hover:text-primary transition-colors text-xs">Persónuverndarstefna</Link></li>
+              <li><Link to="/terms" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Skilmálar</Link></li>
+              <li><Link to="/terms#privacy" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Persónuverndarstefna</Link></li>
             </ul>
           </div>
         </div>
 
         {/* Newsletter Signup */}
-        <div className="border-t border-white/10 pt-6 mb-6">
+        <div className={`border-t ${borderColor} pt-6 mb-6`}>
           <div className="text-center mb-4">
-            <h3 className="text-sm font-bold text-white mb-1">Skráðu þig á póstlistann</h3>
-            <p className="text-white/60 text-xs">Fáðu ný fitness tips send beint í tölvupóstinn þinn</p>
+            <h3 className={`text-sm font-bold ${textColor} mb-1`}>Skráðu þig á póstlistann</h3>
+            <p className={`${mutedTextColor} text-xs`}>Fáðu ný fitness tips send beint í tölvupóstinn þinn</p>
           </div>
           
           <div className="relative flex justify-center">
-            <div className="w-full max-w-lg rounded-3xl border border-white/5 bg-black/30 p-4 md:p-6">
+            <div className={`w-full max-w-lg rounded-3xl border p-4 md:p-6 ${isLight ? "bg-white border-slate-200" : "bg-black/30 border-white/5"}`}>
               <div ref={footerFormRef} className="space-y-4" />
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-white/10 pt-6">
+        <div className={`border-t ${borderColor} pt-6`}>
           <div className="text-center">
-            <div className="text-white/60 text-xs">
+            <div className={`${mutedTextColor} text-xs`}>
               <p>© 2025 Sarafit. Öll réttindi áskilin.</p>
             </div>
           </div>
