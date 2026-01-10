@@ -91,8 +91,9 @@ const Footer = ({ theme = "dark" }: FooterProps) => {
             <h4 className={`font-bold mb-3 text-sm ${textColor}`}>Flýtileiðir</h4>
             <ul className="space-y-2">
               <li><Link to="/" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Heim</Link></li>
-              <li><Link to="/how-it-works" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Hvernig þetta virkar</Link></li>
+              <li><Link to="/verdskra" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Verðskrá</Link></li>
               <li><Link to="/about" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Um mig</Link></li>
+              <li><Link to="/macros" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Macros reiknivél</Link></li>
             </ul>
           </div>
 

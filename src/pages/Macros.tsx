@@ -283,7 +283,7 @@ const Macros = () => {
     let explanation = `Byggt á upplýsingum þínum (${genderText}, ${age} ára, ${weight} kg, ${height} cm) er áætlað BMR ${Math.round(bmr).toLocaleString()} kcal/dag og viðhaldskaloríur (TDEE) ${Math.round(tdee).toLocaleString()} kcal á dag. `;
 
     if (goal === 'lose_fat') {
-      explanation += `Fyrir vægþyngd á ${goalIntensity === 'mild' ? '~0.25 kg' : '~0.5 kg'} á viku mælum við með ${targetCalories.toLocaleString()} kcal á dag (${deficit.toLocaleString()} kcal skortur). `;
+      explanation += `Fyrir Fitutap á ${goalIntensity === 'mild' ? '~0.25 kg' : '~0.5 kg'} á viku mælum við með ${targetCalories.toLocaleString()} kcal á dag (${deficit.toLocaleString()} kcal skortur). `;
     } else if (goal === 'build_muscle') {
       explanation += `Fyrir vöðvabyggingu mælum við með ${targetCalories.toLocaleString()} kcal á dag (${surplus.toLocaleString()} kcal umfram). `;
     } else {
@@ -521,7 +521,7 @@ const Macros = () => {
                             <SelectValue placeholder="Veldu markmið" />
                           </SelectTrigger>
                           <SelectContent className="z-[100]">
-                            <SelectItem value="lose_fat">Tapa fitu</SelectItem>
+                            <SelectItem value="lose_fat">Missa fitu</SelectItem>
                             <SelectItem value="build_muscle">Byggja vöðva</SelectItem>
                             <SelectItem value="maintain">Halda þyngd</SelectItem>
                           </SelectContent>
@@ -587,7 +587,7 @@ const Macros = () => {
                     </div>
 
                     <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-white font-bold py-6 text-lg shadow-lg shadow-primary/20">
-                      Reikna út
+                      Reikna
                     </Button>
                   </form>
                 </CardContent>
@@ -598,11 +598,8 @@ const Macros = () => {
                 {/* Markmiðskaloríur á dag - Prominent card at top */}
                 <Card className="bg-card/60 backdrop-blur border border-white/10 w-full overflow-hidden relative">
                   <CardContent className="p-8 relative z-10 text-center">
-                    <p className="text-lg text-foreground/80 mb-2 font-sans font-medium uppercase tracking-wide">Markmiðskaloríur á dag</p>
+                    <p className="text-lg text-foreground/80 mb-2 font-sans font-medium tracking-wide">Markmiðskaloríur á dag</p>
                     <p className="text-6xl md:text-7xl font-black text-white mb-2 font-display drop-shadow-md">{Math.round(results.targetCalories).toLocaleString()} <span className="text-3xl text-white/70">kcal</span></p>
-                    <div className="inline-block bg-black/30 backdrop-blur-md px-4 py-1 rounded-full border border-white/10">
-                      <p className="text-sm text-white/90 font-sans font-medium">{results.caloriesDescription}</p>
-                    </div>
                   </CardContent>
                 </Card>
 
@@ -687,8 +684,8 @@ const Macros = () => {
                   <Card className="bg-background/50 backdrop-blur border border-white/10">
                     <CardContent className="p-6 flex items-center justify-between">
                       <div>
-                        <p className="text-sm text-foreground/70 mb-1 font-sans flex items-center gap-2"><Activity className="w-4 h-4" /> Grunnbrune (BMR)</p>
-                        <p className="text-xs text-foreground/50">Orka í hvíld</p>
+                        <p className="text-sm text-foreground/70 mb-1 font-sans flex items-center gap-2"><Activity className="w-4 h-4" /> Grunnbrennsla (BMR)</p>
+                        <p className="text-xs text-foreground/50">Orka sem líkami þarfnast í hvíld.</p>
                       </div>
                       <p className="text-3xl font-bold text-foreground font-display">{Math.round(results.bmr).toLocaleString()} kcal</p>
                     </CardContent>
