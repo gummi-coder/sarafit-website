@@ -41,6 +41,7 @@ const Index = () => {
       <SEO
         title="Sarafit - Fjarþjálfun sem hentar þínu lífi"
         description="Tónum líkaman og byggjum upp sjálfstraust í ræktinni. Engin diet og engar skyndilausnir - bara árangur sem endist til lengri tíma."
+        image="/DSC02083.JPG"
         url="https://sarafit.is"
         structuredData={structuredData}
       />

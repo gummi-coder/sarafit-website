@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -10,8 +10,33 @@ interface NavigationProps {
 
 const Navigation = ({ theme = "dark" }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Ignore scroll events for rubber banding (negative scroll)
+      if (currentScrollY < 0) return;
+
+      // Always show if near top
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+      } else if (currentScrollY > lastScrollY.current + 5) { // Add threshold for scroll down
+        setIsVisible(false);
+      } else if (currentScrollY < lastScrollY.current - 5) { // Add threshold for scroll up
+        setIsVisible(true);
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const isLight = theme === "light";
   const textColor = isLight ? "text-slate-900" : "text-white";
@@ -32,7 +57,7 @@ const Navigation = ({ theme = "dark" }: NavigationProps) => {
   };
 
   return (
-    <nav className="fixed top-6 left-4 right-4 md:left-8 md:right-8 z-50">
+    <nav className={`fixed top-6 left-4 right-4 md:top-6 md:left-8 md:right-8 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-[200%]'} md:translate-y-0`}>
       <div className={`${bgColor} backdrop-blur-md border rounded-2xl px-4 md:px-8 max-w-[1200px] mx-auto w-full transition-colors duration-300`}>
         <div className="flex items-center justify-between h-20">
           {/* Logo */}

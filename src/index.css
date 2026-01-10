@@ -155,4 +155,16 @@ html::-webkit-scrollbar {
   body::-webkit-scrollbar {
     display: none; /* Chrome, Safari and Opera */
   }
+
+  /* Hide reCAPTCHA widget */
+  .grecaptcha-badge,
+  .g-recaptcha,
+  iframe[src*="recaptcha"],
+  div[data-sitekey] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
 }
