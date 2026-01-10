@@ -398,7 +398,7 @@ const Macros = () => {
         />
         <Navigation />
         
-        <main className="pt-32 pb-20 px-4 overflow-x-hidden">
+        <main className="pt-40 md:pt-32 pb-8 md:pb-20 px-4 overflow-x-hidden">
           <div className="container mx-auto max-w-4xl w-full">
             {!results ? (
               <>
@@ -594,17 +594,17 @@ const Macros = () => {
               </Card>
               </>
             ) : (
-              <div className="space-y-6 w-full animate-fade-in">
+              <div className="space-y-3 md:space-y-6 w-full animate-fade-in">
                 {/* Markmiðskaloríur á dag - Prominent card at top */}
                 <Card className="bg-card/60 backdrop-blur border border-white/10 w-full overflow-hidden relative">
-                  <CardContent className="p-8 relative z-10 text-center">
-                    <p className="text-lg text-foreground/80 mb-2 font-sans font-medium tracking-wide">Markmiðskaloríur á dag</p>
-                    <p className="text-6xl md:text-7xl font-black text-white mb-2 font-display drop-shadow-md">{Math.round(results.targetCalories).toLocaleString()} <span className="text-3xl text-white/70">kcal</span></p>
+                  <CardContent className="p-4 md:p-8 relative z-10 text-center">
+                    <p className="text-sm md:text-lg text-foreground/80 mb-1 md:mb-2 font-sans font-medium tracking-wide">Markmiðskaloríur á dag</p>
+                    <p className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-0 md:mb-2 font-display drop-shadow-md">{Math.round(results.targetCalories).toLocaleString()} <span className="text-xl md:text-3xl text-white/70">kcal</span></p>
                   </CardContent>
                 </Card>
 
                 {/* Macro Preset Toggle */}
-                <div className="flex flex-wrap gap-2 justify-center">
+                <div className="flex flex-wrap gap-1.5 md:gap-2 justify-center">
                   {[
                     { value: 'balanced', label: 'Jafnvægi' },
                     { value: 'high_protein', label: 'Hátt prótein' },
@@ -614,7 +614,7 @@ const Macros = () => {
                     <Button
                       key={preset.value}
                       variant={macroPreset === preset.value ? "default" : "outline"}
-                      className={`rounded-full ${macroPreset === preset.value ? 'bg-primary text-white hover:bg-primary/90' : 'bg-transparent border-white/20 text-foreground hover:bg-white/10 hover:text-white'}`}
+                      className={`rounded-full text-xs md:text-sm py-1.5 md:py-2 px-3 md:px-4 h-8 md:h-auto ${macroPreset === preset.value ? 'bg-primary text-white hover:bg-primary/90' : 'bg-transparent border-white/20 text-foreground hover:bg-white/10 hover:text-white'}`}
                       onClick={() => handlePresetChange(preset.value)}
                     >
                       {preset.label}
@@ -623,57 +623,57 @@ const Macros = () => {
                 </div>
 
                 {/* Makróskipting - Three macro cards */}
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid md:grid-cols-3 gap-2.5 md:gap-4">
                   {/* Prótein */}
                   <Card className="bg-card/60 backdrop-blur border border-white/10 w-full relative overflow-hidden group hover:border-primary/50 transition-colors">
-                    <CardContent className="p-6">
-                      <div className="flex justify-between items-center mb-4">
-                        <p className="font-bold text-lg text-foreground flex items-center gap-2">
-                          <Dna className="w-5 h-5 text-blue-400" /> Prótein
+                    <CardContent className="p-3 md:p-6">
+                      <div className="flex justify-between items-center mb-2 md:mb-4">
+                        <p className="font-bold text-sm md:text-lg text-foreground flex items-center gap-1.5 md:gap-2">
+                          <Dna className="w-4 h-4 md:w-5 md:h-5 text-blue-400 flex-shrink-0" /> <span className="truncate">Prótein</span>
                         </p>
-                        <span className="text-xs font-mono bg-blue-500/20 text-blue-300 px-2 py-1 rounded">{results.macros.protein.percentage}%</span>
+                        <span className="text-xs font-mono bg-blue-500/20 text-blue-300 px-1.5 md:px-2 py-0.5 md:py-1 rounded flex-shrink-0">{results.macros.protein.percentage}%</span>
                       </div>
-                      <p className="text-4xl font-black text-foreground font-display mb-2">{results.macros.protein.grams}g</p>
-                      <Progress value={results.macros.protein.percentage} className="h-2 mb-3 bg-blue-950" indicatorClassName="bg-blue-500" />
-                      <div className="text-xs text-foreground/50 font-sans space-y-1">
+                      <p className="text-2xl md:text-4xl font-black text-foreground font-display mb-1 md:mb-2">{results.macros.protein.grams}g</p>
+                      <Progress value={results.macros.protein.percentage} className="h-1.5 md:h-2 mb-2 md:mb-3 bg-blue-950" indicatorClassName="bg-blue-500" />
+                      <div className="text-xs text-foreground/50 font-sans space-y-0.5 md:space-y-1">
                         <p>{Math.round(results.macros.protein.calories)} kcal</p>
-                        <p>Svið: {results.macros.protein.minGrams}–{results.macros.protein.maxGrams} g</p>
+                        <p className="text-[10px] md:text-xs">Svið: {results.macros.protein.minGrams}–{results.macros.protein.maxGrams} g</p>
                       </div>
                     </CardContent>
                   </Card>
 
                   {/* Kolvetni */}
                   <Card className="bg-card/60 backdrop-blur border border-white/10 w-full relative overflow-hidden group hover:border-primary/50 transition-colors">
-                    <CardContent className="p-6">
-                      <div className="flex justify-between items-center mb-4">
-                        <p className="font-bold text-lg text-foreground flex items-center gap-2">
-                          <Utensils className="w-5 h-5 text-green-400" /> Kolvetni
+                    <CardContent className="p-3 md:p-6">
+                      <div className="flex justify-between items-center mb-2 md:mb-4">
+                        <p className="font-bold text-sm md:text-lg text-foreground flex items-center gap-1.5 md:gap-2">
+                          <Utensils className="w-4 h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" /> <span className="truncate">Kolvetni</span>
                         </p>
-                        <span className="text-xs font-mono bg-green-500/20 text-green-300 px-2 py-1 rounded">{results.macros.carbs.percentage}%</span>
+                        <span className="text-xs font-mono bg-green-500/20 text-green-300 px-1.5 md:px-2 py-0.5 md:py-1 rounded flex-shrink-0">{results.macros.carbs.percentage}%</span>
                       </div>
-                      <p className="text-4xl font-black text-foreground font-display mb-2">{results.macros.carbs.grams}g</p>
-                      <Progress value={results.macros.carbs.percentage} className="h-2 mb-3 bg-green-950" indicatorClassName="bg-green-500" />
-                      <div className="text-xs text-foreground/50 font-sans space-y-1">
+                      <p className="text-2xl md:text-4xl font-black text-foreground font-display mb-1 md:mb-2">{results.macros.carbs.grams}g</p>
+                      <Progress value={results.macros.carbs.percentage} className="h-1.5 md:h-2 mb-2 md:mb-3 bg-green-950" indicatorClassName="bg-green-500" />
+                      <div className="text-xs text-foreground/50 font-sans space-y-0.5 md:space-y-1">
                         <p>{Math.round(results.macros.carbs.calories)} kcal</p>
-                        <p>Sykur: &lt; {results.macros.sugarLimit} g</p>
+                        <p className="text-[10px] md:text-xs">Sykur: &lt; {results.macros.sugarLimit} g</p>
                       </div>
                     </CardContent>
                   </Card>
 
                   {/* Fita */}
                   <Card className="bg-card/60 backdrop-blur border border-white/10 w-full relative overflow-hidden group hover:border-primary/50 transition-colors">
-                    <CardContent className="p-6">
-                      <div className="flex justify-between items-center mb-4">
-                        <p className="font-bold text-lg text-foreground flex items-center gap-2">
-                          <Flame className="w-5 h-5 text-yellow-400" /> Fita
+                    <CardContent className="p-3 md:p-6">
+                      <div className="flex justify-between items-center mb-2 md:mb-4">
+                        <p className="font-bold text-sm md:text-lg text-foreground flex items-center gap-1.5 md:gap-2">
+                          <Flame className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 flex-shrink-0" /> <span className="truncate">Fita</span>
                         </p>
-                        <span className="text-xs font-mono bg-yellow-500/20 text-yellow-300 px-2 py-1 rounded">{results.macros.fat.percentage}%</span>
+                        <span className="text-xs font-mono bg-yellow-500/20 text-yellow-300 px-1.5 md:px-2 py-0.5 md:py-1 rounded flex-shrink-0">{results.macros.fat.percentage}%</span>
                       </div>
-                      <p className="text-4xl font-black text-foreground font-display mb-2">{results.macros.fat.grams}g</p>
-                      <Progress value={results.macros.fat.percentage} className="h-2 mb-3 bg-yellow-950" indicatorClassName="bg-yellow-500" />
-                      <div className="text-xs text-foreground/50 font-sans space-y-1">
+                      <p className="text-2xl md:text-4xl font-black text-foreground font-display mb-1 md:mb-2">{results.macros.fat.grams}g</p>
+                      <Progress value={results.macros.fat.percentage} className="h-1.5 md:h-2 mb-2 md:mb-3 bg-yellow-950" indicatorClassName="bg-yellow-500" />
+                      <div className="text-xs text-foreground/50 font-sans space-y-0.5 md:space-y-1">
                         <p>{Math.round(results.macros.fat.calories)} kcal</p>
-                        <p>Mett fita: &lt; {results.macros.saturatedFatLimit} g</p>
+                        <p className="text-[10px] md:text-xs">Mett fita: &lt; {results.macros.saturatedFatLimit} g</p>
                       </div>
                     </CardContent>
                   </Card>
