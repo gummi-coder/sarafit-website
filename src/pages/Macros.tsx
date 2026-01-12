@@ -604,7 +604,7 @@ const Macros = () => {
                 </Card>
 
                 {/* Macro Preset Toggle */}
-                <div className="flex flex-wrap gap-1.5 md:gap-2 justify-center">
+                <div className="flex flex-nowrap md:flex-wrap gap-0.5 md:gap-2 justify-center">
                   {[
                     { value: 'balanced', label: 'Jafnvægi' },
                     { value: 'high_protein', label: 'Hátt prótein' },
@@ -614,7 +614,7 @@ const Macros = () => {
                     <Button
                       key={preset.value}
                       variant={macroPreset === preset.value ? "default" : "outline"}
-                      className={`rounded-full text-xs md:text-sm py-1.5 md:py-2 px-3 md:px-4 h-8 md:h-auto ${macroPreset === preset.value ? 'bg-primary text-white hover:bg-primary/90' : 'bg-transparent border-white/20 text-foreground hover:bg-white/10 hover:text-white'}`}
+                      className={`rounded-full text-[11px] md:text-sm py-1 md:py-2 px-2 md:px-4 h-7 md:h-auto whitespace-nowrap flex-shrink-0 ${macroPreset === preset.value ? 'bg-primary text-white hover:bg-primary/90' : 'bg-transparent border-white/20 text-foreground hover:bg-white/10 hover:text-white'}`}
                       onClick={() => handlePresetChange(preset.value)}
                     >
                       {preset.label}

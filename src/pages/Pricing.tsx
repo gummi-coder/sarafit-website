@@ -210,6 +210,98 @@ const Pricing = () => {
           </div>
         </section>
 
+        {/* Comparison Section - Fjarþjálfun vs Tilbúin prógram */}
+        <section className="py-12 md:py-20 px-4 overflow-x-hidden">
+          <div className="container mx-auto max-w-5xl">
+            <div className="text-center mb-12 md:mb-16 px-2">
+              <h2 className="text-2xl md:text-5xl font-black mb-4 md:mb-6 font-display">
+                <span className="text-foreground">Viltu meira en</span>{" "}
+                <span className="text-primary">tilbúið prógram?</span>
+              </h2>
+              <p className="text-base md:text-lg text-foreground/80 font-sans max-w-3xl mx-auto px-2">
+                Fjarþjálfun gefur þér persónulega aðstoð, sérsniðið plan og stuðning sem tilbúið prógram getur ekki boðið.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 mb-8">
+              {/* Tilbúin prógram column */}
+              <Card className="bg-card/50 backdrop-blur-sm border border-white/10">
+                <CardContent className="p-6">
+                  <h3 className="text-xl md:text-2xl font-bold mb-4 text-foreground font-display">Tilbúin prógram</h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start text-sm md:text-base text-foreground/70">
+                      <Check className="w-5 h-5 text-foreground/50 mr-3 flex-shrink-0 mt-0.5" />
+                      <span>Tilbúið æfingarprógram</span>
+                    </li>
+                    <li className="flex items-start text-sm md:text-base text-foreground/70">
+                      <Check className="w-5 h-5 text-foreground/50 mr-3 flex-shrink-0 mt-0.5" />
+                      <span>Aðgangur að Sarafit appinu</span>
+                    </li>
+                    <li className="flex items-start text-sm md:text-base text-foreground/70">
+                      <Check className="w-5 h-5 text-foreground/50 mr-3 flex-shrink-0 mt-0.5" />
+                      <span>Engin persónuleg aðstoð</span>
+                    </li>
+                    <li className="flex items-start text-sm md:text-base text-foreground/70">
+                      <Check className="w-5 h-5 text-foreground/50 mr-3 flex-shrink-0 mt-0.5" />
+                      <span>Ekki aðlagað að þínum þörfum</span>
+                    </li>
+                    <li className="flex items-start text-sm md:text-base text-foreground/70">
+                      <Check className="w-5 h-5 text-foreground/50 mr-3 flex-shrink-0 mt-0.5" />
+                      <span>Engin næringarráðgjöf</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              {/* Fjarþjálfun column */}
+              <Card className="bg-primary/10 backdrop-blur-sm border-2 border-primary/30 shadow-lg shadow-primary/10">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-2 mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground font-display">Fjarþjálfun</h3>
+                    <span className="bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full">BESTA VALIÐ</span>
+                  </div>
+                  <ul className="space-y-3">
+                    <li className="flex items-start text-sm md:text-base text-foreground">
+                      <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                      <span><strong>Sérhannað æfingarprógram</strong></span>
+                    </li>
+                    <li className="flex items-start text-sm md:text-base text-foreground">
+                      <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                      <span><strong>Fullur aðgangur að fitness appinu SARAFIT</strong></span>
+                    </li>
+                    <li className="flex items-start text-sm md:text-base text-foreground">
+                      <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                      <span><strong>Myndbönd og leiðbeiningar</strong> af öllum æfingum</span>
+                    </li>
+                    <li className="flex items-start text-sm md:text-base text-foreground">
+                      <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                      <span><strong>Mánaðarleg árangurs check-in</strong></span>
+                    </li>
+                    <li className="flex items-start text-sm md:text-base text-foreground">
+                      <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                      <span><strong>Aðgangur að þjálfara</strong> í gegnum spjallþráð í appinu</span>
+                    </li>
+                    <li className="flex items-start text-sm md:text-base text-foreground">
+                      <Check className="w-5 h-5 text-primary mr-3 flex-shrink-0 mt-0.5" />
+                      <span><strong>Næringarþjálfun</strong></span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+
+            <div className="text-center">
+              <Button 
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-6 rounded-full text-lg shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
+                onClick={() => navigate("/how-it-works")}
+              >
+                Skoða Fjarþjálfun
+              </Button>
+            </div>
+          </div>
+        </section>
+
         {/* 4️⃣ Social Proof Section */}
         <section className="py-12 md:py-20 px-4 overflow-x-hidden">
           <div className="container mx-auto max-w-6xl">
