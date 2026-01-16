@@ -232,15 +232,46 @@ export const blogPosts = [
     `
   },
   {
-    title: "Er morgunmatur mikilvægasta máltíð dagsins?",
-    excerpt: "Við höfum öll heyrt þetta, en er þetta satt? Við skoðum hvað rannsóknir segja um morgunmat og fitubrennslu.",
+    title: "Hefur þú engan tíma fyrir ræktina? - hér er það sem þú getur gert",
+    excerpt: "\"Ég hef ekki tíma fyrir ræktina\"... Þetta er eitt af stærstu vandamálunum sem fólk er að glíma við. En sannleikurinn er sá að þú þarft ekki meiri tíma - þú þarft betra plan og meira skipulag.",
     date: "15. Desember 2023",
     readTime: "5 mín lestur",
-    category: "Næring",
-    image: "/placeholder.svg",
-    slug: "er-morgunmatur-mikilvaegur",
+    category: "Lífsstíll",
+    image: "/2 3.png",
+    slug: "hefur-thu-engan-tima-fyrir-raektina",
     author: "Guðrún Sara",
-    content: "<p>Efni greinarinnar kemur hér...</p>"
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        &quot;Ég hef ekki tíma fyrir ræktina&quot;... Þetta er eitt af stærstu vandamálunum sem fólk er að glíma við í sambandi við hreyfingu og heilsu, og það er alveg góð ástæða fyrir því. Lífið er upptekið, vinna, skóli, fjölskylda, stress og svo margt fleira sem kemur upp.
+      </p>
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        En sannleikurinn er sá að þú þarft ekki meiri tíma. Þú þarft betra plan og meira skipulag.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-4 mt-8 text-white font-display">Gleymdu skyndilausnunum og settu fókus á hreyfingu sem þú getur framkvæmt</h2>
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Þú þarft ekki að mæta á langar æfingar. Þú þarft heldur ekki að mæta á æfingu alla daga vikunnar. Þú getur mætt tvisvar sinnum í viku í aðeins 30 mínútur ef það er það eina sem þú hefur tíma fyrir.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-4 mt-8 text-white font-display">Bættu hreyfingu inn í rútínuna þína</h2>
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Í staðinn fyrir að bæta inn hreyfingu bara einhverstaðar - settu niður fasta tíma þar sem þú ætlar að mæta eins og beint eftir vinnu, um leið og þú vaknar eða beint eftir kvöldmat. Bættu hreyfingu inn í núverandi rútínu og alltaf á sömu dögum á sama tíma. Þú vilt ná að festa hreyfingu inn í lífið þitt en ekki breyta lífinu þínu svo þú getur hreyft þig.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-4 mt-8 text-white font-display">Vertu með raunhæfar væntingar</h2>
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Það er ekki mjög raunhæft fyrir alla að mæta 6 sinnum í viku og taka alltaf 60 mínútna æfingu. Þér er alls ekki að mistakast þó þú getur ekki uppfyllt standarda sem aðrir eru að deila á samfélagsmiðum eða sem þú hefur búið til í hausnum þínum. Þú gerir bara þitt besta og setur þér raunhæf markmið.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-4 mt-8 text-white font-display">Ekki bera þig saman við aðra</h2>
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Aðrir eru ekki með lífið þitt. Aðrir gætu haft meiri tíma. Ekki bera árangurinn þinn saman við einhvern sem getur mætt 5x í viku og tekið klukkutíma æfingu í hvert sinn. Þinn árangur gæti komið hægar, og það er allt í góðu. Við tökum öll okkar tíma og hversu hratt við náum markmiðunum okkar skiptir ekki eins miklu máli og að ná að halda þeim stöðugleika sem þarf til að ná þeim á endanum.
+      </p>
+
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Þegar þú segir við sjálfa þig að þú hafir ekki tíma fyrir hreyfingu þá ertu ekki að setja heilsuna þína og líkama í forgang. Til þess að búa til pláss fyrir hreyfingu þarftu að vera með skýrt og raunhæft plan og mögulega vera tilbúin að fórna óhollum ávönum.
+      </p>
+    `
   },
   {
     title: "Hvernig á að velja rétt lóð",

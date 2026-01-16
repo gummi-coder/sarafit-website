@@ -109,7 +109,7 @@ const Pricing = () => {
                   description: "Fyrir hlaupara sem vilja styrktarþjálfun með hlaupinu.",
                   features: [
                     "Byggt á því markmiði að vilja auka framisstöðu í hlaupi",
-                    "Hentar vel fyrir þá sem eru nú þgear með hlauparútínu",
+                    "Hentar vel fyrir þá sem eru nú þegar með hlauparútínu",
                     "2 styrktaræfingadagar á viku",
                     "kemur í 2 \"phases\""
                   ],
