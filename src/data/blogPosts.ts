@@ -59,7 +59,7 @@ export const blogPosts = [
       </p>
 
       <p class="mb-6 text-lg leading-relaxed text-white/90">
-        Ef þú vilt sjá meiri árangur í ræktinni, getur þú lesið meira um <a href="/blog/halda-ser-vid-efnid-i-friinu" class="text-primary hover:text-primary/80 underline font-medium">5 algengar ástæður hvers vegna þú sérð engan árangur</a> eða <a href="/blog/hversu-oft-i-viku-attu-ad-maeta-i-raektina" class="text-primary hover:text-primary/80 underline font-medium">hversu oft í viku þú ættir að mæta</a>.
+        Ef þú vilt sjá meiri árangur í ræktinni þá getur þú lesið um <a href="/blog/halda-ser-vid-efnid-i-friinu" class="text-primary hover:text-primary/80 underline font-medium">5 algengar ástæður hvers vegna þú sérð engan árangur</a> eða <a href="/blog/hversu-oft-i-viku-attu-ad-maeta-i-raektina" class="text-primary hover:text-primary/80 underline font-medium">hversu oft í viku þú ættir að mæta</a>.
       </p>
     `
   },
@@ -141,7 +141,7 @@ export const blogPosts = [
       </p>
 
       <p class="mb-6 text-lg leading-relaxed text-white/90">
-        Ef þú vilt sjá meiri árangur með næringu, getur þú lesið meira um <a href="/blog/af-hverju-vigtin-segir-ekki-alla-soguna" class="text-primary hover:text-primary/80 underline font-medium">hvers vegna vigtin segir ekki alla söguna</a> eða <a href="/blog/halda-ser-vid-efnid-i-friinu" class="text-primary hover:text-primary/80 underline font-medium">hvers vegna þú sérð engan árangur</a>.
+        Ef þú vilt sjá meiri árangur með næringu þá getur þú lesið um <a href="/blog/af-hverju-vigtin-segir-ekki-alla-soguna" class="text-primary hover:text-primary/80 underline font-medium">hvers vegna vigtin segir ekki alla söguna</a> eða <a href="/blog/halda-ser-vid-efnid-i-friinu" class="text-primary hover:text-primary/80 underline font-medium">hvers vegna þú sérð engan árangur</a>.
       </p>
     `
   },
@@ -194,7 +194,7 @@ export const blogPosts = [
       </p>
 
       <p class="mb-6 text-lg leading-relaxed text-white/90">
-        Ef þú ert að byrja í ræktinni, getur þú lesið meira um <a href="/blog/5-algeng-mistok-i-raektinni" class="text-primary hover:text-primary/80 underline font-medium">5 algeng mistök sem þú vilt forðast</a>. Ef þú hefur engan tíma fyrir ræktina, getur þú lesið <a href="/blog/hefur-thu-engan-tima-fyrir-raektina" class="text-primary hover:text-primary/80 underline font-medium">hér</a> um hvað þú getur gert.
+        Ef þú ert að byrja í ræktinni þá getur þú lesið um <a href="/blog/5-algeng-mistok-i-raektinni" class="text-primary hover:text-primary/80 underline font-medium">5 algeng mistök sem þú vilt forðast</a>. Ef þú hefur engan tíma fyrir ræktina þá getur þú lesið meira um það <a href="/blog/hefur-thu-engan-tima-fyrir-raektina" class="text-primary hover:text-primary/80 underline font-medium">hér</a>.
       </p>
     `
   },
@@ -248,7 +248,7 @@ export const blogPosts = [
       </p>
 
       <p class="mb-6 text-lg leading-relaxed text-white/90">
-        Ef þú vilt vita hversu oft í viku þú ættir að mæta, getur þú lesið <a href="/blog/hversu-oft-i-viku-attu-ad-maeta-i-raektina" class="text-primary hover:text-primary/80 underline font-medium">hér</a>. Ef þú sérð engan árangur þó þú sért að æfa stöðugt, getur þú lesið meira um <a href="/blog/halda-ser-vid-efnid-i-friinu" class="text-primary hover:text-primary/80 underline font-medium">5 algengar ástæður</a>.
+        Ef þú vilt vita hversu oft í viku þú ættir að mæta í ræktina þá getur þú lesið um það <a href="/blog/hversu-oft-i-viku-attu-ad-maeta-i-raektina" class="text-primary hover:text-primary/80 underline font-medium">hér</a>. Ef þú sérð engan árangur þó þú sért að æfa stöðugt þá getur þú lesið um <a href="/blog/halda-ser-vid-efnid-i-friinu" class="text-primary hover:text-primary/80 underline font-medium">5 algengar ástæður hvers vegna það er</a>.
       </p>
     `
   },
@@ -296,7 +296,7 @@ export const blogPosts = [
       </p>
 
       <p class="mb-6 text-lg leading-relaxed text-white/90">
-        Ef þú vilt læra meira um hvernig á að mæla árangur rétt, getur þú lesið <a href="/blog/af-hverju-vigtin-segir-ekki-alla-soguna" class="text-primary hover:text-primary/80 underline font-medium">hér</a> um betri leiðir til að mæla árangur. Ef þú vilt vita meira um næringu, getur þú lesið um <a href="/blog/hvernig-byrja-telja-macros" class="text-primary hover:text-primary/80 underline font-medium">hvernig á að telja macros</a>.
+        Ef þú vilt læra meira um hvernig á að mæla árangur rétt þá getur þú lesið <a href="/blog/af-hverju-vigtin-segir-ekki-alla-soguna" class="text-primary hover:text-primary/80 underline font-medium">hér</a> um betri leiðir til að mæla árangur. Ef þú vilt vita meira um næringu þá getur þú lesið um <a href="/blog/hvernig-byrja-telja-macros" class="text-primary hover:text-primary/80 underline font-medium">hvernig á að telja macros</a>.
       </p>
     `
   },
@@ -342,7 +342,7 @@ export const blogPosts = [
       </p>
 
       <p class="mb-6 text-lg leading-relaxed text-white/90">
-        Ef þú vilt vita hversu oft í viku þú ættir að mæta, getur þú lesið <a href="/blog/hversu-oft-i-viku-attu-ad-maeta-i-raektina" class="text-primary hover:text-primary/80 underline font-medium">hér</a>. Ef þú ert að byrja í ræktinni, getur þú líka lesið um <a href="/blog/5-algeng-mistok-i-raektinni" class="text-primary hover:text-primary/80 underline font-medium">5 algeng mistök sem þú vilt forðast</a>.
+        Ef þú vilt vita hversu oft í viku þú ættir að mæta þá getur þú lesið <a href="/blog/hversu-oft-i-viku-attu-ad-maeta-i-raektina" class="text-primary hover:text-primary/80 underline font-medium">hér</a>. Ef þú ert að byrja í ræktinni þá getur þú líka lesið um <a href="/blog/5-algeng-mistok-i-raektinni" class="text-primary hover:text-primary/80 underline font-medium">5 algeng mistök sem þú vilt forðast</a>.
       </p>
     `
   }
