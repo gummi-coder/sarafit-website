@@ -49,6 +49,7 @@ const Navigation = ({ theme = "dark" }: NavigationProps) => {
     { name: "Fjarþjálfun", href: "/how-it-works" },
     { name: "Tilbúin prógröm", href: "/pricing" },
     { name: "Um mig", href: "/about" },
+    { name: "Blog", href: "/blog" },
   ];
 
   const handleSignupClick = () => {

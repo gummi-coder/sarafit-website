@@ -95,7 +95,7 @@ const BlogPost = () => {
 
           <div className="container mx-auto max-w-5xl mb-12">
             <div className="aspect-video w-full rounded-3xl overflow-hidden bg-card shadow-sm border border-white/10">
-              <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+              <img src={post.image} alt={post.title} className={`w-full h-full object-cover ${post.slug === "5-algeng-mistok-i-raektinni" ? "object-[center_30%]" : ""}`} />
             </div>
           </div>
         </section>

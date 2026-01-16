@@ -16,7 +16,7 @@ const Blog = () => {
   const featuredPost = blogPosts[0];
   
   const displayedPosts = selectedCategory === "Allt"
-    ? blogPosts.slice(1)
+    ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
 
   const categories = ["Allt", "Næring", "Æfingar", "Hugarfar", "Lífsstíll"];

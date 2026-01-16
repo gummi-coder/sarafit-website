@@ -2,8 +2,8 @@ export const blogPosts = [
   {
     title: "Af hverju vigtin segir ekki alla söguna",
     excerpt: "Það er auðvelt að festast alveg í tölunni á vigtinni. Sannleikurinn er sá að vigtin segir okkur oft mjög lítið um raunverulegan árangur. Hér lærir þú betri leiðir til að mæla árangur.",
-    date: "12. Janúar 2024",
-    readTime: "5 mín lestur",
+    date: "16. Janúar 2026",
+    readTime: "3 mín lestur",
     category: "Hugarfar",
     image: "/vigtin.png", 
     slug: "af-hverju-vigtin-segir-ekki-alla-soguna",
@@ -62,10 +62,10 @@ export const blogPosts = [
   {
     title: "Þarft þú að telja macros?",
     excerpt: "Margir spyrja sig: \"Þarf ég að telja macros til að sjá árangur?\" eða \"er macros bara annað megrunar trend\"? Hér koma svörin við þessum spurningum.",
-    date: "8. Janúar 2024",
-    readTime: "7 mín lestur",
+    date: "9. Janúar 2026",
+    readTime: "2 mín lestur",
     category: "Næring",
-    image: "/2 3.png",
+    image: "/3 2.png",
     slug: "hvernig-byrja-telja-macros",
     author: "Guðrún Sara",
     content: `
@@ -138,10 +138,59 @@ export const blogPosts = [
     `
   },
   {
+    title: "Hversu oft í viku áttu að mæta í ræktina?",
+    excerpt: "Hversu oft í viku þú ættir að mæta í ræktina fer fyrst og fremst eftir því hversu oft í viku þú kemst í ræktina og hvað þín rútína leyfir. Besta æfingaplanið er planið sem þú nærð að halda þig við.",
+    date: "2. Janúar 2026",
+    readTime: "2 mín lestur",
+    category: "Æfingar",
+    image: "/4.png",
+    slug: "hversu-oft-i-viku-attu-ad-maeta-i-raektina",
+    author: "Guðrún Sara",
+    content: `
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Hversu oft í viku þú ættir að mæta í ræktina fer fyrst og fremst eftir því hversu oft í viku þú kemst í ræktina og hvað þín rútína leyfir.
+      </p>
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Hversu oft þú átt að mæta í ræktina fer ekki eftir því hvað fólk á samfélagsmiðlum segja að sé best eða hversu oft þú heldur að þú eigir að vera að fara - þín rútína og hversu oft þú virkilega kemst segir fyrst og fremst til um það.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-4 mt-8 text-white font-display">Þín rútína kemur fyrst</h2>
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Besta æfingaplanið er planið sem þú nærð að halda þig við. Mundu það!
+      </p>
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Ef það er raunhæft fyrir þig og þitt líf að mæta 2x í viku, þá er betra að halda við það í staðinn fyrir að setja þér óraunhæf markmið og enda á því að mæta ekkert.
+      </p>
+
+      <div class="bg-primary/5 border border-primary/20 rounded-2xl p-6 mb-8 my-8">
+        <p class="text-white/90 leading-relaxed font-bold text-lg">
+          Stöðugleiki vinnur fullkomnun.
+        </p>
+      </div>
+
+      <h2 class="text-2xl font-bold mb-4 mt-8 text-white font-display">Hversu oft átt þú að mæta?</h2>
+      <ul class="list-disc pl-6 mb-6 space-y-3 text-white/90">
+        <li><strong>2x í viku</strong> er nóg til að byggja upp góða ávana og sjá árangur</li>
+        <li><strong>3x í viku</strong> er &quot;the sweet spot&quot; fyrir flesta</li>
+        <li><strong>4-5x í viku</strong> er flott ef þú hefur gaman af því og líkaminn nær að hvíla nóg</li>
+        <li><strong>6-7x í viku</strong> er aðeins fyrir íþróttafólk eða þá sem eru að vinna að ákveðnu markmiði í íþróttum</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold mb-4 mt-8 text-white font-display">Annað til að hafa í huga</h2>
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Það skiptir mjög miklu máli fyrir líkaman að fá hvíldina sem hann þarf til að vaxa. Það skiptir alveg jafn miklu máli og æfingin sjálf. Streita, svefn og vinnan þín hefur mikil áhrif á hversu mikla hreyfingu þú höndlar.
+      </p>
+
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Ekki setja þér óraunhæf markmið með óraunhæfu plani - lærðu að finna það sem virkar fyrir þig.
+      </p>
+    `
+  },
+  {
     title: "5 algeng mistök í ræktinni",
     excerpt: "Mitt allra helsta ráð fyrir byrjendur í ræktinni er bara að byrja! Það eru þó nokkur mistök sem þú vilt helst ekki gera þegar þú ert að stíga þín fyrstu skref í ræktina.",
-    date: "5. Janúar 2024",
-    readTime: "4 mín lestur",
+    date: "26. Desember 2025",
+    readTime: "2 mín lestur",
     category: "Æfingar",
     image: "/DSC02083.JPG",
     slug: "5-algeng-mistok-i-raektinni",
@@ -190,10 +239,10 @@ export const blogPosts = [
   {
     title: "Af hverju þú sérð engan árangur þó þú sért að æfa stöðugt",
     excerpt: "Það getur verið mjög þreytandi að mæta stöðugt í ræktina en að sjá engan árangur. Hér koma 5 algengar ástæður hvers vegna þú sérð engan árangur þrátt fyrir metnaðinn sem þú setur í að mæta í ræktina.",
-    date: "28. Desember 2023",
-    readTime: "6 mín lestur",
+    date: "19. Desember 2025",
+    readTime: "3 mín lestur",
     category: "Lífsstíll",
-    image: "/2 3.png",
+    image: "/Gugu arangur.png",
     slug: "halda-ser-vid-efnid-i-friinu",
     author: "Guðrún Sara",
     content: `
@@ -234,10 +283,10 @@ export const blogPosts = [
   {
     title: "Hefur þú engan tíma fyrir ræktina? - hér er það sem þú getur gert",
     excerpt: "\"Ég hef ekki tíma fyrir ræktina\"... Þetta er eitt af stærstu vandamálunum sem fólk er að glíma við. En sannleikurinn er sá að þú þarft ekki meiri tíma - þú þarft betra plan og meira skipulag.",
-    date: "15. Desember 2023",
-    readTime: "5 mín lestur",
+    date: "12. Desember 2025",
+    readTime: "3 mín lestur",
     category: "Lífsstíll",
-    image: "/2 3.png",
+    image: "/5.png",
     slug: "hefur-thu-engan-tima-fyrir-raektina",
     author: "Guðrún Sara",
     content: `
@@ -272,28 +321,6 @@ export const blogPosts = [
         Þegar þú segir við sjálfa þig að þú hafir ekki tíma fyrir hreyfingu þá ertu ekki að setja heilsuna þína og líkama í forgang. Til þess að búa til pláss fyrir hreyfingu þarftu að vera með skýrt og raunhæft plan og mögulega vera tilbúin að fórna óhollum ávönum.
       </p>
     `
-  },
-  {
-    title: "Hvernig á að velja rétt lóð",
-    excerpt: "Að velja rétta þyngd er lykilatriði til að sjá árangur. Hér lærir þú hvernig þú finnur réttu þyngdina fyrir þínar æfingar.",
-    date: "10. Desember 2023",
-    readTime: "4 mín lestur",
-    category: "Æfingar",
-    image: "/placeholder.svg",
-    slug: "hvernig-velja-rett-lod",
-    author: "Guðrún Sara",
-    content: "<p>Efni greinarinnar kemur hér...</p>"
-  },
-  {
-    title: "Mikilvægi svefns fyrir árangur",
-    excerpt: "Svefn er oft vanmetinn þáttur í heilsurækt. Hér förum við yfir hvernig góður svefn getur bætt árangurinn þinn í ræktinni og daglegu lífi.",
-    date: "5. Desember 2023",
-    readTime: "6 mín lestur",
-    category: "Lífsstíll",
-    image: "/placeholder.svg",
-    slug: "mikilvaegi-svefns",
-    author: "Guðrún Sara",
-    content: "<p>Efni greinarinnar kemur hér...</p>"
   }
 ];
 
