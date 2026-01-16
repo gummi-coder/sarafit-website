@@ -3,15 +3,74 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, ArrowLeft, Share2, Facebook, Twitter, Linkedin } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Calendar, Clock, ArrowLeft, Share2, Facebook, Twitter, Linkedin, ArrowRight } from "lucide-react";
 import { blogPosts } from "@/data/blogPosts";
 import NotFound from "./NotFound";
 import { useToast } from "@/hooks/use-toast";
+import { useMemo } from "react";
 
 const BlogPost = () => {
   const { slug } = useParams();
   const { toast } = useToast();
   const post = blogPosts.find((p) => p.slug === slug);
+
+  // Get related posts (same category, excluding current post, max 3)
+  const relatedPosts = useMemo(() => {
+    if (!post) return [];
+    return blogPosts
+      .filter((p) => p.slug !== post.slug && p.category === post.category)
+      .slice(0, 3);
+  }, [post]);
+
+  // Generate structured data for Article schema
+  const structuredData = useMemo(() => {
+    if (!post) return null;
+    
+    // Parse date from Icelandic format to ISO format
+    const parseIcelandicDate = (dateStr: string) => {
+      const months: { [key: string]: string } = {
+        "Janúar": "01", "Febrúar": "02", "Mars": "03", "Apríl": "04",
+        "Maí": "05", "Júní": "06", "Júlí": "07", "Ágúst": "08",
+        "September": "09", "Október": "10", "Nóvember": "11", "Desember": "12"
+      };
+      
+      const parts = dateStr.split(" ");
+      if (parts.length === 3) {
+        const day = parts[0].replace(".", "").padStart(2, "0");
+        const month = months[parts[1]] || "01";
+        const year = parts[2];
+        return `${year}-${month}-${day}`;
+      }
+      return new Date().toISOString().split("T")[0];
+    };
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": post.title,
+      "description": post.excerpt,
+      "image": `https://sarafit.is${post.image}`,
+      "datePublished": parseIcelandicDate(post.date),
+      "dateModified": parseIcelandicDate(post.date),
+      "author": {
+        "@type": "Person",
+        "name": post.author
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "SARAFIT",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sarafit.is/sarafit-logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `https://sarafit.is/blog/${post.slug}`
+      }
+    };
+  }, [post]);
 
   const handleShare = (platform: string) => {
     const url = encodeURIComponent(window.location.href);
@@ -57,6 +116,9 @@ const BlogPost = () => {
         description={post.excerpt}
         url={`https://sarafit.is/blog/${slug}`}
         keywords={`${post.category}, blogg, heilsa, þjálfun, SARAFIT`}
+        image={`https://sarafit.is${post.image}`}
+        type="article"
+        structuredData={structuredData}
       />
 
       <main className="pt-32 pb-20">
@@ -123,6 +185,42 @@ const BlogPost = () => {
                 </Button>
               </div>
             </div>
+
+            {/* Related Posts Section */}
+            {relatedPosts.length > 0 && (
+              <div className="mt-12 pt-8 border-t border-white/10">
+                <h3 className="text-lg font-bold mb-6 text-white">Tengdar greinar</h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  {relatedPosts.map((relatedPost) => (
+                    <Link key={relatedPost.slug} to={`/blog/${relatedPost.slug}`} className="group">
+                      <div className="border border-white/10 bg-card/30 backdrop-blur-sm rounded-lg overflow-hidden hover:border-primary/30 hover:bg-card/40 transition-all duration-300 h-full flex flex-col">
+                        <div className="aspect-[4/3] overflow-hidden relative">
+                          <img
+                            src={relatedPost.image}
+                            alt={relatedPost.title}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                        </div>
+                        <div className="p-4 flex-grow">
+                          <div className="flex items-center gap-2 text-xs text-white/60 mb-2">
+                            <span className="flex items-center"><Calendar className="w-3 h-3 mr-1" /> {relatedPost.date}</span>
+                          </div>
+                          <h4 className="text-base font-bold mb-2 font-display text-white group-hover:text-primary transition-colors line-clamp-2">
+                            {relatedPost.title}
+                          </h4>
+                          <p className="text-white/70 text-sm leading-relaxed line-clamp-2 mb-3">
+                            {relatedPost.excerpt}
+                          </p>
+                          <span className="text-primary text-sm font-medium inline-flex items-center group-hover:underline">
+                            Lesa meira <ArrowRight className="w-3 h-3 ml-1 transition-transform group-hover:translate-x-1" />
+                          </span>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 

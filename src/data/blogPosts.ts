@@ -57,6 +57,10 @@ export const blogPosts = [
       <p class="mb-6 text-lg leading-relaxed text-white/90">
         Ekki láta töluna á vigtinni blekkja þig. Þú getur notað vigtina til að mæla árangur en ekki láta það vera eins tólið sem þú notar.
       </p>
+
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Ef þú vilt sjá meiri árangur í ræktinni, getur þú lesið meira um <a href="/blog/halda-ser-vid-efnid-i-friinu" class="text-primary hover:text-primary/80 underline font-medium">5 algengar ástæður hvers vegna þú sérð engan árangur</a> eða <a href="/blog/hversu-oft-i-viku-attu-ad-maeta-i-raektina" class="text-primary hover:text-primary/80 underline font-medium">hversu oft í viku þú ættir að mæta</a>.
+      </p>
     `
   },
   {
@@ -135,6 +139,10 @@ export const blogPosts = [
       <p class="mb-6 text-lg leading-relaxed text-white/90">
         Það er engin rétt leið fyrir alla og þú þarft alltaf að finna það sem virkar best fyrir þig.
       </p>
+
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Ef þú vilt sjá meiri árangur með næringu, getur þú lesið meira um <a href="/blog/af-hverju-vigtin-segir-ekki-alla-soguna" class="text-primary hover:text-primary/80 underline font-medium">hvers vegna vigtin segir ekki alla söguna</a> eða <a href="/blog/halda-ser-vid-efnid-i-friinu" class="text-primary hover:text-primary/80 underline font-medium">hvers vegna þú sérð engan árangur</a>.
+      </p>
     `
   },
   {
@@ -183,6 +191,10 @@ export const blogPosts = [
 
       <p class="mb-6 text-lg leading-relaxed text-white/90">
         Ekki setja þér óraunhæf markmið með óraunhæfu plani - lærðu að finna það sem virkar fyrir þig.
+      </p>
+
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Ef þú ert að byrja í ræktinni, getur þú lesið meira um <a href="/blog/5-algeng-mistok-i-raektinni" class="text-primary hover:text-primary/80 underline font-medium">5 algeng mistök sem þú vilt forðast</a>. Ef þú hefur engan tíma fyrir ræktina, getur þú lesið <a href="/blog/hefur-thu-engan-tima-fyrir-raektina" class="text-primary hover:text-primary/80 underline font-medium">hér</a> um hvað þú getur gert.
       </p>
     `
   },
@@ -234,6 +246,10 @@ export const blogPosts = [
       <p class="mb-6 text-lg leading-relaxed text-white/90">
         Ef markmiðið þitt er að byggja upp styrk, líða betur og komast í betra form - ekki vera að flækja þetta, byrjaðu að mæta og vertu opin fyrir því að læra nýja hluti.
       </p>
+
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Ef þú vilt vita hversu oft í viku þú ættir að mæta, getur þú lesið <a href="/blog/hversu-oft-i-viku-attu-ad-maeta-i-raektina" class="text-primary hover:text-primary/80 underline font-medium">hér</a>. Ef þú sérð engan árangur þó þú sért að æfa stöðugt, getur þú lesið meira um <a href="/blog/halda-ser-vid-efnid-i-friinu" class="text-primary hover:text-primary/80 underline font-medium">5 algengar ástæður</a>.
+      </p>
     `
   },
   {
@@ -278,6 +294,10 @@ export const blogPosts = [
       <p class="mb-6 text-lg leading-relaxed text-white/90">
         Þegar við höfum komið hreyfingu inn í rútínuna og erum komin yfir byrjendastigið þar sem það eina skiptir máli er að mæta og halda stöðugleika þá skiptir máli að byrja að spá aðeins meira í því hvernig við getum gert betur og hvað við getum gert til að sjá enn meiri árangur.
       </p>
+
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Ef þú vilt læra meira um hvernig á að mæla árangur rétt, getur þú lesið <a href="/blog/af-hverju-vigtin-segir-ekki-alla-soguna" class="text-primary hover:text-primary/80 underline font-medium">hér</a> um betri leiðir til að mæla árangur. Ef þú vilt vita meira um næringu, getur þú lesið um <a href="/blog/hvernig-byrja-telja-macros" class="text-primary hover:text-primary/80 underline font-medium">hvernig á að telja macros</a>.
+      </p>
     `
   },
   {
@@ -319,6 +339,10 @@ export const blogPosts = [
 
       <p class="mb-6 text-lg leading-relaxed text-white/90">
         Þegar þú segir við sjálfa þig að þú hafir ekki tíma fyrir hreyfingu þá ertu ekki að setja heilsuna þína og líkama í forgang. Til þess að búa til pláss fyrir hreyfingu þarftu að vera með skýrt og raunhæft plan og mögulega vera tilbúin að fórna óhollum ávönum.
+      </p>
+
+      <p class="mb-6 text-lg leading-relaxed text-white/90">
+        Ef þú vilt vita hversu oft í viku þú ættir að mæta, getur þú lesið <a href="/blog/hversu-oft-i-viku-attu-ad-maeta-i-raektina" class="text-primary hover:text-primary/80 underline font-medium">hér</a>. Ef þú ert að byrja í ræktinni, getur þú líka lesið um <a href="/blog/5-algeng-mistok-i-raektinni" class="text-primary hover:text-primary/80 underline font-medium">5 algeng mistök sem þú vilt forðast</a>.
       </p>
     `
   }
