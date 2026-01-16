@@ -45,8 +45,7 @@ const Pricing = () => {
         "Vikuleg check-in",
         "Mánaðarleg árangurs check-in",
         "Aðgangur að þjálfara í gegnum spjallþráð í appinu",
-        "Næringarþjálfun",
-        "NÝTT - fjarfundir þar sem þú færð kennslu á næringu og mataræði."
+        "Næringarþjálfun"
       ],
       popular: true,
       cta: "Byrja núna"
