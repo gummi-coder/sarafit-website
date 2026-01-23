@@ -96,6 +96,11 @@ const Signup = () => {
       });
 
       if (response.ok) {
+        // Fire Meta Pixel Lead event
+        if (window.fbq) {
+          window.fbq('track', 'Lead');
+        }
+        
         form.reset();
         setProgramType("");
         setPrebuiltPlan("");
