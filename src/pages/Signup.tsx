@@ -87,7 +87,9 @@ const Signup = () => {
     formData.set("termsAccepted", termsAccepted ? "yes" : "no");
 
     try {
-      const response = await fetch("https://formspree.io/f/xvgvzwyp", {
+      // Form backend: Basin (can switch back to Formspree if needed)
+      // Formspree: https://formspree.io/f/xvgvzwyp
+      const response = await fetch("https://usebasin.com/f/7dfdb40e769c", {
         method: "POST",
         headers: {
           Accept: "application/json",
