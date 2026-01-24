@@ -52,8 +52,8 @@ const Signup = () => {
     const form = event.currentTarget;
     const formData = new FormData(form);
 
-    const service = (formData.get("service") as string) || "";
-    const selectedPrebuilt = (formData.get("prebuiltPlan") as string) || "";
+    const service = (formData.get("thjonusta") as string) || "";
+    const selectedPrebuilt = (formData.get("tilbuidProgram") as string) || "";
 
     if (!service) {
       setSubmissionMessage(null);
@@ -77,14 +77,14 @@ const Signup = () => {
     setSubmissionMessage(null);
     setIsSubmitting(true);
 
-    formData.set("service", service);
+    formData.set("thjonusta", service);
     if (service === "tilbuin") {
-      formData.set("prebuiltProgram", selectedPrebuilt);
+      formData.set("tilbuidProgram", selectedPrebuilt);
     } else {
-      formData.delete("prebuiltPlan");
-      formData.set("prebuiltProgram", "");
+      formData.delete("tilbuidProgram");
+      formData.set("tilbuidProgram", "");
     }
-    formData.set("termsAccepted", termsAccepted ? "yes" : "no");
+    formData.set("skilmalaSamthykkt", termsAccepted ? "yes" : "no");
 
     try {
       // Form backend: Basin (can switch back to Formspree if needed)
@@ -170,7 +170,7 @@ const Signup = () => {
                       </Label>
                       <Input
                         id="signup-name"
-                        name="name"
+                        name="nafn"
                         placeholder="Fullt nafn"
                         required
                         className="bg-background/60 border-border/30"
@@ -183,7 +183,7 @@ const Signup = () => {
                       </Label>
                       <Input
                         id="signup-email"
-                        name="email"
+                        name="netfang"
                         type="email"
                         placeholder="Netfang"
                         required
@@ -197,7 +197,7 @@ const Signup = () => {
                       </Label>
                       <Input
                         id="signup-phone"
-                        name="phone"
+                        name="simanumer"
                         type="tel"
                         placeholder="Símanúmer"
                         className="bg-background/60 border-border/30"
@@ -222,7 +222,7 @@ const Signup = () => {
                         Þjónusta *
                       </Label>
                       <Select
-                        name="service"
+                        name="thjonusta"
                         value={programType || undefined}
                         onValueChange={(value) => {
                           setProgramType(value);
@@ -249,7 +249,7 @@ const Signup = () => {
                           Veldu tilbúið prógram *
                         </Label>
                         <Select
-                          name="prebuiltPlan"
+                          name="tilbuidProgram"
                           value={prebuiltPlan || undefined}
                           onValueChange={(value) => {
                             setPrebuiltPlan(value);
@@ -280,7 +280,7 @@ const Signup = () => {
                       </Label>
                       <Textarea
                         id="signup-goals"
-                        name="goals"
+                        name="markmid"
                         placeholder="Segðu okkur frá helstu markmiðum þínum..."
                         required
                         className="bg-background/60 border-border/30 min-h-[120px]"
