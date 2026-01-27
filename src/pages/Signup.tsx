@@ -54,6 +54,7 @@ const Signup = () => {
 
     const service = (formData.get("thjonusta") as string) || "";
     const selectedPrebuilt = (formData.get("tilbuidProgram") as string) || "";
+    const phone = (formData.get("simanumer") as string) || "";
 
     if (!service) {
       setSubmissionMessage(null);
@@ -64,6 +65,12 @@ const Signup = () => {
     if (service === "tilbuin" && !selectedPrebuilt) {
       setSubmissionMessage(null);
       setSubmissionError("Vinsamlegast veldu tilbúið prógram áður en þú sendir inn.");
+      return;
+    }
+
+    if (!phone.trim()) {
+      setSubmissionMessage(null);
+      setSubmissionError("Vinsamlegast fylltu út símanúmer áður en þú sendir inn.");
       return;
     }
 
@@ -193,13 +200,14 @@ const Signup = () => {
 
                     <div className="space-y-2">
                       <Label htmlFor="signup-phone" className="text-foreground">
-                        Símanúmer
+                        Símanúmer *
                       </Label>
                       <Input
                         id="signup-phone"
                         name="simanumer"
                         type="tel"
                         placeholder="Símanúmer"
+                        required
                         className="bg-background/60 border-border/30"
                       />
                     </div>
@@ -237,8 +245,12 @@ const Signup = () => {
                           <SelectValue placeholder="Veldu þjónustu" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="fjar">Fjarþjálfun</SelectItem>
-                          <SelectItem value="tilbuin">Tilbúið prógram</SelectItem>
+                          <SelectItem value="fjar">
+                            Fjarþjálfun <span className="text-foreground/50">- 24.990 kr. /á mánuði</span>
+                          </SelectItem>
+                          <SelectItem value="tilbuin">
+                            Tilbúið prógram <span className="text-foreground/50">- 7.990 kr. /á mánuði</span>
+                          </SelectItem>
                         </SelectContent>
                       </Select>
                     </div>
