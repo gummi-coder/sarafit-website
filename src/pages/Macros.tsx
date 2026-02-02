@@ -394,7 +394,7 @@ const Macros = () => {
         <SEO
           title="Macros Reiknivél - SARAFIT"
           description="Reiknaðu út BMR, TDEE og makrór fyrir markmiðið þitt. Persónuleg næringarútreikningur byggður á vísindalegum aðferðum."
-          url="https://sarafit.is/makronar"
+          url="https://sarafit.is/macros"
         />
         <Navigation />
         

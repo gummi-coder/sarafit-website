@@ -126,7 +126,7 @@ export const blogPosts = [
         <p class="mb-6 text-white/90 leading-relaxed">
           Ef þú vilt reikna út hversu mikið þú þarft að borða miðað við markmiðið þitt, getur þú notað SARAFIT macros reiknivélina.
         </p>
-        <a href="/makronar" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-full text-base transition-all hover:scale-105 shadow-lg hover:shadow-primary/25">
+        <a href="/macros" class="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-full text-base transition-all hover:scale-105 shadow-lg hover:shadow-primary/25">
           Opna Macros Reiknivél
         </a>
       </div>

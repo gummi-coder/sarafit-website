@@ -92,7 +92,7 @@ const Footer = ({ theme = "dark" }: FooterProps) => {
             <ul className="space-y-2">
               <li><Link to="/" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Heim</Link></li>
               <li><Link to="/um-mig" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Um mig</Link></li>
-              <li><Link to="/makronar" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Macros reiknivél</Link></li>
+              <li><Link to="/macros" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Macros reiknivél</Link></li>
               <li><Link to="/blog" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Blog</Link></li>
             </ul>
           </div>

@@ -57,7 +57,7 @@ const Links = () => {
     },
     {
       title: "Macros reiknivél",
-      url: "/makronar",
+      url: "/macros",
       color: "bg-white text-black",
     },
   ];

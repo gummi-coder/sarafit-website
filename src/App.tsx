@@ -47,7 +47,7 @@ const App = () => (
               <Route path="/skilmalar" element={<Terms />} />
               <Route path="/blueprint" element={<Blueprint />} />
               <Route path="/links" element={<Links />} />
-              <Route path="/makronar" element={<Macros />} />
+              <Route path="/macros" element={<Macros />} />
               <Route path="/verdskra" element={<Verdskra />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
