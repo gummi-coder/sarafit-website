@@ -42,7 +42,7 @@ const Links = () => {
     },
     {
       title: "Tilbúin prógröm",
-      url: "/pricing",
+      url: "/tilbun-progrom",
       color: "bg-white text-black",
     },
     {
@@ -57,7 +57,7 @@ const Links = () => {
     },
     {
       title: "Macros reiknivél",
-      url: "/macros",
+      url: "/makronar",
       color: "bg-white text-black",
     },
   ];

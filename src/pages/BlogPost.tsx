@@ -14,6 +14,7 @@ const BlogPost = () => {
   const { slug } = useParams();
   const { toast } = useToast();
   const post = blogPosts.find((p) => p.slug === slug);
+  const postImage = post?.image;
 
   // Get related posts (same category, excluding current post, max 3)
   const relatedPosts = useMemo(() => {
@@ -50,7 +51,6 @@ const BlogPost = () => {
       "@type": "Article",
       "headline": post.title,
       "description": post.excerpt,
-      "image": `https://sarafit.is${post.image}`,
       "datePublished": parseIcelandicDate(post.date),
       "dateModified": parseIcelandicDate(post.date),
       "author": {
@@ -116,9 +116,13 @@ const BlogPost = () => {
         description={post.excerpt}
         url={`https://sarafit.is/blog/${slug}`}
         keywords={`${post.category}, blogg, heilsa, þjálfun, SARAFIT`}
-        image={`https://sarafit.is${post.image}`}
+        image={postImage ? `https://sarafit.is${postImage}` : undefined}
         type="article"
-        structuredData={structuredData}
+        structuredData={
+          postImage
+            ? { ...structuredData, image: `https://sarafit.is${postImage}` }
+            : structuredData
+        }
       />
 
       <main className="pt-32 pb-20">
@@ -155,11 +159,17 @@ const BlogPost = () => {
             </div>
           </div>
 
-          <div className="container mx-auto max-w-5xl mb-12">
-            <div className="aspect-video w-full rounded-3xl overflow-hidden bg-card shadow-sm border border-white/10">
-              <img src={post.image} alt={post.title} className={`w-full h-full object-cover ${post.slug === "5-algeng-mistok-i-raektinni" ? "object-[center_30%]" : ""}`} />
+          {postImage && (
+            <div className="container mx-auto max-w-5xl mb-12">
+              <div className="aspect-video w-full rounded-3xl overflow-hidden bg-card shadow-sm border border-white/10">
+                <img
+                  src={postImage}
+                  alt={post.title}
+                  className={`w-full h-full object-cover ${post.slug === "5-algeng-mistok-i-raektinni" ? "object-[center_30%]" : ""}`}
+                />
+              </div>
             </div>
-          </div>
+          )}
         </section>
 
         {/* Article Content */}

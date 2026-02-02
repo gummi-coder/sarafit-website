@@ -70,7 +70,7 @@ const About = () => {
       <SEO
         title="Um mig - Guðrún Sara"
         description="Með yfir fjagra ára reynslu í þjálfun hjálpa ég bæði byrjendum og íþróttafólki að ná raunverulegum árangri. Persónuleg þjálfun sem hentar þínu lífi."
-        url="https://sarafit.is/about"
+        url="https://sarafit.is/um-mig"
         keywords="Guðrún Sara, þjálfari, fjarþjálfun, SARAFIT, um mig, reynsla"
       />
       <Navigation />

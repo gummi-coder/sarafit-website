@@ -91,8 +91,8 @@ const Footer = ({ theme = "dark" }: FooterProps) => {
             <h4 className={`font-bold mb-3 text-sm ${textColor}`}>Flýtileiðir</h4>
             <ul className="space-y-2">
               <li><Link to="/" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Heim</Link></li>
-              <li><Link to="/about" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Um mig</Link></li>
-              <li><Link to="/macros" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Macros reiknivél</Link></li>
+              <li><Link to="/um-mig" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Um mig</Link></li>
+              <li><Link to="/makronar" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Macros reiknivél</Link></li>
               <li><Link to="/blog" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Blog</Link></li>
             </ul>
           </div>
@@ -101,10 +101,10 @@ const Footer = ({ theme = "dark" }: FooterProps) => {
           <div>
             <h4 className={`font-bold mb-3 text-sm ${textColor}`}>Fjarþjálfun</h4>
             <ul className="space-y-2">
-              <li><Link to="/how-it-works" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Fjarþjálfun</Link></li>
+              <li><Link to="/fjarþjálfun" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Fjarþjálfun</Link></li>
               <li><Link to="/verdskra" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Verðskrá</Link></li>
-              <li><Link to="/pricing" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Tilbúin prógröm</Link></li>
-              <li><Link to="/signup" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Skráning</Link></li>
+              <li><Link to="/tilbun-progrom" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Tilbúin prógröm</Link></li>
+              <li><Link to="/skraning" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Skráning</Link></li>
             </ul>
           </div>
 
@@ -112,8 +112,8 @@ const Footer = ({ theme = "dark" }: FooterProps) => {
           <div>
             <h4 className={`font-bold mb-3 text-sm ${textColor}`}>Skilmálar</h4>
             <ul className="space-y-2">
-              <li><Link to="/terms" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Skilmálar</Link></li>
-              <li><Link to="/terms#privacy" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Persónuverndarstefna</Link></li>
+              <li><Link to="/skilmalar" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Skilmálar</Link></li>
+              <li><Link to="/skilmalar#privacy" className={`${mutedTextColor} hover:text-primary transition-colors text-xs`}>Persónuverndarstefna</Link></li>
             </ul>
           </div>
         </div>

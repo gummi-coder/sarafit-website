@@ -394,7 +394,7 @@ const Macros = () => {
         <SEO
           title="Macros Reiknivél - SARAFIT"
           description="Reiknaðu út BMR, TDEE og makrór fyrir markmiðið þitt. Persónuleg næringarútreikningur byggður á vísindalegum aðferðum."
-          url="https://sarafit.is/macros"
+          url="https://sarafit.is/makronar"
         />
         <Navigation />
         
@@ -402,15 +402,15 @@ const Macros = () => {
           <div className="container mx-auto max-w-4xl w-full">
             {!results ? (
               <>
-                <div className="text-center mb-12">
-                  <h1 className="text-4xl md:text-6xl font-black mb-4 font-display">
-                    <span className="text-foreground">Macros</span>{" "}
-                    <span className="text-primary">Reiknivél</span>
-                  </h1>
-                  <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-sans">
+            <div className="text-center mb-12">
+              <h1 className="text-4xl md:text-6xl font-black mb-4 font-display">
+                <span className="text-foreground">Macros</span>{" "}
+                <span className="text-primary">Reiknivél</span>
+              </h1>
+              <p className="text-lg text-foreground/80 max-w-2xl mx-auto font-sans">
                     Reiknaðu út orkuþörf og makróskiptingu fyrir þín markmið
-                  </p>
-                </div>
+              </p>
+            </div>
                 <Card className="bg-card/60 backdrop-blur border border-white/10 overflow-visible w-full shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-2xl text-foreground flex items-center gap-2">
@@ -630,9 +630,9 @@ const Macros = () => {
                       <div className="flex justify-between items-center mb-2 md:mb-4">
                         <p className="font-bold text-sm md:text-lg text-foreground flex items-center gap-1.5 md:gap-2">
                           <Dna className="w-4 h-4 md:w-5 md:h-5 text-blue-400 flex-shrink-0" /> <span className="truncate">Prótein</span>
-                        </p>
+                          </p>
                         <span className="text-xs font-mono bg-blue-500/20 text-blue-300 px-1.5 md:px-2 py-0.5 md:py-1 rounded flex-shrink-0">{results.macros.protein.percentage}%</span>
-                      </div>
+                        </div>
                       <p className="text-2xl md:text-4xl font-black text-foreground font-display mb-1 md:mb-2">{results.macros.protein.grams}g</p>
                       <Progress value={results.macros.protein.percentage} className="h-1.5 md:h-2 mb-2 md:mb-3 bg-blue-950" indicatorClassName="bg-blue-500" />
                       <div className="text-xs text-foreground/50 font-sans space-y-0.5 md:space-y-1">
@@ -648,9 +648,9 @@ const Macros = () => {
                       <div className="flex justify-between items-center mb-2 md:mb-4">
                         <p className="font-bold text-sm md:text-lg text-foreground flex items-center gap-1.5 md:gap-2">
                           <Utensils className="w-4 h-4 md:w-5 md:h-5 text-green-400 flex-shrink-0" /> <span className="truncate">Kolvetni</span>
-                        </p>
+                          </p>
                         <span className="text-xs font-mono bg-green-500/20 text-green-300 px-1.5 md:px-2 py-0.5 md:py-1 rounded flex-shrink-0">{results.macros.carbs.percentage}%</span>
-                      </div>
+                        </div>
                       <p className="text-2xl md:text-4xl font-black text-foreground font-display mb-1 md:mb-2">{results.macros.carbs.grams}g</p>
                       <Progress value={results.macros.carbs.percentage} className="h-1.5 md:h-2 mb-2 md:mb-3 bg-green-950" indicatorClassName="bg-green-500" />
                       <div className="text-xs text-foreground/50 font-sans space-y-0.5 md:space-y-1">
@@ -666,9 +666,9 @@ const Macros = () => {
                       <div className="flex justify-between items-center mb-2 md:mb-4">
                         <p className="font-bold text-sm md:text-lg text-foreground flex items-center gap-1.5 md:gap-2">
                           <Flame className="w-4 h-4 md:w-5 md:h-5 text-yellow-400 flex-shrink-0" /> <span className="truncate">Fita</span>
-                        </p>
+                          </p>
                         <span className="text-xs font-mono bg-yellow-500/20 text-yellow-300 px-1.5 md:px-2 py-0.5 md:py-1 rounded flex-shrink-0">{results.macros.fat.percentage}%</span>
-                      </div>
+                        </div>
                       <p className="text-2xl md:text-4xl font-black text-foreground font-display mb-1 md:mb-2">{results.macros.fat.grams}g</p>
                       <Progress value={results.macros.fat.percentage} className="h-1.5 md:h-2 mb-2 md:mb-3 bg-yellow-950" indicatorClassName="bg-yellow-500" />
                       <div className="text-xs text-foreground/50 font-sans space-y-0.5 md:space-y-1">

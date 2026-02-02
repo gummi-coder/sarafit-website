@@ -46,9 +46,9 @@ const Navigation = ({ theme = "dark" }: NavigationProps) => {
 
   const navLinks = [
     { name: "Verðskrá", href: "/verdskra" },
-    { name: "Fjarþjálfun", href: "/how-it-works" },
-    { name: "Tilbúin prógröm", href: "/pricing" },
-    { name: "Um mig", href: "/about" },
+    { name: "Fjarþjálfun", href: "/fjarþjálfun" },
+    { name: "Tilbúin prógröm", href: "/tilbun-progrom" },
+    { name: "Um mig", href: "/um-mig" },
     { name: "Blog", href: "/blog" },
   ];
 

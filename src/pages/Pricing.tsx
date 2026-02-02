@@ -34,7 +34,7 @@ const Pricing = () => {
       <SEO
         title="Tilbúin prógröm - Melt Mode, Stronger & Bigger, Booty Builder, Endurance, The Runner, Homebody, Begin NOW, Busy Bee"
         description="Veldu prógram sem hentar þínum markmiðum. Melt Mode, Stronger & Bigger, Booty Builder, Endurance, The Runner, Homebody, Begin NOW og Busy Bee - allt með fullum aðgangi að SARAFIT appinu."
-        url="https://sarafit.is/pricing"
+        url="https://sarafit.is/tilbun-progrom"
         keywords="tilbúin prógröm, Melt Mode, Stronger Bigger, Booty Builder, Endurance, The Runner, Homebody, Begin NOW, Busy Bee, æfingarprógram, SARAFIT"
       />
       <Navigation />
@@ -199,7 +199,7 @@ const Pricing = () => {
                         ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-primary/25" 
                         : "bg-secondary hover:bg-secondary/80 text-secondary-foreground shadow-md"
                     }`}
-                    onClick={() => navigate(`/signup?program=${programValue}`)}
+                    onClick={() => navigate(`/skraning?program=${programValue}`)}
                   >
                     Velja prógram
                   </Button>
@@ -294,7 +294,7 @@ const Pricing = () => {
               <Button 
                 size="lg"
                 className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold px-8 py-6 rounded-full text-lg shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
-                onClick={() => navigate("/how-it-works")}
+                onClick={() => navigate("/fjarþjálfun")}
               >
                 Skoða Fjarþjálfun
               </Button>

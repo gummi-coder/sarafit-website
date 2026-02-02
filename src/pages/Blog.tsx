@@ -4,20 +4,38 @@ import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { Calendar, Clock, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Blog = () => {
   const [selectedCategory, setSelectedCategory] = useState("Allt");
+  const [page, setPage] = useState(1);
+  const pageSize = 6;
+
+  const goToPage = (nextPage: number) => {
+    setPage(nextPage);
+  };
+
+  // Scroll to top when page changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [page]);
   
-  const featuredPost = blogPosts[0];
-  
-  const displayedPosts = selectedCategory === "Allt"
+  const filteredPosts = selectedCategory === "Allt"
     ? blogPosts
     : blogPosts.filter(post => post.category === selectedCategory);
+
+  const totalPages = Math.max(1, Math.ceil(filteredPosts.length / pageSize));
+  const safePage = Math.min(page, totalPages);
+  const startIndex = (safePage - 1) * pageSize;
+  const pagePosts = filteredPosts.slice(startIndex, startIndex + pageSize);
+
+  const showFeatured = safePage === 1 && pagePosts.length > 0;
+  const featuredPost = showFeatured ? pagePosts[0] : null;
+  const gridPosts = pagePosts;
 
   const categories = ["Allt", "Næring", "Æfingar", "Hugarfar", "Lífsstíll"];
 
@@ -46,6 +64,7 @@ const Blog = () => {
         </section>
 
         {/* Featured Post Section - Always visible */}
+        {featuredPost && (
         <section className="px-4 mb-20">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-2xl font-bold mb-8 flex items-center gap-2 text-white">
@@ -53,13 +72,19 @@ const Blog = () => {
               Nýasta
             </h2>
             <div className="grid md:grid-cols-2 gap-8 items-center bg-card/50 rounded-3xl overflow-hidden border border-white/10 shadow-sm transition-all hover:shadow-md">
-              <div className="aspect-video md:aspect-auto md:h-full min-h-[300px] overflow-hidden">
-                <img 
-                  src={featuredPost.image} 
-                  alt={featuredPost.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                />
-              </div>
+              {featuredPost.image ? (
+                <div className="aspect-video md:aspect-auto md:h-full min-h-[300px] overflow-hidden">
+                  <img
+                    src={featuredPost.image}
+                    alt={featuredPost.title}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                </div>
+              ) : (
+                <div className="aspect-video md:aspect-auto md:h-full min-h-[300px] bg-gradient-to-br from-primary/10 via-card/40 to-card/20 flex items-center justify-center">
+                  <span className="text-white/50 font-medium">SARAFIT</span>
+                </div>
+              )}
               <div className="p-8 md:p-12 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-4">
                   <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 border-none">
@@ -91,6 +116,7 @@ const Blog = () => {
             </div>
           </div>
         </section>
+        )}
 
         {/* Categories & Recent Posts */}
         <section className="px-4 mb-20">
@@ -101,7 +127,10 @@ const Blog = () => {
                 <Button 
                   key={i} 
                   variant={selectedCategory === cat ? "default" : "outline"} 
-                  onClick={() => setSelectedCategory(cat)}
+                  onClick={() => {
+                    setSelectedCategory(cat);
+                    goToPage(1);
+                  }}
                   className={selectedCategory === cat
                     ? "bg-primary text-primary-foreground hover:bg-primary/90 rounded-full" 
                     : "border-white/20 text-white/80 hover:text-primary hover:border-primary/50 hover:bg-white/5 rounded-full bg-transparent"}
@@ -113,8 +142,8 @@ const Blog = () => {
 
             {/* Posts Grid */}
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {displayedPosts.length > 0 ? (
-                displayedPosts.map((post, index) => (
+              {gridPosts.length > 0 ? (
+                gridPosts.map((post, index) => (
                   <Card key={index} className="border-white/10 bg-card/40 backdrop-blur-sm shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 overflow-hidden group h-full flex flex-col">
                     <div className="aspect-[4/3] overflow-hidden relative">
                       <div className="absolute top-4 left-4 z-10">
@@ -122,11 +151,17 @@ const Blog = () => {
                           {post.category}
                         </Badge>
                       </div>
-                      <img 
-                        src={post.image} 
-                        alt={post.title} 
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
+                      {post.image ? (
+                        <img
+                          src={post.image}
+                          alt={post.title}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gradient-to-br from-primary/10 via-card/40 to-card/20 flex items-center justify-center">
+                          <span className="text-white/50 font-medium">SARAFIT</span>
+                        </div>
+                      )}
                     </div>
                     <CardContent className="p-6 flex-grow">
                       <div className="flex items-center gap-3 text-xs text-white/60 mb-3 font-medium">
@@ -155,6 +190,33 @@ const Blog = () => {
                 </div>
               )}
             </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-4 mt-12">
+                <Button
+                  variant="outline"
+                  disabled={safePage <= 1}
+                  onClick={() => goToPage(Math.max(1, safePage - 1))}
+                  className="border-white/20 text-white/80 hover:text-primary hover:border-primary/50 hover:bg-white/5 rounded-full bg-transparent"
+                >
+                  <ChevronLeft className="w-4 h-4 mr-2" />
+                  Fyrri
+                </Button>
+                <div className="text-white/70 text-sm font-medium">
+                  Síða {safePage} af {totalPages}
+                </div>
+                <Button
+                  variant="outline"
+                  disabled={safePage >= totalPages}
+                  onClick={() => goToPage(Math.min(totalPages, safePage + 1))}
+                  className="border-white/20 text-white/80 hover:text-primary hover:border-primary/50 hover:bg-white/5 rounded-full bg-transparent"
+                >
+                  Næsta
+                  <ChevronRight className="w-4 h-4 ml-2" />
+                </Button>
+              </div>
+            )}
           </div>
         </section>
 

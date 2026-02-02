@@ -9,9 +9,9 @@ const Pricing = () => {
 
   const handleSignupClick = (serviceCode?: string) => {
     if (serviceCode) {
-      navigate(`/signup?service=${serviceCode}`);
+      navigate(`/skraning?service=${serviceCode}`);
     } else {
-      scrollToSignupSection(navigate, location.pathname);
+    scrollToSignupSection(navigate, location.pathname);
     }
   };
 

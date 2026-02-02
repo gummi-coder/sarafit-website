@@ -34,7 +34,7 @@ const NotFound = () => {
                 </Button>
                 
                 <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/10 text-foreground font-bold px-8 py-6 rounded-full text-lg w-full sm:w-auto" asChild>
-                  <Link to="/how-it-works">
+                  <Link to="/fjarþjálfun">
                     Skoða fjarþjálfun
                   </Link>
                 </Button>

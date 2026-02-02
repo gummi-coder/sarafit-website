@@ -21,7 +21,6 @@ import Verdskra from "./pages/Verdskra";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Exercises from "./pages/Exercises";
-import Tilbuid25 from "./pages/Tilbuid25";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -37,23 +36,22 @@ const App = () => (
           <ScrollToTop />
           <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/how-it-works" element={<HowItWorks />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/pricing" element={<Pricing />} />
-              <Route path="/signup" element={<Signup />} />
+              <Route path="/fjarþjálfun" element={<HowItWorks />} />
+              <Route path="/um-mig" element={<About />} />
+              <Route path="/hafdu-samband" element={<Contact />} />
+              <Route path="/tilbun-progrom" element={<Pricing />} />
+              <Route path="/skraning" element={<Signup />} />
               <Route path="/email1" element={<EmailSignup1 />} />
               <Route path="/email2" element={<EmailSignup2 />} />
-              <Route path="/apply" element={<Apply />} />
-              <Route path="/terms" element={<Terms />} />
+              <Route path="/umsokn" element={<Apply />} />
+              <Route path="/skilmalar" element={<Terms />} />
               <Route path="/blueprint" element={<Blueprint />} />
               <Route path="/links" element={<Links />} />
-              <Route path="/macros" element={<Macros />} />
+              <Route path="/makronar" element={<Macros />} />
               <Route path="/verdskra" element={<Verdskra />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/æfingar" element={<Exercises />} />
-              <Route path="/tilbuid25" element={<Tilbuid25 />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

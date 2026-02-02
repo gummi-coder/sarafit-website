@@ -10,19 +10,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://sarafit.is/how-it-works</loc>
+    <loc>https://sarafit.is/fjarþjálfun</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sarafit.is/pricing</loc>
+    <loc>https://sarafit.is/tilbun-progrom</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sarafit.is/about</loc>
+    <loc>https://sarafit.is/um-mig</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -34,14 +34,26 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sarafit.is/signup</loc>
+    <loc>https://sarafit.is/skraning</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://sarafit.is/makronar</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sarafit.is/verdskra</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://sarafit.is/blog</loc>
-    <lastmod>2026-01-16</lastmod>
+    <lastmod>2026-01-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>

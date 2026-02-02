@@ -264,7 +264,7 @@ const Contact = () => {
           <Button 
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-black text-xl px-16 py-8 rounded-full shadow-lg hover:shadow-primary/50 transition-all hover:scale-105"
-            onClick={() => window.location.href = 'http://localhost:8082/apply'}
+            onClick={() => window.location.href = 'http://localhost:8082/umsokn'}
           >
             SKRÁ MIG NÚNA!
           </Button>
